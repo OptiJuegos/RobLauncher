@@ -1473,6 +1473,8 @@ echo.
 :: Avisando al Usuario
 echo Para actualizar tu Launcher, simplemente presiona "Enter"
 echo El launcher descargara la Ultima Actualizacion disponible.
+echo.
+
 pause
 
 :: Descargando .bat de github
