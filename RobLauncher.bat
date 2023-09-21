@@ -1477,6 +1477,9 @@ echo.
 
 pause
 
+:: Descargando la ultima version del .bat actualizador:
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Assets" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/update.bat
+
 :: Descargando .bat de github
-%CD%\Assets\Update.bat
+"%CD%\Assets\Update.bat"
 
