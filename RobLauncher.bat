@@ -1477,6 +1477,10 @@ echo.
 
 pause
 
+:: Borrando la version antigua del .bat actualizador
+del "%CD%\Assets\Update.bat"
+timeout /t 1 /nobreak
+
 :: Descargando la ultima version del .bat actualizador:
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Assets" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/update.bat
 
