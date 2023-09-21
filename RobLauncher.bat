@@ -1483,7 +1483,9 @@ timeout /t 1 /nobreak
 
 :: Descargando la ultima version del .bat actualizador:
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Assets" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/update.bat
+timeout /t 1 /nobreak
 
 :: Descargando .bat de github
 "%CD%\Assets\Update.bat"
+timeout /t 1 /nobreak
 
