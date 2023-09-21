@@ -1470,6 +1470,11 @@ echo.
 echo %LAUNCHER_TEXT%
 echo.
 
+:: Avisando al Usuario
+echo Para actualizar tu Launcher, simplemente presiona "Enter"
+echo El launcher descargara la Ultima Actualizacion disponible.
+pause
+
 :: Descargando .bat de github
 %CD%\Assets\Update.bat
 
