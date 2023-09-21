@@ -1471,4 +1471,5 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Descargando .bat de github
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P %CD%
+%CD%\Assets\Update.bat
+
