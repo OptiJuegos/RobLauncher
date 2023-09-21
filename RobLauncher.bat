@@ -147,7 +147,7 @@ echo.
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
-if "%op%"=="" goto :Start
+if "%op%"=="" goto :OptiCraftBE
 if "%op%"=="1" goto :1.7.3.1
 if "%op%"=="2" goto :1.9.1.0
 if "%op%"=="3" goto :1.12.0
@@ -157,7 +157,7 @@ if "%op%"=="6" goto :1.18.31
 if "%op%"=="7" goto :1.19.52
 if "%op%"=="8" goto :1.20.10
 if "%op%"=="9" goto :Start
-if "%op%"=="" goto :Start
+if "%op%"=="" goto :OptiCraftBE
 pause
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -654,14 +654,14 @@ echo.
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
-if "%op%"=="" goto :Start
+if "%op%"=="" goto :OptiGames
 if "%op%"=="1" goto :CupheadLITE
 if "%op%"=="2" goto :GtaIV
 if "%op%"=="3" goto :PES6
 if "%op%"=="4" goto :Ratatouille
 if "%op%"=="5" goto :Craftsman
 if "%op%"=="6" goto :Start
-if "%op%"=="" goto :Start
+if "%op%"=="" goto :OptiGames
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1263,7 +1263,7 @@ echo.
 echo Tu juego se ha descargado y descomprimido correctamente.
 echo Visita la carpeta Games para encontrar el ejecutable.
 
-timeout /t 5 /nobreak
+timeout /t 3 /nobreak
 
 :: Ir al inicio
 goto :Start
@@ -1290,13 +1290,13 @@ echo.
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
-if "%op%"=="" goto :Start
+if "%op%"=="" goto :Utilities
 if "%op%"=="1" goto :Temp
 if "%op%"=="2" goto :Runtimes
 if "%op%"=="3" goto :Updates
 ::if "%op%"=="4" goto :FAQ
 if "%op%"=="4" goto :Start
-if "%op%"=="" goto :Start
+if "%op%"=="" goto :Utilities
 pause
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
