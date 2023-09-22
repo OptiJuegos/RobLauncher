@@ -1324,12 +1324,15 @@ if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
 cls
 
 :: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" x "%CD%\Downloaded\Games\Super_Mario_64.zip" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" x "%CD%\Downloaded\Games\Compressed\Super_Mario_64.zip" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
 RD /S /Q "%CD%\Downloaded\Games\Compressed"
 cls
+
+:: Ir al game downloaded para Avisar
+goto :GameDownloaded
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :PolyBridge
@@ -1424,6 +1427,7 @@ cls
 goto :GameDownloaded
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
+
 :GameDownloaded
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
 echo.
@@ -1500,7 +1504,7 @@ echo Instalando Visual C++ 2015
 "%CD%\Downloaded\Runtimes\VisualC\vcredist2015_2017_2019_x86.exe" /install /passive
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Runtimes"
+RD /S /Q "%CD%\Downloaded\Runtimes\VisualC"
 
 :: Avisar que se instalo el coso
 cls
