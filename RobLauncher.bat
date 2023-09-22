@@ -1324,7 +1324,7 @@ if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
 cls
 
 :: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" x "%CD%\Downloaded\Games\Compressed\https://cdn.discordapp.com/attachments/1154580119185281095/1154580292045131776/Super_Mario_64.zip" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" x "%CD%\Downloaded\Games\Super_Mario_64.zip" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
