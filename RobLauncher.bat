@@ -41,7 +41,7 @@ title %LAUNCHER_VER%
 mkdir "Downloaded"
 
 :: Comprobar si existe el archivo Options.txt, si no ir a un mini tutorial para los TOPOS (chiste los quiero mucho)
-if exist "Assets\extra\options.txt" (
+if exist "%CD%\Assets\extra\options.txt" (
     goto :Start
 ) else (
     goto :Tutorial
@@ -63,7 +63,7 @@ echo.
 pause
 
 :: Crear un archivo de Options (como mc), para despues comprobar si no es la primera vez ejecutando el %%LAUNCHER_TEXT% 
-type nul > "Assets\extra\options.txt"
+type nul > "%CD%\Assets\extra\options.txt"
 
 :: Ir al inicio del launcher
 goto :Start
