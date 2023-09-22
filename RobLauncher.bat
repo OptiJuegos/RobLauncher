@@ -86,6 +86,25 @@ echo *5.- Sobre el Launcher
 echo *6.- Actualizar el Launcher
 echo.
 
+:: Comprobando si el sistema es Windows XP
+ver | findstr /i "5\.0\."
+ver | findstr /i "5\.1\."
+ver | findstr /i "6\.0\."
+if %errorlevel%==0 (
+goto :OldOSWarning
+) else (
+goto :StartContinue
+)
+
+:: Advertencia Windows antiguos
+:OldOSWarning
+echo ======================================================================================
+echo -Tu Windows es bastante antiguo, lo que puede generar multiples fallas con el Launcher
+echo -Te recomendamos que, si es posible, actualices a un Windows mas reciente.
+echo ======================================================================================
+echo.
+
+:StartContinue
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
@@ -181,7 +200,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152030436927742104/1153481005701812294/OptiCraft_1.7.3.1_By_OptiJuegos.7z
 
 :: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" x %CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.7.3.1_By_OptiJuegos.7z -o"%CD%\Downloaded\OptiCraft"
+"%CD%\Assets\7z.exe" -bsp1 x %CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.7.3.1_By_OptiJuegos.7z -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
