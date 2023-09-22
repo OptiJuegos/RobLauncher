@@ -31,8 +31,8 @@ if '%errorlevel%' NEQ '0' (
 ======================================================================================================================================================================================	
 :: Establecer las Variables de Entorno...
 set WGET="%CD%\Assets\wget.exe"
-set LAUNCHER_TEXT=*RobLauncher V1.2 - Un launcher para OptiCraft y Demas Proyectos.*
-set LAUNCHER_VER=RobLauncher V1.2
+set LAUNCHER_TEXT=*RobLauncher V1.3 - Un launcher para OptiCraft y Demas Proyectos.*
+set LAUNCHER_VER=RobLauncher V1.3
 
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
@@ -54,9 +54,11 @@ cls
 echo.
 echo Hola bienvenido al %LAUNCHER_VER%!
 echo.
-echo Un launcher para OptiCraft y demas Proyectos!
-echo Para moverte por los menus, debes seleccionar las Opciones
-echo Utilizando los numeros, como 1-2-3-4-5 y presionando Enter.
+echo ============================================================
+echo -Un launcher para OptiCraft y demas Proyectos!
+echo -Para moverte por los menus, debes seleccionar las Opciones
+echo -Utilizando los numeros, como 1-2-3-4-5 y presionando Enter.
+echo ============================================================
 echo.
 pause
 
@@ -100,7 +102,6 @@ if "%op%"=="" goto :Start
 :OptiCraftBE
 cls
 
-
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
 echo.
 echo %LAUNCHER_TEXT%
@@ -128,19 +129,19 @@ goto :Seguir
 
 :: Advertencia Windows 7
 :W7Warning
-echo ===============================================================================
-echo OptiCraft Bedrock requiere ciertas actualizaciones y dependencias que Windows
-echo No contiene por defecto, si el juego no te funciona O tienes algun error,
-echo Porfavor ve a la pestania de Utilidades Y instala todas las cosas de alli (C++)
-echo ===============================================================================
+echo ==============================================================================
+echo -OptiCraft Bedrock requiere ciertas actualizaciones y dependencias que Windows
+echo -No contiene por defecto, si el juego no te funciona o tienes algun error,
+echo -Porfavor ve al apartado de Utilidades y instala todas las cosas de ahi (C++).
+echo ==============================================================================
 echo.
 
 :: Aviso Render dragon
 :Seguir
 echo ===============================================================================
-echo Las versiones superiores a la 1.18.31 incluyen el motor grafico Render Dragon.
-echo Este motor grafico requiere un Dispositivo con DirectX 10 o Superior 
-echo Si el juego tiene problemas, porfavor actualiza tu Driver de Video.
+echo -Las versiones superiores a la 1.18.31 incluyen el motor grafico Render Dragon.
+echo -Este motor grafico requiere un dispositivo con DirectX 10 o Superior 
+echo -Si el juego tiene problemas, porfavor actualiza tu Driver de Video.
 echo ===============================================================================
 echo.
 
@@ -494,21 +495,22 @@ echo *4.- Volver para atras.
 echo.
 
 :: Aviso para pcs sin OpenGL 2.1
-echo ======================================================================================================
-echo Las versiones JAVA requieren un minimo de OpenGL 2.1 para funcionar correctamente.				  
-echo Si tu dispositivo no soporta esa Version, es posible que tengas fallas al ejecutar OptiCraft 	  
-echo Porfavor, manten tu driver de video actualizado para evitar este problema. 						  
-echo ======================================================================================================																
+echo =====================================================================================
+echo -Las versiones JAVA requieren un minimo de OpenGL 2.1 para funcionar correctamente.
+echo -Si tu dispositivo no soporta esa version, podrias tener fallas al ejecutar OptiCraft
+echo -Porfavor, manten tu driver de video actualizado para evitar este problema
+echo =====================================================================================
+echo.
 
 :: Codigo para ir al menu con las Opciones
-set /p op=Opcion:
+set /p op=Opcion: 
 
-if "%op%"=="" goto :Start
+if "%op%"=="" goto :OptiCraftJE
 if "%op%"=="1" goto :1.8.9
 if "%op%"=="2" goto :1.12.2
 if "%op%"=="3" goto :1.16.5
 if "%op%"=="4" goto :Start
-if "%op%"=="" goto :Start
+if "%op%"=="" goto :OptiCraftJE
 pause
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -642,13 +644,25 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- Cuphead Lite (1.7 GB)
-echo *2.- Gta IV Rip-Lite (7.7 GB)
-echo *3.- PES 6 Portable (1.1 GB)
-echo *4.- Ratatouille Portable (234 MB)
-echo *5.- Craftsman PC Port (25 MB)
-echo *6.- Volver para atras.
+echo *1.- Cuphead - (1.7 GB)
+echo *2.- Craftsman PC - (25 MB)
+echo *3.- Geometry Dash - (21 MB)
+echo *4.- Gta IV *RIP* - (7.7 GB)
+echo *5.- Pepsiman *RIP* - (10 MB)
+echo *6.- PES 6 - (1.1 GB)
+echo *7.- Plants VS Zombies - (19 MB)
+echo *8.- Poly Bridge 1 - (77 MB)
+echo *9.- Ratatouille *RIP* - (234 MB)
+echo *10.- Super Mario 64 PC - (15 MB)
+echo *11.- Volver para atras.
+echo.
 
+:: Aviso juegos RIP
+echo ========================================================
+echo -Los juegos que contengan la palabra *RIP* tienen audios
+echo -Eliminados para reducir el peso del juego
+echo -Esto podria afectar tu experiencia con los mismos.
+echo ========================================================
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -656,11 +670,16 @@ set /p op=Opcion:
 
 if "%op%"=="" goto :OptiGames
 if "%op%"=="1" goto :CupheadLITE
-if "%op%"=="2" goto :GtaIV
-if "%op%"=="3" goto :PES6
-if "%op%"=="4" goto :Ratatouille
-if "%op%"=="5" goto :Craftsman
-if "%op%"=="6" goto :Start
+if "%op%"=="2" goto :Craftsman
+if "%op%"=="3" goto :GeometryDash
+if "%op%"=="4" goto :GtaIV
+if "%op%"=="5" goto :Pepsiman
+if "%op%"=="6" goto :PES6
+if "%op%"=="7" goto :PVZ
+if "%op%"=="8" goto :PolyBridge
+if "%op%"=="9" goto :Ratatouille
+if "%op%"=="10" goto :SM64
+if "%op%"=="11" goto :Start
 if "%op%"=="" goto :OptiGames
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1255,18 +1274,170 @@ goto :GameDownloaded
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
+:PVZ
+cls
+
+::Comprobando si el juego ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
+	echo Ejecutando el Juego...
+	echo.
+    "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
+	goto :Start
+) else (
+    echo Descargando el Juego...
+	echo.
+)
+
+:: Descargando Juego...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1065489877497548861/1128792447783284928/Plants_vs_Zombies.7z
+cls
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" x "%CD%\Downloaded\Games\Compressed\Plants_vs_Zombies.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :GameDownloaded
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:SM64
+cls
+
+::Comprobando si el juego ya ha sido descargado
+if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
+	echo Ejecutando el Juego...
+	echo.
+    "%CD%\Downloaded\Games\SM64\SM64-60.exe"
+	goto :Start
+) else (
+    echo Descargando el Juego...
+	echo.
+)
+
+:: Descargando Juego...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1065489877497548861/1113672795302412338/Super_Mario_64.zip
+cls
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" x "%CD%\Downloaded\Games\Compressed\https://cdn.discordapp.com/attachments/1154580119185281095/1154580292045131776/Super_Mario_64.zip" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:PolyBridge
+cls
+
+::Comprobando si el juego ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe" (
+	echo Ejecutando el Juego...
+	echo.
+	"%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe"
+	goto :Start
+) else (
+    echo Descargando el Juego...
+	echo.
+)
+
+:: Descargando Juego...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154586363413405727/1154587148876517427/Poly_Bridge_v0.73b_Optimizado.7z.001
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154586363413405727/1154587149237223444/Poly_Bridge_v0.73b_Optimizado.7z.002
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154586363413405727/1154587148247388220/Poly_Bridge_v0.73b_Optimizado.7z.003
+cls
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" x "%CD%\Downloaded\Games\Compressed\Poly_Bridge_v0.73b_Optimizado.7z.001" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :GameDownloaded
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:Pepsiman
+cls
+
+::Comprobando si el juego ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Pepsiman\Pepsiman-Launcher.bat" (
+	echo Ejecutando el Juego...
+	echo.
+	"%CD%\Downloaded\Games\Pepsiman\Pepsiman-Launcher.bat"
+	goto :Start
+) else (
+    echo Descargando el Juego...
+	echo.
+)
+
+:: Descargando Juego...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154592189050007582/1154593307196923904/Pepsiman.7z
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" x "%CD%\Downloaded\Games\Compressed\Pepsiman.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :GameDownloaded
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:GeometryDash
+cls
+
+::Comprobando si el juego ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Geometry Dash Optimizado\GeometryDash-Launcher.bat" (
+	echo Ejecutando el Juego...
+	echo.
+	"%CD%\Downloaded\Games\Geometry Dash Optimizado\GeometryDash-Launcher.bat"
+	goto :Start
+) else (
+    echo Descargando el Juego...
+	echo.
+)
+
+:: Descargando Juego...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154595888300310559/1154596010908201042/Geometry_Dash_Optimizado.7z
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" x "%CD%\Downloaded\Games\Compressed\Geometry_Dash_Optimizado.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :GameDownloaded
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 :GameDownloaded
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
 echo.
 echo %LAUNCHER_TEXT%
 echo.
-echo Tu juego se ha descargado y descomprimido correctamente.
-echo Visita la carpeta Games para encontrar el ejecutable.
-
-timeout /t 3 /nobreak
+echo =========================================================
+echo -El juego se ha descargado y descomprimido correctamente.
+echo -Visita la carpeta "Games" para encontrarlo.
+echo =========================================================
+echo.
+pause
 
 :: Ir al inicio
-goto :Start
+goto :OptiGames
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1280,9 +1451,9 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- Borrar archivos Temporales.
-echo *2.- Instalar dependencias para Programas (Visual C++).
-echo *3.- Descargar e Instalar actualizaciones necesarias en Windows 7 (Arregla los problemas en OptiCraft).
+echo *1.- Borrar archivos Temporales
+echo *2.- Instalar dependencias para programas (Visual C++)
+echo *3.- Descargar e instalar actualizaciones necesarias en Windows 7 (Arregla problemas en OptiCraft)
 ::echo *4.- Preguntas frecuentes de OptiCraft.
 echo *4.- Volver para atras.
 echo.
@@ -1335,10 +1506,13 @@ RD /S /Q "%CD%\Downloaded\OptiCraft\Runtimes"
 cls
 echo %LAUNCHER_TEXT%
 echo.
-echo Se ha instalado Visual C++ 2005-2022!
-echo Si tuviste algun error en la instalacion
-echo Porfavor comprueba de tener tu Sistema Operativo
-echo Con las ultimas actualizaciones y Parches de Seguridad.
+echo ========================================================
+echo -Se ha instalado Visual C++ 2005-2022!
+echo -
+echo -Si tuviste algun error en la instalacion
+echo -Porfavor comprueba de tener tu Sistema Operativo
+echo -Con las ultimas actualizaciones y Parches de Seguridad.
+echo ========================================================
 echo.
 
 timeout 3 /nobreak
@@ -1350,21 +1524,33 @@ goto :Utilities
 :: Comprobando si el sistema es Windows 7
 ver | findstr /i "6\.1\."
 if %errorlevel%==0 (
-    @echo off
+	goto :StartUpdateW7
 ) else (
-	cls
-    echo.
-    echo Tu sistema no esta corriendo Windows 7.
-	echo No se instalara ninguna Actualizacion.
-	timeout /t 3 /nobreak
-	goto :Start
+	goto :NotWin7
 )
+
+:NotWin7
+cls
+echo.
+echo %LAUNCHER_TEXT%
+echo.
+echo =======================================
+echo -Tu sistema no esta corriendo Windows 7
+echo -No se instalara ninguna Actualizacion.
+echo =======================================
+timeout /t 3 /nobreak
+goto :Start
+
+:StartUpdateW7
+cls
 
 :: Cartel de comprobacion
 echo.
-echo Antes de realizar este paso
-echo Es recomendable crear un punto de restauracion
-echo Por si te ocurre algun error!
+echo ===============================================
+echo -Antes de realizar este paso
+echo -Es recomendable crear un punto de restauracion
+echo -Por si te ocurre algun error!
+echo ===============================================
 echo.
 pause
 
@@ -1432,10 +1618,13 @@ Del /S /F /Q "%SystemDrive%\Windows\Prefetch\*.*"
 
 :: Avisar que se instalo el coso
 cls
-echo Archivos Temporales.
 echo.
-echo Se han borrado los Archivos Temporales!
-echo Que se encontraban en %temp% y Prefetch.
+echo %LAUNCHER_TEXT%
+echo.
+echo ========================================
+echo -Se han borrado los Archivos Temporales
+echo -Que se encontraban en Temp y Prefetch.
+echo ========================================
 
 timeout 3 /nobreak
 goto :Utilities
@@ -1449,11 +1638,13 @@ cls
 echo.
 echo %LAUNCHER_TEXT%
 echo.
-echo Inspirado en varios launchers que me hicieron, hice el codigo desde 0.
-echo Utiliza WGET-7z para descargar y descomprimir archivos
-echo Hecho en 1 semana. Sin mucha dedicacion por Dia
-echo.
-echo *Creado por OptiJuegos, tambien el creador del OptiCraft.*
+echo =================================================================================
+echo -Launcher creado desde cero por mi, pensado para computadoras de bajos recursos
+echo -Utiliza WGET y 7Zip para descargar y descomprimir archivos
+echo -
+echo -Hecho en 1 semana, sin mucha dedicacion por dia
+echo -Creado por OptiJuegos, tambien el creador del OptiCraft.*
+echo =================================================================================
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -1471,10 +1662,13 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Avisando al Usuario
-echo Para actualizar tu Launcher, simplemente presiona "Enter"
-echo El launcher descargara la Ultima Actualizacion disponible.
+echo ==========================================================
+echo Para actualizar el Launcher, presiona la tecla "Enter"
+echo El launcher descargara la ultima actualizacion disponible.
 echo.
-
+echo Si quieres cancelar este proceso, cierra el Launcher
+echo ==========================================================
+echo.
 pause
 
 :: Borrando la version antigua del .bat actualizador
