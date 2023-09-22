@@ -90,9 +90,7 @@ echo *6.- Actualizar el Launcher
 echo.
 
 :: Comprobando si el sistema es Windows XP
-ver | findstr /i "5\.0\."
 ver | findstr /i "5\.1\."
-ver | findstr /i "6\.0\."
 if %errorlevel%==0 (
 goto :OldOSWarning
 ) else (
