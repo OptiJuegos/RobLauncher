@@ -210,6 +210,7 @@ timeout /t 1 /nobreak
 RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
 
 :: Ejecutando el Juego...
+cls
 echo Ejecutando el Juego...
 "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
 
@@ -1554,7 +1555,6 @@ cls
 :: Ir al game downloaded para Avisar
 goto :GameDownloaded
 
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :GameDownloaded
@@ -1616,7 +1616,6 @@ cls
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091681835991121/vcredist2012_x86.exe
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091682838429707/vcredist2013_x86.exe
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091683530489927/vcredist2015_2017_2019_x86.exe
-
 cls
 
 :: Instalando Visual C++ 2015-2017-2019-2022
