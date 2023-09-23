@@ -1,4 +1,5 @@
 @echo off
+
 ======================================================================================================================================================================================	
 :: BatchGotAdmin --> Pidiendo privilegios para evitar fallas.
 :: Si tu PC no soporta los privilegios de Administrador, simplemente elimina este codigo!
@@ -33,8 +34,8 @@ if '%errorlevel%' NEQ '0' (
 
 :: Establecer las Variables de Entorno...
 set WGET="%CD%\Assets\wget.exe"
-set LAUNCHER_TEXT=*RobLauncher V1.3 - Un launcher para OptiCraft y Demas Proyectos.*
-set LAUNCHER_VER=RobLauncher V1.3
+set LAUNCHER_TEXT=*RobLauncher V1.4 - Un launcher para OptiCraft y Demas Proyectos.*
+set LAUNCHER_VER=RobLauncher V1.4
 
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
@@ -114,7 +115,7 @@ if "%op%"=="1" goto :OptiCraftBE
 if "%op%"=="2" goto :OptiCraftJE
 if "%op%"=="3" goto :OptiGames
 if "%op%"=="4" goto :Utilities
-if "%op%"=="5" goto :About
+if "%op%"=="5" goto :AboutPage
 if "%op%"=="6" goto :Update
 if "%op%"=="" goto :Start
 
@@ -191,7 +192,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
+    start "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -209,10 +210,8 @@ timeout /t 1 /nobreak
 RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
 
 :: Ejecutando el Juego...
-cls
 echo Ejecutando el Juego...
 "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
-timeout /t 10 /nobreak
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -669,15 +668,18 @@ echo.
 :: Opciones para seleccionar
 echo *1.- Cuphead - (1.7 GB)
 echo *2.- Craftsman PC - (25 MB)
-echo *3.- Geometry Dash - (21 MB)
-echo *4.- Gta IV *RIP* - (7.7 GB)
-echo *5.- Pepsiman *RIP* - (10 MB)
-echo *6.- PES 6 - (1.1 GB)
-echo *7.- Plants VS Zombies - (19 MB)
-echo *8.- Poly Bridge 1 - (77 MB)
-echo *9.- Ratatouille *RIP* - (234 MB)
-echo *10.- Super Mario 64 PC - (15 MB)
-echo *11.- Volver para atras.
+echo *3.- Counter Strike 1.6 - (139 MB)
+echo *4.- Geometry Dash - (21 MB)
+echo *5.- Gta IV *RIP* - (7.7 GB)
+echo *6.- Pepsiman *RIP* - (10 MB)
+echo *7.- PES 6 - (1.1 GB)
+echo *8.- Plants VS Zombies - (19 MB)
+echo *9.- Poly Bridge 1 - (77 MB)
+echo *10.- Ratatouille *RIP* - (234 MB)
+echo *11.- Sonic 1 PC - (33 MB)
+echo *12.- Super Mario 64 PC - (15 MB)
+echo *13.- Undertale (Ingles) - (115 MB)
+echo *14.- Volver para atras.
 echo.
 
 :: Aviso juegos RIP
@@ -694,15 +696,18 @@ set /p op=Opcion:
 if "%op%"=="" goto :OptiGames
 if "%op%"=="1" goto :CupheadLITE
 if "%op%"=="2" goto :Craftsman
-if "%op%"=="3" goto :GeometryDash
-if "%op%"=="4" goto :GtaIV
-if "%op%"=="5" goto :Pepsiman
-if "%op%"=="6" goto :PES6
-if "%op%"=="7" goto :PVZ
-if "%op%"=="8" goto :PolyBridge
-if "%op%"=="9" goto :Ratatouille
-if "%op%"=="10" goto :SM64
-if "%op%"=="11" goto :Start
+if "%op%"=="3" goto :CS16
+if "%op%"=="4" goto :GeometryDash
+if "%op%"=="5" goto :GtaIV
+if "%op%"=="6" goto :Pepsiman
+if "%op%"=="7" goto :PES6
+if "%op%"=="8" goto :PVZ
+if "%op%"=="9" goto :PolyBridge
+if "%op%"=="10" goto :Ratatouille
+if "%op%"=="11" goto :Sonic
+if "%op%"=="12" goto :SM64
+if "%op%"=="13" goto :Undertale
+if "%op%"=="14" goto :Start
 if "%op%"=="" goto :OptiGames
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1451,6 +1456,107 @@ goto :GameDownloaded
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
+:Sonic
+cls
+
+::Comprobando si el juego ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Sonic 1\Sonic-Launcher.bat" (
+	echo Ejecutando el Juego...
+	echo.
+	"%CD%\Downloaded\Games\Sonic 1\Sonic-Launcher.bat"
+	goto :Start
+) else (
+    echo Descargando el Juego...
+	echo.
+)
+
+:: Descargando Juego...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154580119185281095/1154881800414441532/Sonic_1.7z.001
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154580119185281095/1154881800791933050/Sonic_1.7z.002
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Sonic_1.7z.001" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :GameDownloaded
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:CS16
+cls
+
+::Comprobando si el juego ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\cstrike-Launcher.bat" (
+	echo Ejecutando el Juego...
+	echo.
+	"%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\cstrike-Launcher.bat"
+	goto :Start
+) else (
+    echo Descargando el Juego...
+	echo.
+)
+
+:: Descargando Juego...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887117655257218/Counter_Strike_1.6_OptiClient.7z.001
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887118003372062/Counter_Strike_1.6_OptiClient.7z.002
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887118322147478/Counter_Strike_1.6_OptiClient.7z.003
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887118670278676/Counter_Strike_1.6_OptiClient.7z.004
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887119030976633/Counter_Strike_1.6_OptiClient.7z.005
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887119601410078/Counter_Strike_1.6_OptiClient.7z.006
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Counter_Strike_1.6_OptiClient.7z.001" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :GameDownloaded
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:Undertale
+cls
+
+::Comprobando si el juego ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Undertale\UNDERTALE.exe" (
+	echo Ejecutando el Juego...
+	echo.
+	"%CD%\Downloaded\Games\Undertale\UNDERTALE.exe"
+	goto :Start
+) else (
+    echo Descargando el Juego...
+	echo.
+)
+
+:: Descargando Juego...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899843144232992/Undertale.7z.004
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899843437838460/Undertale.7z.005
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899843744006154/Undertale.7z.001
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899844075368570/Undertale.7z.002
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899844373168128/Undertale.7z.003
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Undertale.7z.001" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :GameDownloaded
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
 :GameDownloaded
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
 echo.
@@ -1477,22 +1583,24 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- Borrar archivos Temporales
-echo *2.- Instalar dependencias para programas (Visual C++)
+echo *1.- Actualizar Drivers con Driver Booster.
+echo *2.- Borrar archivos Temporales
 echo *3.- Descargar e instalar updates necesarias en Windows 7 (Arregla problemas en OptiCraft)
-echo *4.- Preguntas frecuentes de OptiCraft.
-echo *4.- Volver para atras.
+echo *4.- Instalar dependencias para programas (Visual C++)
+echo *5.- Preguntas frecuentes de OptiCraft.
+echo *6.- Volver para atras.
 echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
 if "%op%"=="" goto :Utilities
-if "%op%"=="1" goto :Temp
-if "%op%"=="2" goto :Runtimes
+if "%op%"=="1" goto :Drivers
+if "%op%"=="2" goto :Temp
 if "%op%"=="3" goto :Updates
-::if "%op%"=="4" goto :FAQ
-if "%op%"=="4" goto :Start
+if "%op%"=="4" goto :Runtimes
+if "%op%"=="5" goto :FAQ
+if "%op%"=="6" goto :Start
 if "%op%"=="" goto :Utilities
 pause
 
@@ -1502,31 +1610,31 @@ pause
 cls
 
 :: Descargando el Visual C++, Net Framework Y DirectX x86
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Runtimes\VisualC" https://cdn.discordapp.com/attachments/1152091227303452702/1152094349346213979/vcredist2005_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Runtimes\VisualC" https://cdn.discordapp.com/attachments/1152091227303452702/1152091684201570304/vcredist2008_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Runtimes\VisualC" https://cdn.discordapp.com/attachments/1152091227303452702/1152091681068433429/vcredist2010_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Runtimes\VisualC" https://cdn.discordapp.com/attachments/1152091227303452702/1152091681835991121/vcredist2012_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Runtimes\VisualC" https://cdn.discordapp.com/attachments/1152091227303452702/1152091682838429707/vcredist2013_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Runtimes\VisualC" https://cdn.discordapp.com/attachments/1152091227303452702/1152091683530489927/vcredist2015_2017_2019_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152094349346213979/vcredist2005_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091684201570304/vcredist2008_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091681068433429/vcredist2010_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091681835991121/vcredist2012_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091682838429707/vcredist2013_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091683530489927/vcredist2015_2017_2019_x86.exe
 
 cls
 
 :: Instalando Visual C++ 2015-2017-2019-2022
 echo Instalando Visual C++ 2005
-"%CD%\Downloaded\Runtimes\VisualC\vcredist2005_x86.exe" /q
+"%CD%\Downloaded\Utilities\Runtimes\vcredist2005_x86.exe" /q
 echo Instalando Visual C++ 2008
-"%CD%\Downloaded\Runtimes\VisualC\vcredist2008_x86.exe" /q /norestart
+"%CD%\DownloadedUtilities\Runtimes\vcredist2008_x86.exe" /q /norestart
 echo Instalando Visual C++ 2010
-"%CD%\Downloaded\Runtimes\VisualC\vcredist2010_x86.exe" /install /passive
+"%CD%\Downloaded\Utilities\Runtimes\vcredist2010_x86.exe" /install /passive
 echo Instalando Visual C++ 2012
-"%CD%\Downloaded\Runtimes\VisualC\vcredist2012_x86.exe" /install /passive
+"%CD%\DownloadedUtilities\Runtimes\vcredist2012_x86.exe" /install /passive
 echo Instalando Visual C++ 2013
-"%CD%\Downloaded\Runtimes\VisualC\vcredist2013_x86.exe" /install /passive
+"%CD%\Downloaded\Utilities\Runtimes\vcredist2013_x86.exe" /install /passive
 echo Instalando Visual C++ 2015
-"%CD%\Downloaded\Runtimes\VisualC\vcredist2015_2017_2019_x86.exe" /install /passive
+"%CD%\Downloaded\Utilities\Runtimes\vcredist2015_2017_2019_x86.exe" /install /passive
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Runtimes\VisualC"
+RD /S /Q "%CD%\Downloaded\Utilities\Runtimes"
 
 :: Avisar que se instalo el coso
 cls
@@ -1534,7 +1642,7 @@ echo %LAUNCHER_TEXT%
 echo.
 echo ========================================================
 echo -Se ha instalado Visual C++ 2005-2022!
-echo -
+echo.
 echo -Si tuviste algun error en la instalacion
 echo -Porfavor comprueba de tener tu Sistema Operativo
 echo -Con las ultimas actualizaciones y Parches de Seguridad.
@@ -1655,9 +1763,60 @@ echo ========================================
 timeout 3 /nobreak
 goto :Utilities
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:FAQ
+cls
+
+:: Borrando las preguntas frecuentes Anteriores
+del "%CD%\Downloaded\OptiCraft\FAQPreguntasFrecuentes\FAQ.txt
+
+:: Descargando el bloc de notas con el FAQ
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\FAQPreguntasFrecuentes" https://cdn.discordapp.com/attachments/1148035643876839525/1154872436093898862/FAQ.txt
+
+:: Iniciando el NOTEPAD
+"notepad.exe" "%CD%\Downloaded\OptiCraft\FAQPreguntasFrecuentes\FAQ.txt"
+
+:: Codigo para ir al menu con las Opciones
+goto :Utilities
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:Drivers
+cls
+
+::Comprobando si el juego ya ha sido descargado
+if exist "%CD%\Downloaded\Utilities\Drivers\DriverBooster\DriverBoosterPortable.exe" (
+	echo Ejecutando Driver Booster...
+	echo.
+	"%CD%\Downloaded\Utilities\Drivers\DriverBooster\DriverBoosterPortable.exe"
+	goto :Utilities
+) else (
+    echo Descargando Driver Booster...
+	echo.
+)
+
+:: Descargando Driver Booster
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Drivers\Compressed" https://cdn.discordapp.com/attachments/1154877006589210695/1154877125711638570/DriverBooster.7z
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Utilities\Drivers\Compressed\DriverBooster.7z" -o"%CD%\Downloaded\Utilities\Drivers"
+timeout /t 1 /nobreak
+
+:: Ejecutando Driver Booster
+echo Ejecutando Driver Booster...
+"%CD%\Downloaded\Utilities\Drivers\DriverBooster\DriverBoosterPortable.exe"
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Utilities\Drivers\Compressed"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :Utilities
+
 ========================================================================================================================================================
 
-:About
+:AboutPage
 cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
