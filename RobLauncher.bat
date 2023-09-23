@@ -188,7 +188,7 @@ pause
 :1.7.3.1
 cls
 
-:: Comprobando si el juego ya ha sido descargado."%CD%\Downloaded\OptiCraft"
+:: Comprobando si el juego ya ha sido descargado.
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
@@ -203,7 +203,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152030436927742104/1153481005701812294/OptiCraft_1.7.3.1_By_OptiJuegos.7z
 
 :: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 -bsp1 x %CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.7.3.1_By_OptiJuegos.7z -o"%CD%\Downloaded\OptiCraft"
+"%CD%\Assets\7z.exe" -bsp1 x %CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.7.3.1_By_OptiJuegos.7z -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
