@@ -578,10 +578,10 @@ cls
 :: Comprobando si el juego ya ha sido descargado.
 :: No se porque es de 32 Bits, creo que lo actualice pero no subi la version, rarisimo
 
-if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft 32 Bits.bat" (
+if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.2 FORGE\1-Minecraft 32 Bits.bat" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft 32 Bits.bat"
+    "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.2 FORGE\1-Minecraft 32 Bits.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -609,7 +609,7 @@ RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
 :: Ejecutando el Juego...
 cls
 echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft 32 Bits.bat"
+"%CD%\Downloaded\OptiCraft\OptiCraft 1.12.2 FORGE\1-Minecraft 32 Bits.bat"
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
