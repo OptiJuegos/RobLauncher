@@ -1,5 +1,4 @@
 @echo off
-
 ======================================================================================================================================================================================	
 :: BatchGotAdmin --> Pidiendo privilegios para evitar fallas.
 :: Si tu PC no soporta los privilegios de Administrador, simplemente elimina este codigo!
@@ -33,9 +32,10 @@ if '%errorlevel%' NEQ '0' (
 =========================================================================================================================================================
 
 :: Establecer las Variables de Entorno...
+set FFPLAY="%CD%\Assets\ffplay.exe"
 set WGET="%CD%\Assets\wget.exe"
-set LAUNCHER_TEXT=*RobLauncher V1.4 - Un launcher para OptiCraft y Demas Proyectos.*
-set LAUNCHER_VER=RobLauncher V1.4
+set LAUNCHER_TEXT=*RobLauncher V1.5 - Un launcher para OptiCraft y Demas Proyectos.*
+set LAUNCHER_VER=RobLauncher V1.5
 
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
@@ -51,6 +51,7 @@ if exist "%CD%\Assets\extra\options.txt" (
 )
 
 ========================================================================================================================================================
+
 :Tutorial
 cls
 
@@ -212,7 +213,7 @@ RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
 :: Ejecutando el Juego...
 cls
 echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -809,6 +810,8 @@ cls
 
 :: Ir al game downloaded para Avisar
 goto :GameDownloaded
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :GtaIV
 cls
@@ -1558,6 +1561,8 @@ goto :GameDownloaded
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :GameDownloaded
+cls
+
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
 echo.
 echo %LAUNCHER_TEXT%
@@ -1641,7 +1646,7 @@ echo %LAUNCHER_TEXT%
 echo.
 echo ========================================================
 echo -Se ha instalado Visual C++ 2005-2022!
-echo.
+echo -
 echo -Si tuviste algun error en la instalacion
 echo -Porfavor comprueba de tener tu Sistema Operativo
 echo -Con las ultimas actualizaciones y Parches de Seguridad.
@@ -1736,14 +1741,18 @@ goto :Finalizado
 
 :Finalizado
 echo.
-echo Las actualizaciones se han Instalado.
-echo Tu computadora se reiniciara en 15 Segundos.
+echo ==============================================
+echo -Las actualizaciones se han Instalado.
+echo -Tu computadora se reiniciara en 15 Segundos.
+echo ==============================================
 echo.
 shutdown /r /t 0
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :Temp
+cls
+
 :: Borrando Archivos Temporales...
 Del /S /F /Q "%temp%"
 Del /S /F /Q "%SystemDrive%\Windows\Temp\*.*"
@@ -1827,7 +1836,7 @@ echo -Launcher creado desde cero por mi, pensado para computadoras de bajos recu
 echo -Utiliza WGET y 7Zip para descargar y descomprimir archivos
 echo -
 echo -Hecho en 1 semana, sin mucha dedicacion por dia
-echo -Creado por OptiJuegos, tambien el creador del OptiCraft.*
+echo -Creado por OptiJuegos, tambien el creador del OptiCraft.
 echo =================================================================================
 echo.
 
@@ -1847,10 +1856,10 @@ echo.
 
 :: Avisando al Usuario
 echo ==========================================================
-echo Para actualizar el Launcher, presiona la tecla "Enter"
-echo El launcher descargara la ultima actualizacion disponible.
-echo.
-echo Si quieres cancelar este proceso, cierra el Launcher
+echo -Para actualizar el Launcher, presiona la tecla "Enter"
+echo -El launcher descargara la ultima actualizacion disponible.
+echo -
+echo -Si quieres cancelar este proceso, cierra el Launcher.
 echo ==========================================================
 echo.
 pause
