@@ -75,6 +75,12 @@ goto :Start
 ========================================================================================================================================================
 
 :Start
+:StartBE
+:StartJE
+:StartGames
+:StartUtilities
+:StartAbout
+
 cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
@@ -180,7 +186,7 @@ if "%op%"=="5" goto :1.17.30
 if "%op%"=="6" goto :1.18.31
 if "%op%"=="7" goto :1.19.52
 if "%op%"=="8" goto :1.20.10
-if "%op%"=="9" goto :Start
+if "%op%"=="9" goto :StartBE
 if "%op%"=="" goto :OptiCraftBE
 pause
 
@@ -193,7 +199,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    start "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
+    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -228,7 +234,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe"
+    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -265,7 +271,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
+    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -303,7 +309,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe"
+    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -347,7 +353,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
+    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -386,7 +392,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.18.31 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.18.31 By OptiJuegos\OptiCraft.exe"
+    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.18.31 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -425,7 +431,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe"
+    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -466,7 +472,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe"
+    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -532,7 +538,7 @@ if "%op%"=="" goto :OptiCraftJE
 if "%op%"=="1" goto :1.8.9
 if "%op%"=="2" goto :1.12.2
 if "%op%"=="3" goto :1.16.5
-if "%op%"=="4" goto :Start
+if "%op%"=="4" goto :StartJE
 if "%op%"=="" goto :OptiCraftJE
 pause
 
@@ -709,7 +715,7 @@ if "%op%"=="10" goto :Ratatouille
 if "%op%"=="11" goto :Sonic
 if "%op%"=="12" goto :SM64
 if "%op%"=="13" goto :Undertale
-if "%op%"=="14" goto :Start
+if "%op%"=="14" goto :StartGames
 if "%op%"=="" goto :OptiGames
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -721,7 +727,7 @@ cls
 if exist "%CD%\Downloaded\Games\Cuphead Lite\Cuphead.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\Games\Cuphead Lite\Cuphead.exe"
+    start "" "%CD%\Downloaded\Games\Cuphead Lite\Cuphead.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -820,7 +826,7 @@ cls
 if exist "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\gta_data\GTAIV.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\gta_data\GTAIV.exe"
+    start "" "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\gta_data\GTAIV.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1168,7 +1174,7 @@ cls
 if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
+    start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1242,7 +1248,7 @@ cls
 if exist "%CD%\Downloaded\Games\Ratatouille The VideoGame RIP\overlay.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\Games\Ratatouille The VideoGame RIP\overlay.exe"
+    start "" "%CD%\Downloaded\Games\Ratatouille The VideoGame RIP\overlay.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1282,7 +1288,7 @@ cls
 if exist "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe"
+    start "" "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1313,7 +1319,7 @@ cls
 if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
+    start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1344,7 +1350,7 @@ cls
 if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
 	echo Ejecutando el Juego...
 	echo.
-    "%CD%\Downloaded\Games\SM64\SM64-60.exe"
+    start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1374,7 +1380,7 @@ cls
 if exist "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe" (
 	echo Ejecutando el Juego...
 	echo.
-	"%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe"
+	start "" "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1407,7 +1413,7 @@ cls
 if exist "%CD%\Downloaded\Games\Pepsiman\Pepsiman-Launcher.bat" (
 	echo Ejecutando el Juego...
 	echo.
-	"%CD%\Downloaded\Games\Pepsiman\Pepsiman-Launcher.bat"
+	start "" "%CD%\Downloaded\Games\Pepsiman\Pepsiman-Launcher.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1437,7 +1443,7 @@ cls
 if exist "%CD%\Downloaded\Games\Geometry Dash Optimizado\GeometryDash-Launcher.bat" (
 	echo Ejecutando el Juego...
 	echo.
-	"%CD%\Downloaded\Games\Geometry Dash Optimizado\GeometryDash-Launcher.bat"
+	start "" "%CD%\Downloaded\Games\Geometry Dash Optimizado\GeometryDash-Launcher.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1467,7 +1473,7 @@ cls
 if exist "%CD%\Downloaded\Games\Sonic 1\Sonic-Launcher.bat" (
 	echo Ejecutando el Juego...
 	echo.
-	"%CD%\Downloaded\Games\Sonic 1\Sonic-Launcher.bat"
+	start "" "%CD%\Downloaded\Games\Sonic 1\Sonic-Launcher.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1498,7 +1504,7 @@ cls
 if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\cstrike-Launcher.bat" (
 	echo Ejecutando el Juego...
 	echo.
-	"%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\cstrike-Launcher.bat"
+	start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\cstrike-Launcher.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1533,7 +1539,7 @@ cls
 if exist "%CD%\Downloaded\Games\Undertale\UNDERTALE.exe" (
 	echo Ejecutando el Juego...
 	echo.
-	"%CD%\Downloaded\Games\Undertale\UNDERTALE.exe"
+	start "" "%CD%\Downloaded\Games\Undertale\UNDERTALE.exe"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1605,7 +1611,7 @@ if "%op%"=="2" goto :Temp
 if "%op%"=="3" goto :Updates
 if "%op%"=="4" goto :Runtimes
 if "%op%"=="5" goto :FAQ
-if "%op%"=="6" goto :Start
+if "%op%"=="6" goto :StartUtilities
 if "%op%"=="" goto :Utilities
 pause
 
@@ -1797,7 +1803,7 @@ cls
 if exist "%CD%\Downloaded\Utilities\Drivers\DriverBooster\DriverBoosterPortable.exe" (
 	echo Ejecutando Driver Booster...
 	echo.
-	"%CD%\Downloaded\Utilities\Drivers\DriverBooster\DriverBoosterPortable.exe"
+	start "" "%CD%\Downloaded\Utilities\Drivers\DriverBooster\DriverBoosterPortable.exe"
 	goto :Utilities
 ) else (
     echo Descargando Driver Booster...
@@ -1842,7 +1848,7 @@ echo.
 
 :: Codigo para ir al menu con las Opciones
 pause
-goto :Start
+goto :StartAbout
 
 ========================================================================================================================================================
 
