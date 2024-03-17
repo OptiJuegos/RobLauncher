@@ -32,10 +32,9 @@ if '%errorlevel%' NEQ '0' (
 =========================================================================================================================================================
 
 :: Establecer las Variables de Entorno...
-set FFPLAY="%CD%\Assets\ffplay.exe"
 set WGET="%CD%\Assets\wget.exe"
-set LAUNCHER_TEXT=*RobLauncher V1.5 - Un launcher para OptiCraft y Demas Proyectos.*
-set LAUNCHER_VER=RobLauncher V1.5
+set LAUNCHER_TEXT=*RobLauncher V1.6 - Un launcher para OptiCraft y Demas Proyectos.*
+set LAUNCHER_VER=RobLauncher V1.6
 
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
@@ -195,30 +194,31 @@ pause
 :1.7.3.1
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
+::Comprobando si el Software ya ha sido descargado
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe" (
-	echo Ejecutando el Juego...
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.7.3.1
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152030436927742104/1153481005701812294/OptiCraft_1.7.3.1_By_OptiJuegos.7z
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.7.3.1 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EbBfZnzUT8NDkvU4PEQ8sLkBBVJY63qsN95a2QtR6miE3g?download=1
+cls
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x %CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.7.3.1_By_OptiJuegos.7z -o"%CD%\Downloaded\OptiCraft"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft 1.7.3.1 By OptiJuegos.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft 1.7.3.1 By OptiJuegos.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
+echo Ejecutando el Software...
 start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
@@ -230,33 +230,32 @@ goto :Start
 :1.9.1.0
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
+::Comprobando si el Software ya ha sido descargado
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe" (
-	echo Ejecutando el Juego...
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.9.1.0
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152030526744576020/1152030917636935860/OptiCraft_1.9.1.0_By_OptiJuegos.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152030526744576020/1152030917951504394/OptiCraft_1.9.1.0_By_OptiJuegos.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152030526744576020/1152030918337364008/OptiCraft_1.9.1.0_By_OptiJuegos.7z.003
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.9.1.0 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EelOarM7FixMlYd4bk4ys9sBE9qPPZWL3LCTOAGOZ6yR7g?download=1
+cls
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.9.1.0_By_OptiJuegos.7z.001" -o"%CD%\Downloaded\OptiCraft"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft 1.9.1.0 By OptiJuegos.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft 1.9.1.0 By OptiJuegos.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -267,34 +266,32 @@ goto :Start
 :1.12.0
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
+::Comprobando si el Software ya ha sido descargado
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe" (
-	echo Ejecutando el Juego...
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.12.0
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" "https://cdn.discordapp.com/attachments/1152042504812765226/1152375682966503504/OptiCraft_1.12.0_By_OptiJuegos.7z.001"
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" "https://cdn.discordapp.com/attachments/1152042504812765226/1152375683385921668/OptiCraft_1.12.0_By_OptiJuegos.7z.002"
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" "https://cdn.discordapp.com/attachments/1152042504812765226/1152375683838914651/OptiCraft_1.12.0_By_OptiJuegos.7z.003"
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" "https://cdn.discordapp.com/attachments/1152042504812765226/1152375682647732295/OptiCraft_1.12.0_By_OptiJuegos.7z.004"
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EUibyg9ig3lNg9Cgh7s6JJQBFT_uvm6o6XbASSWARDI9vg?download=1
+cls
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.12.0_By_OptiJuegos.7z.001" -o"%CD%\Downloaded\OptiCraft"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -305,34 +302,32 @@ goto :Start
 :1.14.31
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
+::Comprobando si el Software ya ha sido descargado
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe" (
-	echo Ejecutando el Juego...
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.14.31
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" "https://cdn.discordapp.com/attachments/1152422839765442660/1152793110720544929/OptiCraft_1.14.31_By_OptiJuegos.7z.004"
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" "https://cdn.discordapp.com/attachments/1152422839765442660/1152793111223865404/OptiCraft_1.14.31_By_OptiJuegos.7z.001"
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" "https://cdn.discordapp.com/attachments/1152422839765442660/1152793111660068904/OptiCraft_1.14.31_By_OptiJuegos.7z.002"
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" "https://cdn.discordapp.com/attachments/1152422839765442660/1152793112050143313/OptiCraft_1.14.31_By_OptiJuegos.7z.003"
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.14.31 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ET6v9hflz6tJqaWSlAe-JUkBEfxByvVl_Cu9u8fAMw2JsA?download=1
+cls
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.14.31_By_OptiJuegos.7z.001" -o"%CD%\Downloaded\OptiCraft"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft 1.14.31 By OptiJuegos.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft 1.14.31 By OptiJuegos.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -349,35 +344,32 @@ goto :Start
 :1.17.30
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
+::Comprobando si el Software ya ha sido descargado
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe" (
-	echo Ejecutando el Juego...
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.17.30
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422903506272346/1152795303326523502/OptiCraft_1.17.30_By_OptiJuegos.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422903506272346/1152795303691419739/OptiCraft_1.17.30_By_OptiJuegos.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422903506272346/1152795304165396480/OptiCraft_1.17.30_By_OptiJuegos.7z.003
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422903506272346/1152795304668700672/OptiCraft_1.17.30_By_OptiJuegos.7z.004
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422903506272346/1152795305004236840/OptiCraft_1.17.30_By_OptiJuegos.7z.005
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.17.30 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EV76CXR9Px1Bt43vqoSneB0BpivVLo06L6f4Vc9AaL5sXw?download=1
+cls
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.17.30_By_OptiJuegos.7z.001" -o"%CD%\Downloaded\OptiCraft"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft 1.17.30 By OptiJuegos.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft 1.17.30 By OptiJuegos.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -388,35 +380,32 @@ goto :Start
 :1.18.31
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
-if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.18.31 By OptiJuegos\OptiCraft.exe" (
-	echo Ejecutando el Juego...
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe" (
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.18.31 By OptiJuegos\OptiCraft.exe"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.18.31
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422929473208330/1152795303313952898/OptiCraft_1.18.31_By_OptiJuegos.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422929473208330/1152795303699816468/OptiCraft_1.18.31_By_OptiJuegos.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422929473208330/1152795304035368990/OptiCraft_1.18.31_By_OptiJuegos.7z.003
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422929473208330/1152795304379306004/OptiCraft_1.18.31_By_OptiJuegos.7z.004
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422929473208330/1152795304886804571/OptiCraft_1.18.31_By_OptiJuegos.7z.005
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.18.31 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWIFeD7fVFNFkbrvCrS5MA0BXhlN24dAvEaiFwKNSe89VA?download=1
+cls
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.18.31_By_OptiJuegos.7z.001" -o"%CD%\Downloaded\OptiCraft"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft 1.18.31 By OptiJuegos.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft 1.18.31 By OptiJuegos.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.18.31 By OptiJuegos\OptiCraft.exe"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.18.31 By OptiJuegos\OptiCraft.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -427,37 +416,33 @@ goto :Start
 :1.19.52
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
+::Comprobando si el Software ya ha sido descargado
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe" (
-	echo Ejecutando el Juego...
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.19.52
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422940944650271/1152795299543273585/OptiCraft_1.19.52_By_OptiJuegos.7z.004
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422940944650271/1152795299941711933/OptiCraft_1.19.52_By_OptiJuegos.7z.005
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422940944650271/1152795300264677427/OptiCraft_1.19.52_By_OptiJuegos.7z.006
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422940944650271/1152795300721872937/OptiCraft_1.19.52_By_OptiJuegos.7z.007
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422940944650271/1152795301174837330/OptiCraft_1.19.52_By_OptiJuegos.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422940944650271/1152795301476831363/OptiCraft_1.19.52_By_OptiJuegos.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422940944650271/1152795302089216040/OptiCraft_1.19.52_By_OptiJuegos.7z.003
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.19.52 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQ-F0QrwMyVAmJAd31zR_FEBK7NBq-IwcSiA1LQwSBlxCw?download=1
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.19.52_By_OptiJuegos.7z.001" -o"%CD%\Downloaded\OptiCraft"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft 1.19.52 By OptiJuegos.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft 1.19.52 By OptiJuegos.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -468,38 +453,33 @@ goto :Start
 :1.20.10
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
+::Comprobando si el Software ya ha sido descargado
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe" (
-	echo Ejecutando el Juego...
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.20.10
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422951765934120/1152795228680503346/OptiCraft_1.20.10_By_OptiJuegos.7z.007
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422951765934120/1152795229057978469/OptiCraft_1.20.10_By_OptiJuegos.7z.008
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422951765934120/1152795229628411944/OptiCraft_1.20.10_By_OptiJuegos.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422951765934120/1152795229972336721/OptiCraft_1.20.10_By_OptiJuegos.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422951765934120/1152795230324670504/OptiCraft_1.20.10_By_OptiJuegos.7z.003
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422951765934120/1152795231947862056/OptiCraft_1.20.10_By_OptiJuegos.7z.004
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422951765934120/1152795232262426725/OptiCraft_1.20.10_By_OptiJuegos.7z.005
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1152422951765934120/1152795232841252924/OptiCraft_1.20.10_By_OptiJuegos.7z.006
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.20.10 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EZDFCsnoNjpEoN44RThvEIYBP_NQVMS35TBPq4diBzmynw?download=1
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_1.20.10_By_OptiJuegos.7z.001" -o"%CD%\Downloaded\OptiCraft"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft 1.20.10 By OptiJuegos.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft 1.20.10 By OptiJuegos.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -517,10 +497,11 @@ echo.
 
 :: Opciones para seleccionar
 :: Aca solo estan las versiones mas estables y funcionales, las que no actualice las descarto por fallas para evitar quejas de los TOPOS (chiste los quiero mucho)
-echo *1.- OptiCraft Java 1.8.9 (123 MB)
-echo *2.- OptiCraft Java 1.12.2 (218 MB)
-echo *3.- OptiCraft Java 1.16.5 (368 MB)
-echo *4.- Volver para atras.
+echo *1.- OptiCraft Java 1.5.2 (25 MB)
+echo *2.- OptiCraft Java 1.8.9 (123 MB)
+echo *3.- OptiCraft Java 1.12.2 (218 MB)
+echo *4.- OptiCraft Java 1.16.5 (368 MB)
+echo *5.- Volver para atras.
 echo.
 
 :: Aviso para pcs sin OpenGL 2.1
@@ -535,133 +516,161 @@ echo.
 set /p op=Opcion: 
 
 if "%op%"=="" goto :OptiCraftJE
-if "%op%"=="1" goto :1.8.9
-if "%op%"=="2" goto :1.12.2
-if "%op%"=="3" goto :1.16.5
-if "%op%"=="4" goto :StartJE
+if "%op%"=="1" goto :1.5.2
+if "%op%"=="2" goto :1.8.9
+if "%op%"=="3" goto :1.12.2
+if "%op%"=="4" goto :1.16.5
+if "%op%"=="5" goto :StartJE
 if "%op%"=="" goto :OptiCraftJE
 pause
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:1.5.2
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Eb9CPCrBaFlEvqjeuqkW54wBcXbXO-Bt6Igyk8uNbTJpVA?download=1
+
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z" -o"%CD%\Downloaded\OptiCraft"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :1.8.9
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
-if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA CLIENTS 1.8.9\1-Minecraft.bat" (
-	echo Ejecutando el Juego...
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat" (
+	echo Ejecutando el Software...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft JAVA CLIENTS 1.8.9\1-Minecraft.bat"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.8.9
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153484367268679781/1153485004752568390/OptiCraft_JAVA_CLIENTS_1.8.9.7z.005
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153484367268679781/1153485005100691467/OptiCraft_JAVA_CLIENTS_1.8.9.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153484367268679781/1153485005436227584/OptiCraft_JAVA_CLIENTS_1.8.9.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153484367268679781/1153485005734035507/OptiCraft_JAVA_CLIENTS_1.8.9.7z.003
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153484367268679781/1153485006048604270/OptiCraft_JAVA_CLIENTS_1.8.9.7z.004
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVu8C8G2gQBFjDtJ4rSpGnwBP6go4KtIDHzH8VjsuiAuHw?download=1
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_JAVA_CLIENTS_1.8.9.7z.001" -o"%CD%\Downloaded\OptiCraft"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft JAVA CLIENTS 1.8.9\1-Minecraft.bat"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :1.12.2
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
-:: No se porque es de 32 Bits, creo que lo actualice pero no subi la version, rarisimo
-
-if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.2 FORGE\1-Minecraft 32 Bits.bat" (
-	echo Ejecutando el Juego...
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat" (
+	echo Ejecutando el Software...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.2 FORGE\1-Minecraft 32 Bits.bat"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.12.2
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485367694069760/1153829069029380157/OptiCraft_JAVA_1.12.2_FORGE.7z.009
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485367694069760/1153829069369131058/OptiCraft_JAVA_1.12.2_FORGE.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485367694069760/1153829069708873858/OptiCraft_JAVA_1.12.2_FORGE.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485367694069760/1153829070044401735/OptiCraft_JAVA_1.12.2_FORGE.7z.003
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485367694069760/1153829070375768194/OptiCraft_JAVA_1.12.2_FORGE.7z.004
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485367694069760/1153829070728073326/OptiCraft_JAVA_1.12.2_FORGE.7z.005
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485367694069760/1153829071059435520/OptiCraft_JAVA_1.12.2_FORGE.7z.006
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485367694069760/1153829071420149761/OptiCraft_JAVA_1.12.2_FORGE.7z.007
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485367694069760/1153829071768273032/OptiCraft_JAVA_1.12.2_FORGE.7z.008
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ESpZMLg3YC1DncbdUeNfXv0BxTdlQcO6OMYV47SRNu6fPQ?download=1
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_JAVA_1.12.2_FORGE.7z.001" -o"%CD%\Downloaded\OptiCraft"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft 1.12.2 FORGE\1-Minecraft 32 Bits.bat"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :1.16.5
 cls
 
-:: Comprobando si el juego ya ha sido descargado.
-if exist "%CD%\Downloaded\OptiCraft\OptiCraft Java 1.16.5\1-Minecraft Sodium.bat" (
-	echo Ejecutando el Juego...
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat" (
+	echo Ejecutando el Software...
 	echo.
-    "%CD%\Downloaded\OptiCraft\OptiCraft Java 1.16.5\1-Minecraft Sodium.bat"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Enlaces de descarga de la 1.16.5
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829265536729168/OptiCraft_Java_1.16.5.7z.014
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829266002292846/OptiCraft_Java_1.16.5.7z.015
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829266459476008/OptiCraft_Java_1.16.5.7z.011
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829267050868787/OptiCraft_Java_1.16.5.7z.012
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829267487072277/OptiCraft_Java_1.16.5.7z.013
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829250898604092/OptiCraft_Java_1.16.5.7z.010
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829251225755688/OptiCraft_Java_1.16.5.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829251594866788/OptiCraft_Java_1.16.5.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829251947180124/OptiCraft_Java_1.16.5.7z.003
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829252278538381/OptiCraft_Java_1.16.5.7z.004
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829252651823114/OptiCraft_Java_1.16.5.7z.005
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829253125775371/OptiCraft_Java_1.16.5.7z.006
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829253603938375/OptiCraft_Java_1.16.5.7z.007
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829253914308689/OptiCraft_Java_1.16.5.7z.008
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\Compressed" https://cdn.discordapp.com/attachments/1153485403811217438/1153829254233071758/OptiCraft_Java_1.16.5.7z.009
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Ea6mincAo9ZNo2VaeEBHIQcB3OXyCyVAbLznBjRCXHXKaw?download=1
 
-:: Descomprimiendo el Archivo...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\OptiCraft\Compressed\OptiCraft_Java_1.16.5.7z.001" -o"%CD%\Downloaded\OptiCraft"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\OptiCraft\Compressed"
+del "Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z"
 
-:: Ejecutando el Juego...
+:: Ejecutando el Software...
 cls
-echo Ejecutando el Juego...
-"%CD%\Downloaded\OptiCraft\OptiCraft Java 1.16.5\1-Minecraft Sodium.bat"
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 ========================================================================================================================================================
 
@@ -677,16 +686,16 @@ echo.
 echo *1.- Cuphead - (1.7 GB)
 echo *2.- Craftsman PC - (25 MB)
 echo *3.- Counter Strike 1.6 - (139 MB)
-echo *4.- Geometry Dash - (21 MB)
+echo *4.- Geometry Dash - (172 MB)
 echo *5.- Gta IV *RIP* - (7.7 GB)
-echo *6.- Pepsiman *RIP* - (10 MB)
-echo *7.- PES 6 - (1.1 GB)
-echo *8.- Plants VS Zombies - (19 MB)
-echo *9.- Poly Bridge 1 - (77 MB)
-echo *10.- Ratatouille *RIP* - (234 MB)
+echo *6.- PES 6 - (1.1 GB)
+echo *7.- Plants VS Zombies - (19 MB)
+echo *8.- Poly Bridge 1 - (77 MB)
+echo *9.- Portal 1 Lite - (10 MB)
+echo *10.- Project Zomboid Lite - (360 MB)
 echo *11.- Sonic 1 PC - (33 MB)
 echo *12.- Super Mario 64 PC - (15 MB)
-echo *13.- Undertale (Ingles) - (115 MB)
+echo *13.- The Forest Lite - (1.1 GB)
 echo *14.- Volver para atras.
 echo.
 
@@ -701,53 +710,60 @@ echo.
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
-if "%op%"=="" goto :OptiGames
 if "%op%"=="1" goto :CupheadLITE
 if "%op%"=="2" goto :Craftsman
 if "%op%"=="3" goto :CS16
 if "%op%"=="4" goto :GeometryDash
 if "%op%"=="5" goto :GtaIV
-if "%op%"=="6" goto :Pepsiman
-if "%op%"=="7" goto :PES6
-if "%op%"=="8" goto :PVZ
-if "%op%"=="9" goto :PolyBridge
-if "%op%"=="10" goto :Ratatouille
+if "%op%"=="6" goto :PES6
+if "%op%"=="7" goto :PVZ
+if "%op%"=="8" goto :PolyBridge
+if "%op%"=="9" goto :Portal
+if "%op%"=="10" goto :ProjectZomboid
 if "%op%"=="11" goto :Sonic
 if "%op%"=="12" goto :SM64
-if "%op%"=="13" goto :Undertale
+if "%op%"=="13" goto :TheForest
 if "%op%"=="14" goto :StartGames
-if "%op%"=="" goto :OptiGames
+if "%op%"=="" goto :Start
+
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :CupheadLITE
 cls
 
-::Comprobando si el juego ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Cuphead Lite\Cuphead.exe" (
-	echo Ejecutando el Juego...
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat" (
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Cuphead Lite\Cuphead.exe"
+	start "" "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Descargando las partes del Juego
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQCx2poRgApFlKgS0WeQXw4BYpellRizN6fTRn2plYoD8A?download=1
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Cuphead LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQCx2poRgApFlKgS0WeQXw4BYpellRizN6fTRn2plYoD8A?download=1
+
 cls
 
-:: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Cuphead LITE.7z" -o"%CD%\Downloaded\Games"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Cuphead LITE.7z" -o"%CD%\Downloaded\OptiCraft"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
-cls
+del "Downloaded\Compressed\Cuphead LITE.7z"
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1114,59 +1130,61 @@ if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer
 )
 
 :: Descargando las Partes del Juego
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Compressed" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
 cls
 
 :: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\PES 6 Portable Y Optimizado.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
-cls
+del "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z"
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-:Ratatouille
+:ProjectZomboid
 cls
 
-::Comprobando si el juego ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Ratatouille The VideoGame RIP\overlay.exe" (
-	echo Ejecutando el Juego...
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat" (
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Ratatouille The VideoGame RIP\overlay.exe"
+	start "" "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Descargando Juego...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008706915700787/Ratatouille_The_VideoGame_RIP.7z.007
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008707238678568/Ratatouille_The_VideoGame_RIP.7z.008
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008711227449394/Ratatouille_The_VideoGame_RIP.7z.009
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008711617515520/Ratatouille_The_VideoGame_RIP.7z.010
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008711944687777/Ratatouille_The_VideoGame_RIP.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008712267636796/Ratatouille_The_VideoGame_RIP.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008712611565679/Ratatouille_The_VideoGame_RIP.7z.003
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008712951320666/Ratatouille_The_VideoGame_RIP.7z.004
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008713370738688/Ratatouille_The_VideoGame_RIP.7z.005
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1148003684706435082/1148008713706279082/Ratatouille_The_VideoGame_RIP.7z.006
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EdoZWBekbBxLg4cA87TmOMsB2H6Hj1l6D1-R2bClD0AqoQ?download=1
 cls
 
-:: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Ratatouille_The_VideoGame_RIP.7z.001" -o"%CD%\Downloaded\Games"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiZomboid V2.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
+del "%CD%\Downloaded\Compressed\OptiZomboid V2.7z"
 cls
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1235,31 +1253,38 @@ goto :SoftDownloaded
 :SM64
 cls
 
-::Comprobando si el juego ya ha sido descargado
+::Comprobando si el Software ya ha sido descargado
 if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
-	echo Ejecutando el Juego...
+	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
+	start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Descargando Juego...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ETw3DmdOjXJNq7mJbasRI88BZ_-ptyWdR1XH92LKa6UrGQ?download=1
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Super_Mario_64.zip" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ETw3DmdOjXJNq7mJbasRI88BZ_-ptyWdR1XH92LKa6UrGQ?download=1
 cls
 
-:: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Super_Mario_64.zip" -o"%CD%\Downloaded\Games"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Super_Mario_64.zip" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
+del "%CD%\Downloaded\Compressed\Super_Mario_64.zip"
 cls
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :PolyBridge
@@ -1276,16 +1301,18 @@ if exist "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridg
 	echo.
 )
 
+pause
+
 :: Descargando Juego...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Games\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVMIndhnLv1FvYuMxXAXX4wB6A3yBK5-HvOfocwu_J88Ow?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVMIndhnLv1FvYuMxXAXX4wBdAcQgnJxk1lxrPAB9CfXhA?download=1
 cls
 
 :: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-del "%CD%\Downloaded\Games\Compressed\Poly_Bridge_v0.73b_Optimizado.7z"
+del "%CD%\Downloadeds\Compressed\Poly_Bridge_v0.73b_Optimizado.7z"
 cls
 
 :: Ir al game downloaded para Avisar
@@ -1293,14 +1320,14 @@ goto :SoftDownloaded
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-:Pepsiman
+:Portal
 cls
 
 ::Comprobando si el juego ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Pepsiman\Pepsiman-Launcher.bat" (
+if exist "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat" (
 	echo Ejecutando el Juego...
 	echo.
-	start "" "%CD%\Downloaded\Games\Pepsiman\Pepsiman-Launcher.bat"
+	start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
@@ -1308,18 +1335,25 @@ if exist "%CD%\Downloaded\Games\Pepsiman\Pepsiman-Launcher.bat" (
 )
 
 :: Descargando Juego...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154592189050007582/1154593307196923904/Pepsiman.7z
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EbALKai1TZZOsVLioKXDyTwBpDlEalRi2AmHoyUpV2NaQA?download=1
+cls
 
 :: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Pepsiman.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
+del "%CD%\Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z"
 cls
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1327,60 +1361,72 @@ goto :SoftDownloaded
 cls
 
 ::Comprobando si el juego ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Geometry Dash Optimizado\GeometryDash-Launcher.bat" (
+if exist "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat" (
 	echo Ejecutando el Juego...
 	echo.
-	start "" "%CD%\Downloaded\Games\Geometry Dash Optimizado\GeometryDash-Launcher.bat"
+    start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
 	echo.
 )
 
-:: Descargando Juego...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154595888300310559/1154596010908201042/Geometry_Dash_Optimizado.7z
+:: Descargando las Partes del Juego
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EU_wwY5XlvRLkZnWJmMs8WIBR5h_TOeaPlzqCBLStU7IIg?download=1
+cls
 
 :: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Geometry_Dash_Optimizado.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
-cls
+del "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z"
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :Sonic
 cls
 
-::Comprobando si el juego ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Sonic 1\Sonic-Launcher.bat" (
-	echo Ejecutando el Juego...
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe" (
+	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\Games\Sonic 1\Sonic-Launcher.bat"
+	start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
 	goto :Start
 ) else (
-    echo Descargando el Juego...
+    echo Descargando el Software...
 	echo.
 )
 
-:: Descargando Juego...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154580119185281095/1154881800414441532/Sonic_1.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154580119185281095/1154881800791933050/Sonic_1.7z.002
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Sonic 1.zip" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQXwXDpiaaxJhG6T61sspaYBM5hA_9bIq4PZiLlGgTdM5w?download=1
+cls
 
-:: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Sonic_1.7z.001" -o"%CD%\Downloaded\Games"
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Sonic 1.zip" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
+del "%CD%\Downloaded\Compressed\Sonic 1.zip"
 cls
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1388,68 +1434,71 @@ goto :SoftDownloaded
 cls
 
 ::Comprobando si el juego ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\cstrike-Launcher.bat" (
+if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat" (
 	echo Ejecutando el Juego...
 	echo.
-	start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\cstrike-Launcher.bat"
+    start "" "%CD%\Downloaded\Games\TCounter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
 	echo.
 )
 
-:: Descargando Juego...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887117655257218/Counter_Strike_1.6_OptiClient.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887118003372062/Counter_Strike_1.6_OptiClient.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887118322147478/Counter_Strike_1.6_OptiClient.7z.003
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887118670278676/Counter_Strike_1.6_OptiClient.7z.004
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887119030976633/Counter_Strike_1.6_OptiClient.7z.005
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154884966036029501/1154887119601410078/Counter_Strike_1.6_OptiClient.7z.006
+:: Descargando las Partes del Juego
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EYd2l17iwvxKkjQzwcodQ7EBsTYQ7eNHq-gBZn3NYhVhAg?download=1
+cls
 
 :: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Counter_Strike_1.6_OptiClient.7z.001" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
-cls
+del "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z"
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\TCounter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-:Undertale
+:TheForest
 cls
 
 ::Comprobando si el juego ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Undertale\UNDERTALE.exe" (
+if exist "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat" (
 	echo Ejecutando el Juego...
 	echo.
-	start "" "%CD%\Downloaded\Games\Undertale\UNDERTALE.exe"
+    start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
 	goto :Start
 ) else (
     echo Descargando el Juego...
 	echo.
 )
 
-:: Descargando Juego...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899843144232992/Undertale.7z.004
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899843437838460/Undertale.7z.005
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899843744006154/Undertale.7z.001
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899844075368570/Undertale.7z.002
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://cdn.discordapp.com/attachments/1154899362682503168/1154899844373168128/Undertale.7z.003
+:: Descargando las Partes del Juego
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\The Forest Lite V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfnqfgzGPalBm6vx2btYadUB2UZXy9RxcK36_c2faXNfrw?download=1
+cls
 
 :: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Undertale.7z.001" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\The Forest Lite V1.0.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
-cls
+del "Downloaded\Compressed\The Forest Lite V1.0.7z"
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1483,10 +1532,9 @@ echo.
 :: Opciones para seleccionar
 echo *1.- Actualizar Drivers con Driver Booster.
 echo *2.- Borrar archivos Temporales
-echo *3.- Descargar e instalar updates necesarias en Windows 7 (Arregla problemas en OptiCraft)
-echo *4.- Instalar dependencias para programas (Visual C++)
-echo *5.- Preguntas frecuentes de OptiCraft.
-echo *6.- Volver para atras.
+echo *3.- Instalar dependencias para programas (Visual C++)
+echo *4.- Preguntas frecuentes de OptiCraft.
+echo *5.- Volver para atras.
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -1495,12 +1543,12 @@ set /p op=Opcion:
 if "%op%"=="" goto :Utilities
 if "%op%"=="1" goto :Drivers
 if "%op%"=="2" goto :Temp
-if "%op%"=="3" goto :Updates
-if "%op%"=="4" goto :Runtimes
-if "%op%"=="5" goto :FAQ
-if "%op%"=="6" goto :StartUtilities
-if "%op%"=="" goto :Utilities
-pause
+if "%op%"=="3" goto :Runtimes
+if "%op%"=="4" goto :FAQ
+if "%op%"=="5" goto :Start
+if "%op%"=="" goto :Start
+
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1508,12 +1556,12 @@ pause
 cls
 
 :: Descargando el Visual C++, Net Framework Y DirectX x86
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152094349346213979/vcredist2005_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091684201570304/vcredist2008_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091681068433429/vcredist2010_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091681835991121/vcredist2012_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091682838429707/vcredist2013_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://cdn.discordapp.com/attachments/1152091227303452702/1152091683530489927/vcredist2015_2017_2019_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2005_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2008_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2010_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2012_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2013_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2015_2017_2019_x86.exe
 cls
 
 :: Instalando Visual C++ 2015-2017-2019-2022
@@ -1547,7 +1595,7 @@ echo ========================================================
 echo.
 
 timeout 3 /nobreak
-goto :Utilities
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1662,7 +1710,7 @@ echo -Que se encontraban en Temp y Prefetch.
 echo ========================================
 
 timeout 3 /nobreak
-goto :Utilities
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1670,16 +1718,16 @@ goto :Utilities
 cls
 
 :: Borrando las preguntas frecuentes Anteriores
-del "%CD%\Downloaded\OptiCraft\FAQPreguntasFrecuentes\FAQ.txt
+del "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt
 
 :: Descargando el bloc de notas con el FAQ
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\OptiCraft\FAQPreguntasFrecuentes" https://cdn.discordapp.com/attachments/1148035643876839525/1154872436093898862/FAQ.txt
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\OptiCraft\FAQ\FAQ.txt" https://lozanoalberto228gmailcom-my.sharepoint.com/:t:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Eb3GT04Wp7tBkPjAXdxOYFkBgcrLRWLfbq7b6fKL1iUPKg?download=1
 
 :: Iniciando el NOTEPAD
-"notepad.exe" "%CD%\Downloaded\OptiCraft\FAQPreguntasFrecuentes\FAQ.txt"
+start "" "notepad.exe" "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt"
 
 :: Codigo para ir al menu con las Opciones
-goto :Utilities
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
