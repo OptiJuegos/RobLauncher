@@ -90,6 +90,14 @@ echo ===========================================================================
 echo.
 
 :StartContinue
+
+:: Advertencia Links
+echo ======================================================================================
+echo -Si los proyectos no te descargan, es posible que el sitio que los tiene este caido
+echo -Si esto te sucede, porfavor intenta descargar los juegos mas tarde
+echo ======================================================================================
+echo.
+
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
@@ -766,7 +774,7 @@ if exist "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.ex
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWLINayBsM9Iv6JSqLrk29IB_1A8HXm3Dkn9DXRA5zCyZw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWLINayBsM9Iv6JSqLrk29IB_1A8HXm3Dkn9DXRA5zCyZw?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -774,11 +782,16 @@ cls
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
-cls
+del "Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z"
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -810,7 +823,7 @@ del "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\TCounter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
+start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -1835,7 +1848,7 @@ if exist "%CD%\Assets\ffplay.exe" (
 echo Descargando el Software...
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ER04dZaqLmBBui1hxu78lsUB2PTkhYEK6AiQQ34GcLxKaA?download=1
 cls
-goto :TVLOL
+goto :MOVIELOL
 
 :MOVIELOL
 
@@ -1851,7 +1864,8 @@ echo *3.- El Chavo: Vacaciones en Acapulco
 echo *4 - Five nights at Freddy: La Pelicula
 echo *5 - Wall-E
 echo *6 - Oppenheimer
-echo *7 - Volver para Atras
+echo *7 - Argentina VS Francia Qatar 2022 (cualquiera)
+echo *8 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -1863,7 +1877,8 @@ if "%op%"=="3" goto :ACAPULCO
 if "%op%"=="4" goto :FNAF
 if "%op%"=="5" goto :WALLE
 if "%op%"=="6" goto :Oppenheimer
-if "%op%"=="7" goto :Start
+if "%op%"=="7" goto :Mundial
+if "%op%"=="8" goto :Start
 if "%op%"=="" goto :Start
 
 :SMB
@@ -1888,4 +1903,8 @@ goto :Start
 
 :Oppenheimer
 %FFPLAY% https://cache017.peliscdn.online/newhls/4c8ab7b7ea8a06df1e7ddceaa7490d9d/EP.0.0.v1.1708613656.720.m3u8
+goto :Start
+
+:Mundial
+%FFPLAY% https://d2nvs31859zcd8.cloudfront.net/a36dd5d176ef62012c0c_stardetonador_97571900428_7474081598/chunked/highlight-2056245952.m3u8
 goto :Start
