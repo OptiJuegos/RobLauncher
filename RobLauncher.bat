@@ -672,7 +672,7 @@ echo *12.- Plants VS Zombies - (19 MB)
 echo *13.- Poly Bridge 1 - (77 MB)
 echo *14.- Portal 1 Lite - (10 MB)
 echo *15.- Project Zomboid Lite - (360 MB)
-echo *16.- Silent Hill 2 - (33 MB)
+echo *16.- Silent Hill 2 - (780 MB)
 echo *17.- Sonic 1 PC - (33 MB)
 echo *18.- Super Mario 64 PC - (15 MB)
 echo *19.- The Forest Lite - (1.1 GB)
@@ -725,8 +725,7 @@ if exist "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat" (
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Cuphead LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQCx2poRgApFlKgS0WeQXw4BYpellRizN6fTRn2plYoD8A?download=1
-
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Cuphead LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQCx2poRgApFlKgS0WeQXw4BYpellRizN6fTRn2plYoD8A?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -740,6 +739,145 @@ del "Downloaded\Compressed\Cuphead LITE.7z"
 cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:Craftsman
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWLINayBsM9Iv6JSqLrk29IB_1A8HXm3Dkn9DXRA5zCyZw?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :SoftDownloaded
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:CS16
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EYd2l17iwvxKkjQzwcodQ7EBsTYQ7eNHq-gBZn3NYhVhAg?download=1
+cls
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\TCounter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:CSGO
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Resurrection Strike V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQyCaTGMnMFPoVmzL9kK_BcB9YPdgW4LdMUsMq-EyWoSiw?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Resurrection Strike V1.0.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Resurrection Strike V1.0.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:GeometryDash
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando las Partes del Software
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EU_wwY5XlvRLkZnWJmMs8WIBR5h_TOeaPlzqCBLStU7IIg?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -820,14 +958,14 @@ goto :Start
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-:YoutubersLife
+:HelloNeighbor
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat" (
+if exist "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello Neighbor.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat"
+    start "" "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello Neighbor.bat"
 	goto :Start
 ) else (
     echo Descargando el Software...
@@ -835,485 +973,20 @@ if exist "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat" 
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Youtubers Life Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hello Neighbor Optimizado Y Portable V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ERFWd9GAa1BKokhCFOsd01ABWsoO5_r_jU43UWfzor1mfQ?download=1
 cls
 
 :: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Youtubers Life Optimizado.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Hello Neighbor Optimizado Y Portable V2.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Youtubers Life Optimizado.7z"
+del "Downloaded\Compressed\Hello Neighbor Optimizado Y Portable V2.7z"
 
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:PES6
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat" (
-	echo Ejecutando el Software...
-	echo.
-    start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z"
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:ProjectZomboid
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat" (
-	echo Ejecutando el Software...
-	echo.
-	start "" "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EdoZWBekbBxLg4cA87TmOMsB2H6Hj1l6D1-R2bClD0AqoQ?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiZomboid V2.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "%CD%\Downloaded\Compressed\OptiZomboid V2.7z"
-cls
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:Craftsman
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe" (
-	echo Ejecutando el Software...
-	echo.
-    start "" "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWLINayBsM9Iv6JSqLrk29IB_1A8HXm3Dkn9DXRA5zCyZw?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
-cls
-
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:PVZ
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
-	echo Ejecutando el Software...
-	echo.
-    start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Plants_vs_Zombies.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ERLh0ATa6hNBitFNvDn1jT4BjR6tdPIbv5tllmCKDEGsaw?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Plants_vs_Zombies.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Games\Compressed"
-cls
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:SM64
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
-	echo Ejecutando el Software...
-	echo.
-	start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Super_Mario_64.zip" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ETw3DmdOjXJNq7mJbasRI88BZ_-ptyWdR1XH92LKa6UrGQ?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Super_Mario_64.zip" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "%CD%\Downloaded\Compressed\Super_Mario_64.zip"
-cls
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:PolyBridge
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe" (
-	echo Ejecutando el Software...
-	echo.
-	start "" "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-pause
-
-:: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVMIndhnLv1FvYuMxXAXX4wBdAcQgnJxk1lxrPAB9CfXhA?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "%CD%\Downloadeds\Compressed\Poly_Bridge_v0.73b_Optimizado.7z"
-cls
-
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:Portal
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat" (
-	echo Ejecutando el Software...
-	echo.
-	start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EbALKai1TZZOsVLioKXDyTwBpDlEalRi2AmHoyUpV2NaQA?download=1
-cls
-
-:: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "%CD%\Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z"
-cls
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:SH2
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat" (
-	echo Ejecutando el Software...
-	echo.
-    start "" "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando las Partes del Software
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Silent Hill 2 Portable.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVr1U07JDcVLi_7nzqiMSVoBwQm_UipBqqhBUKc2j16ncQ?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Silent Hill 2 Portable.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Silent Hill 2 Portable.7z"
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:GeometryDash
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat" (
-	echo Ejecutando el Software...
-	echo.
-    start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando las Partes del Software
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EU_wwY5XlvRLkZnWJmMs8WIBR5h_TOeaPlzqCBLStU7IIg?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z"
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:Sonic
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe" (
-	echo Ejecutando el Software...
-	echo.
-	start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Sonic 1.zip" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQXwXDpiaaxJhG6T61sspaYBM5hA_9bIq4PZiLlGgTdM5w?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Sonic 1.zip" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "%CD%\Downloaded\Compressed\Sonic 1.zip"
-cls
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:CS16
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat" (
-	echo Ejecutando el Software...
-	echo.
-    start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EYd2l17iwvxKkjQzwcodQ7EBsTYQ7eNHq-gBZn3NYhVhAg?download=1
-cls
-
-:: Descomprimiendo el Juego...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z"
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\TCounter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:TheForest
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat" (
-	echo Ejecutando el Software...
-	echo.
-    start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\The Forest Lite V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfnqfgzGPalBm6vx2btYadUB2UZXy9RxcK36_c2faXNfrw?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\The Forest Lite V1.0.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\The Forest Lite V1.0.7z"
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
-
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:CSGO
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe" (
-	echo Ejecutando el Software...
-	echo.
-    start "" "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe"
-	goto :Start
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Resurrection Strike V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQyCaTGMnMFPoVmzL9kK_BcB9YPdgW4LdMUsMq-EyWoSiw?download=1
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Resurrection Strike V1.0.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Resurrection Strike V1.0.7z"
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe"
+start "" "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello Neighbor.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -1386,6 +1059,371 @@ del "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z"
 cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:PES6
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:PVZ
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Plants_vs_Zombies.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ERLh0ATa6hNBitFNvDn1jT4BjR6tdPIbv5tllmCKDEGsaw?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Plants_vs_Zombies.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+RD /S /Q "%CD%\Downloaded\Games\Compressed"
+cls
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:PolyBridge
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+pause
+
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVMIndhnLv1FvYuMxXAXX4wBdAcQgnJxk1lxrPAB9CfXhA?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "%CD%\Downloadeds\Compressed\Poly_Bridge_v0.73b_Optimizado.7z"
+cls
+
+:: Ir al game downloaded para Avisar
+goto :SoftDownloaded
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:Portal
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EbALKai1TZZOsVLioKXDyTwBpDlEalRi2AmHoyUpV2NaQA?download=1
+cls
+
+:: Descomprimiendo el Juego...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "%CD%\Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z"
+cls
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:ProjectZomboid
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EdoZWBekbBxLg4cA87TmOMsB2H6Hj1l6D1-R2bClD0AqoQ?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiZomboid V2.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "%CD%\Downloaded\Compressed\OptiZomboid V2.7z"
+cls
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:SH2
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando las Partes del Software
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Silent Hill 2 Portable.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVr1U07JDcVLi_7nzqiMSVoBwQm_UipBqqhBUKc2j16ncQ?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Silent Hill 2 Portable.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Silent Hill 2 Portable.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:Sonic
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Sonic 1.zip" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQXwXDpiaaxJhG6T61sspaYBM5hA_9bIq4PZiLlGgTdM5w?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Sonic 1.zip" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "%CD%\Downloaded\Compressed\Sonic 1.zip"
+cls
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:SM64
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Super_Mario_64.zip" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ETw3DmdOjXJNq7mJbasRI88BZ_-ptyWdR1XH92LKa6UrGQ?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Super_Mario_64.zip" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "%CD%\Downloaded\Compressed\Super_Mario_64.zip"
+cls
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:TheForest
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\The Forest Lite V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfnqfgzGPalBm6vx2btYadUB2UZXy9RxcK36_c2faXNfrw?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\The Forest Lite V1.0.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\The Forest Lite V1.0.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+goto :Start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+:YoutubersLife
+pause
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat"
+	goto :Start
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Youtubers Life Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Youtubers Life Optimizado.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Youtubers Life Optimizado.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
