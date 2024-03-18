@@ -70,6 +70,7 @@ echo *4.- Utilidades
 echo *5.- Sobre el Launcher
 echo *6.- Actualizar el Launcher
 echo *7.- Canales Television
+echo *8.- Peliculas
 echo.
 
 :: Comprobando si el sistema es Windows XP
@@ -100,6 +101,7 @@ if "%op%"=="4" goto :Utilities
 if "%op%"=="5" goto :AboutPage
 if "%op%"=="6" goto :Update
 if "%op%"=="7" goto :TV
+if "%op%"=="8" goto :MOVIE
 if "%op%"=="" goto :Start
 
 ========================================================================================================================================================
@@ -1777,6 +1779,8 @@ echo *2.- TYC Sports
 echo *3.- TNT Sports
 echo *4 - Television Publica
 echo *5 - Cartoon Network
+echo *6 - Telefe
+echo *7 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -1787,24 +1791,101 @@ if "%op%"=="2" goto :TYC
 if "%op%"=="3" goto :TNT
 if "%op%"=="4" goto :TVP
 if "%op%"=="5" goto :Cartoon
+if "%op%"=="6" goto :Telefe
+if "%op%"=="7" goto :Start
 if "%op%"=="" goto :Start
 
 :ESPN
-%FFPLAY% https://edge-live12-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257
+%FFPLAY% https://edge-live12-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:5
 goto :Start
 
 :TYC
-%FFPLAY% https://dhmxbo9piuo21.cloudfront.net/out/v1/84ee2b0cce384a30abd70b05562ddd91/index.m3u8
+%FFPLAY% https://edge-vod02-sl.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:4
 goto :Start
 
 :TNT
-%FFPLAY% https://edge-live12-hr.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a
+%FFPLAY% https://edge-live12-hr.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -vst v:3
 goto :Start
 
 :TVP
-%FFPLAY% https://edge5-hr.cvattv.com.ar/live/c6eds/Canal7/SA_Live_dash_enc/Canal7.mpd -cenc_decryption_key cc4aae173dd2ef17ae26be3f7ae87662
+%FFPLAY% https://edge5-hr.cvattv.com.ar/live/c6eds/Canal7/SA_Live_dash_enc/Canal7.mpd -cenc_decryption_key cc4aae173dd2ef17ae26be3f7ae87662 -vst v:4
 goto :Start
 
 :Cartoon
-%FFPLAY% https://edge-mix01-ird.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8
+%FFPLAY% https://edge-mix01-ird.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -vst v:4
+goto :Start
+
+:Telefe
+%FFPLAY% https://edge9-sl.cvattv.com.ar/live/c6eds/TelefeHD/SA_Live_dash_enc/TelefeHD.mpd -cenc_decryption_key c69f3afde2085dcaaaddbf55246a0323 -vst v:4
+goto :Start
+
+========================================================================================================================================================
+
+:MOVIE
+cls
+
+:: Comprobando si esta FFPLAY
+if exist "%CD%\Assets\ffplay.exe" (
+	goto :MOVIELOL
+) else (
+    goto :FFPLAYMOVIE
+)
+
+:FFPLAYMOVIE
+echo Descargando el Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ER04dZaqLmBBui1hxu78lsUB2PTkhYEK6AiQQ34GcLxKaA?download=1
+cls
+goto :TVLOL
+
+:MOVIELOL
+
+:: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
+echo.
+echo %LAUNCHER_TEXT%
+echo.
+
+:: Opciones para seleccionar
+echo *1.- Super Mario Bros: La Pelicula
+echo *2.- Ratatouille 
+echo *3.- El Chavo: Vacaciones en Acapulco
+echo *4 - Five nights at Freddy: La Pelicula
+echo *5 - Wall-E
+echo *6 - Oppenheimer
+echo *7 - Volver para Atras
+echo.
+
+:: Codigo para ir al menu con las Opciones
+set /p op=Opcion: 
+
+if "%op%"=="1" goto :SMB
+if "%op%"=="2" goto :RAT
+if "%op%"=="3" goto :ACAPULCO
+if "%op%"=="4" goto :FNAF
+if "%op%"=="5" goto :WALLE
+if "%op%"=="6" goto :Oppenheimer
+if "%op%"=="7" goto :Start
+if "%op%"=="" goto :Start
+
+:SMB
+%FFPLAY% https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8 -vst v:2
+goto :Start
+
+:RAT
+%FFPLAY% https://cdn-cached-fs-43-w.dailymotians.cam/hls/liwalcp6ka2nsti77evsuwsdwifl7f6q3iv7nm2tu,ifsxaenforl2efuyiaa,b7sxaenforl4axkrcba,.urlset/master.m3u8 -vst v:3
+goto :Start
+
+:ACAPULCO
+%FFPLAY% https://d2nvs31859zcd8.cloudfront.net/98e7c04c7eea92019916_stardetonador_96420261846_1856009047/chunked/index-muted-2GIYT9DRH4.m3u8
+goto :Start
+
+:FNAF
+%FFPLAY% https://cache018.peliscdn.online/newhls/b5501eb755e47e473787373877bc3265/EP.0.2.v0.1708598921.720.m3u8
+goto :Start
+
+:WALLE
+%FFPLAY% https://cache018.peliscdn.online/newhls/1b0a006b686bb395565173659004bb9d/EP.0.1.v0.1708749457.1080.m3u8
+goto :Start
+
+:Oppenheimer
+%FFPLAY% https://cache017.peliscdn.online/newhls/4c8ab7b7ea8a06df1e7ddceaa7490d9d/EP.0.0.v1.1708613656.720.m3u8
 goto :Start
