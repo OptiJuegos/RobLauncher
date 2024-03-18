@@ -6,6 +6,7 @@ CD /D "%~dp0"
 =========================================================================================================================================================
 
 :: Establecer las Variables de Entorno...
+set FFPLAY="%CD%\Assets\ffplay.exe"
 set WGET="%CD%\Assets\wget.exe"
 set LAUNCHER_TEXT=*RobLauncher V1.7 - Un launcher para OptiCraft y Demas Proyectos.*
 set LAUNCHER_VER=RobLauncher V1.7
@@ -68,6 +69,7 @@ echo *3.- Juegos Optimizados
 echo *4.- Utilidades
 echo *5.- Sobre el Launcher
 echo *6.- Actualizar el Launcher
+echo *7.- Canales Television
 echo.
 
 :: Comprobando si el sistema es Windows XP
@@ -97,6 +99,7 @@ if "%op%"=="3" goto :OptiGames
 if "%op%"=="4" goto :Utilities
 if "%op%"=="5" goto :AboutPage
 if "%op%"=="6" goto :Update
+if "%op%"=="7" goto :TV
 if "%op%"=="" goto :Start
 
 ========================================================================================================================================================
@@ -1743,3 +1746,65 @@ timeout /t 1 /nobreak
 "%CD%\Assets\Update.bat"
 timeout /t 1 /nobreak
 
+========================================================================================================================================================
+
+:TV
+cls
+
+:: Comprobando si esta FFPLAY
+if exist "%CD%\Assets\ffplay.exe" (
+	goto :TVLOL
+) else (
+    goto :FFPLAY
+)
+
+:FFPLAY
+echo Descargando el Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ER04dZaqLmBBui1hxu78lsUB2PTkhYEK6AiQQ34GcLxKaA?download=1
+cls
+goto :TVLOL
+
+:TVLOL
+
+:: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
+echo.
+echo %LAUNCHER_TEXT%
+echo.
+
+:: Opciones para seleccionar
+echo *1.- ESPN Premium
+echo *2.- TYC Sports
+echo *3.- TNT Sports
+echo *4 - Television Publica
+echo *5 - Cartoon Network
+echo.
+
+:: Codigo para ir al menu con las Opciones
+set /p op=Opcion: 
+
+if "%op%"=="1" goto :ESPN
+if "%op%"=="2" goto :TYC
+if "%op%"=="3" goto :TNT
+if "%op%"=="4" goto :TVP
+if "%op%"=="5" goto :Cartoon
+if "%op%"=="" goto :Start
+
+:ESPN
+%FFPLAY% https://edge-live12-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257
+goto :Start
+
+:TYC
+%FFPLAY% https://dhmxbo9piuo21.cloudfront.net/out/v1/84ee2b0cce384a30abd70b05562ddd91/index.m3u8
+goto :Start
+
+:TNT
+%FFPLAY% https://edge-live12-hr.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a
+goto :Start
+
+:TVP
+%FFPLAY% https://edge5-hr.cvattv.com.ar/live/c6eds/Canal7/SA_Live_dash_enc/Canal7.mpd -cenc_decryption_key cc4aae173dd2ef17ae26be3f7ae87662
+goto :Start
+
+:Cartoon
+%FFPLAY% https://edge-mix01-ird.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8
+goto :Start
