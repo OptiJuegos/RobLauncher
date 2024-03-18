@@ -871,7 +871,7 @@ if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
 cls
 
 :: Descomprimiendo el Software...
