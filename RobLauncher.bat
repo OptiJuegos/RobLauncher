@@ -762,7 +762,7 @@ if exist "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV -
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\GTA 4 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EdP10Hk0kvBKvRJY5fHwqNwBhgPYl-CqGSrW1kj0qqQdFQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GTA 4 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EdP10Hk0kvBKvRJY5fHwqNwBhgPYl-CqGSrW1kj0qqQdFQ?download=1
 
 cls
 
@@ -799,7 +799,7 @@ if exist "%CD%\Downloaded\Games\Grand Theft Auto V LITE\1-Grand Theft Auto V - N
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Compressed" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Grand Theft Auto V LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -835,7 +835,7 @@ if exist "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat" 
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Compressed" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Youtubers Life Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -871,7 +871,7 @@ if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Compressed" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -907,7 +907,7 @@ if exist "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat" (
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EdoZWBekbBxLg4cA87TmOMsB2H6Hj1l6D1-R2bClD0AqoQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EdoZWBekbBxLg4cA87TmOMsB2H6Hj1l6D1-R2bClD0AqoQ?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -944,11 +944,11 @@ if exist "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.ex
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWLINayBsM9Iv6JSqLrk29IB_1A8HXm3Dkn9DXRA5zCyZw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWLINayBsM9Iv6JSqLrk29IB_1A8HXm3Dkn9DXRA5zCyZw?download=1
 cls
 
 :: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
@@ -975,11 +975,11 @@ if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Games\Compressed" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ERLh0ATa6hNBitFNvDn1jT4BjR6tdPIbv5tllmCKDEGsaw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Plants_vs_Zombies.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ERLh0ATa6hNBitFNvDn1jT4BjR6tdPIbv5tllmCKDEGsaw?download=1
 cls
 
 :: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Games\Compressed\Plants_vs_Zombies.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Plants_vs_Zombies.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
@@ -1119,7 +1119,7 @@ if exist "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat" (
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Silent Hill 2 Portable.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVr1U07JDcVLi_7nzqiMSVoBwQm_UipBqqhBUKc2j16ncQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Silent Hill 2 Portable.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVr1U07JDcVLi_7nzqiMSVoBwQm_UipBqqhBUKc2j16ncQ?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -1220,7 +1220,7 @@ cls
 if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\TCounter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
+    start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
 	goto :Start
 ) else (
     echo Descargando el Software...
@@ -1264,7 +1264,7 @@ if exist "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat" (
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\The Forest Lite V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfnqfgzGPalBm6vx2btYadUB2UZXy9RxcK36_c2faXNfrw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\The Forest Lite V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfnqfgzGPalBm6vx2btYadUB2UZXy9RxcK36_c2faXNfrw?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -1300,7 +1300,7 @@ if exist "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe" (
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Resurrection Strike V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQyCaTGMnMFPoVmzL9kK_BcB9YPdgW4LdMUsMq-EyWoSiw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Resurrection Strike V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQyCaTGMnMFPoVmzL9kK_BcB9YPdgW4LdMUsMq-EyWoSiw?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -1336,7 +1336,7 @@ if exist "%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat" (
 )
 
 :: Descargando el Software
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Hollow Knight Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EUQmeV1zm29ClXLC_g5gLlkBm__x_oCA8ric_YxFEu_MEg?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hollow Knight Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EUQmeV1zm29ClXLC_g5gLlkBm__x_oCA8ric_YxFEu_MEg?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -1372,7 +1372,7 @@ if exist "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EXU0YmAjlx1Cv5q1Z7bUy3ABm3zjiLsVTtEiGdjb8_c1LQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EXU0YmAjlx1Cv5q1Z7bUy3ABm3zjiLsVTtEiGdjb8_c1LQ?download=1
 cls
 
 :: Descomprimiendo el Software...
