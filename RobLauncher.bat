@@ -1846,7 +1846,7 @@ if exist "%CD%\Assets\ffplay.exe" (
 
 :FFPLAYMOVIE
 echo Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ER04dZaqLmBBui1hxu78lsUB2PTkhYEK6AiQQ34GcLxKaA?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe
 cls
 goto :MOVIELOL
 
