@@ -1882,11 +1882,11 @@ if "%op%"=="8" goto :Start
 if "%op%"=="" goto :Start
 
 :SMB
-%FFPLAY% https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8 -vst v:2
+%FFPLAY% https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8 -vst v:1
 goto :Start
 
 :RAT
-%FFPLAY% https://cdn-cached-fs-43-w.dailymotians.cam/hls/liwalcp6ka2nsti77evsuwsdwifl7f6q3iv7nm2tu,ifsxaenforl2efuyiaa,b7sxaenforl4axkrcba,.urlset/master.m3u8 -vst v:3
+%FFPLAY% https://908356674.tapecontent.net/radosgw/qx41BgMXM2czbKJ/Hy_qO75eciOGI4mNWZgbPI6f0xu6bL57TvSyoinzaXe2aMBHvQ3ukSxVOp5PzZIj0fBl-Jko6xY9RjtsN5i6s-4cU4J9nyA4J7jFgS7IX_VD5z2mh_MMA_UDRKuYRMIs-Uz7Y7SS4wSxOGYK-U4mux_KKPPHQeKN56op6SY5miz5WOteB7W3KaTPVC9HeUUHvp3O9H_UVHsIoQYxzW-62nXDoRGe_Z_w9LRq9OQHvOtf3ihuJdZnk7DLr1qa8JyhmFTYiSt5rG1UaDVcvVm_80aZERfkIM_TCQ8RuxessP31tX8Bb-CMeSCLrso/Ratatouille+2007+HD+LAT.mp4?stream=1
 goto :Start
 
 :ACAPULCO
