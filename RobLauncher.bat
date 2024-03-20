@@ -676,7 +676,7 @@ echo *3.- Counter Strike 1.6 - (139 MB)
 echo *4.- Counter Strike Global Offensive - (1.1 GB)
 echo *5.- Geometry Dash - (172 MB)
 echo *6.- Gta IV Lite - (11.3 GB)
-echo *7.- Gta V Lite - (37.4 GB)
+echo *7.- Gta V Lite - (51.7 GB)
 echo *8.- Hello Neighbor - (1.8 GB)
 echo *9.- Hollow Knight - (936 MB)
 echo *10.- Left 4 Dead 2 - (1.8 GB)
@@ -955,7 +955,7 @@ if exist "%CD%\Downloaded\Games\Grand Theft Auto V LITE\1-Grand Theft Auto V - N
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Grand Theft Auto V LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Grand Theft Auto V LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWDAX7CzKFlFh7A-2qWOlFAByg2Lt2fcR64EmX5qJPfQ8A?download=1
 cls
 
 :: Descomprimiendo el Software...
