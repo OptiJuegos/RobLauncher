@@ -1789,11 +1789,12 @@ echo.
 :: Opciones para seleccionar
 echo *1.- ESPN Premium
 echo *2.- TYC Sports
-echo *3.- TNT Sports
-echo *4 - Television Publica
-echo *5 - Cartoon Network
-echo *6 - Personalizado
-echo *7 - Volver para Atras
+echo *3.- TYC Sports Play 
+echo *4.- TNT Sports
+echo *5 - Television Publica
+echo *6 - Cartoon Network
+echo *7 - Personalizado
+echo *8 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -1801,11 +1802,12 @@ set /p op=Opcion:
 
 if "%op%"=="1" goto :ESPN
 if "%op%"=="2" goto :TYC
-if "%op%"=="3" goto :TNT
-if "%op%"=="4" goto :TVP
-if "%op%"=="5" goto :Cartoon
-if "%op%"=="6" goto :CustomTV
-if "%op%"=="7" goto :Start
+if "%op%"=="3" goto :TYCPlay
+if "%op%"=="4" goto :TNT
+if "%op%"=="5" goto :TVP
+if "%op%"=="6" goto :Cartoon
+if "%op%"=="7" goto :CustomTV
+if "%op%"=="8" goto :Start
 if "%op%"=="" goto :Start
 
 :ESPN
@@ -1814,6 +1816,10 @@ goto :Start
 
 :TYC
 %FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3 -flags low_delay
+goto :Start
+
+:TYCPlay
+%FFPLAY% https://dhmxbo9piuo21.cloudfront.net/out/v1/84ee2b0cce384a30abd70b05562ddd91/index.m3u8 -flags low_delay
 goto :Start
 
 :TNT
@@ -1876,21 +1882,19 @@ echo.
 
 :: Opciones para seleccionar
 echo *1.- Super Mario Bros: La Pelicula
-echo *2.- Ratatouille 
-echo *3.- El Chavo: Vacaciones en Acapulco
-echo *4 - Five nights at Freddy: La Pelicula
-echo *5 - Wall-E
-echo *6 - Oppenheimer
-echo *7 - Argentina VS Francia Qatar 2022 (cualquiera)
-echo *8 - Personalizado
-echo *9 - Volver para Atras
+echo *2.- El Chavo: Vacaciones en Acapulco
+echo *3 - Five nights at Freddy: La Pelicula
+echo *4 - Wall-E
+echo *5 - Oppenheimer
+echo *6 - Argentina VS Francia Qatar 2022 (cualquiera)
+echo *7 - Personalizado
+echo *8 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
 if "%op%"=="1" goto :SMB
-if "%op%"=="2" goto :RAT
 if "%op%"=="3" goto :ACAPULCO
 if "%op%"=="4" goto :FNAF
 if "%op%"=="5" goto :WALLE
@@ -1900,11 +1904,11 @@ if "%op%"=="9" goto :CustomMOVIE
 if "%op%"=="" goto :Start
 
 :SMB
-%FFPLAY% https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8 -vst v:2
+%FFPLAY% https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8
 goto :Start
 
 :RAT
-%FFPLAY% https://cdn-cached-fs-43-w.dailymotians.cam/hls/liwalcp6ka2nsti77evsuwsdwifl7f6q3iv7nm2tu,ifsxaenforl2efuyiaa,b7sxaenforl4axkrcba,.urlset/master.m3u8 -vst v:3
+echo NO HAY UN M3U8 100% FUNCIONAL!!!!
 goto :Start
 
 :ACAPULCO
