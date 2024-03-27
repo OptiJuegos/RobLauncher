@@ -1792,7 +1792,7 @@ echo *2.- TYC Sports
 echo *3.- TNT Sports
 echo *4 - Television Publica
 echo *5 - Cartoon Network
-echo *6 - Telefe
+echo *6 - Personalizado
 echo *7 - Volver para Atras
 echo.
 
@@ -1804,28 +1804,45 @@ if "%op%"=="2" goto :TYC
 if "%op%"=="3" goto :TNT
 if "%op%"=="4" goto :TVP
 if "%op%"=="5" goto :Cartoon
-if "%op%"=="6" goto :Telefe
+if "%op%"=="6" goto :CustomTV
 if "%op%"=="7" goto :Start
 if "%op%"=="" goto :Start
 
 :ESPN
-%FFPLAY% https://edge-live12-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:5
+%FFPLAY% https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:3 -flags low_delay
 goto :Start
 
 :TYC
-%FFPLAY% https://edge-vod02-sl.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:4
+%FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3 -flags low_delay
 goto :Start
 
 :TNT
-%FFPLAY% https://edge-live12-hr.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -vst v:3
+%FFPLAY% https://edge-live32-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -vst v:3 -flags low_delay
 goto :Start
 
 :TVP
-%FFPLAY% https://edge5-hr.cvattv.com.ar/live/c6eds/Canal7/SA_Live_dash_enc/Canal7.mpd -cenc_decryption_key cc4aae173dd2ef17ae26be3f7ae87662 -vst v:4
+%FFPLAY% https://edge-mix01-coe.cvattv.com.ar/live/c6eds/Canal7/SA_Live_dash_enc_2A/Canal7.mpd -cenc_decryption_key cc4aae173dd2ef17ae26be3f7ae87662 -vst v:3 -flags low_delay-flags low_delay
 goto :Start
 
 :Cartoon
-%FFPLAY% https://edge-mix01-ird.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -vst v:4
+%FFPLAY% https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -vst v:3 -flags low_delay
+goto :Start
+
+:CustomTV
+cls
+
+echo Establecer link personalizado
+echo.
+
+set /p URL=URL del video: 
+set /p DECRYPTION_KEY=Clave de desencriptacion (dejar en blanco si no hay alguna):
+
+IF "%DECRYPTION_KEY%"=="" (
+    %FFPLAY% %URL%
+) ELSE (
+    %FFPLAY% %URL% -cenc_decryption_key %DECRYPTION_KEY%
+)
+
 goto :Start
 
 :Telefe
@@ -1865,7 +1882,8 @@ echo *4 - Five nights at Freddy: La Pelicula
 echo *5 - Wall-E
 echo *6 - Oppenheimer
 echo *7 - Argentina VS Francia Qatar 2022 (cualquiera)
-echo *8 - Volver para Atras
+echo *8 - Personalizado
+echo *9 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -1878,7 +1896,7 @@ if "%op%"=="4" goto :FNAF
 if "%op%"=="5" goto :WALLE
 if "%op%"=="6" goto :Oppenheimer
 if "%op%"=="7" goto :Mundial
-if "%op%"=="8" goto :Start
+if "%op%"=="9" goto :CustomMOVIE
 if "%op%"=="" goto :Start
 
 :SMB
@@ -1907,4 +1925,16 @@ goto :Start
 
 :Mundial
 %FFPLAY% https://d2nvs31859zcd8.cloudfront.net/a36dd5d176ef62012c0c_stardetonador_97571900428_7474081598/chunked/highlight-2056245952.m3u8
+goto :Start
+
+:CustomMOVIE
+cls
+
+echo Establecer link personalizado
+echo.
+
+set /p URL=URL del video:
+
+%FFPLAY% %URL%
+
 goto :Start
