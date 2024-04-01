@@ -1819,7 +1819,7 @@ goto :Start
 goto :Start
 
 :TYCPlay
-%FFPLAY% https://dhmxbo9piuo21.cloudfront.net/out/v1/84ee2b0cce384a30abd70b05562ddd91/index.m3u8 -flags low_delay
+%FFPLAY% https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8 -flags low_delay
 goto :Start
 
 :TNT
@@ -1849,10 +1849,6 @@ IF "%DECRYPTION_KEY%"=="" (
     %FFPLAY% %URL% -cenc_decryption_key %DECRYPTION_KEY%
 )
 
-goto :Start
-
-:Telefe
-%FFPLAY% https://edge9-sl.cvattv.com.ar/live/c6eds/TelefeHD/SA_Live_dash_enc/TelefeHD.mpd -cenc_decryption_key c69f3afde2085dcaaaddbf55246a0323 -vst v:4
 goto :Start
 
 ========================================================================================================================================================
