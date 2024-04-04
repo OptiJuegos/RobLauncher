@@ -1787,28 +1787,33 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- ESPN Premium
-echo *2.- TYC Sports
-echo *3.- TYC Sports Play 
-echo *4.- TNT Sports
-echo *5 - Television Publica
-echo *6 - Cartoon Network
-echo *7 - Personalizado
+echo *1 - Bein Sports
+echo *2 - Cartoon Network
+echo *3.- ESPN Premium
+echo *4 - Television Publica
+echo *5.- TNT Sports
+echo *6.- TYC Sports
+echo *7.- TYC Sports Play 
+echo *8 - Personalizado
 echo *8 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
-if "%op%"=="1" goto :ESPN
-if "%op%"=="2" goto :TYC
-if "%op%"=="3" goto :TYCPlay
-if "%op%"=="4" goto :TNT
-if "%op%"=="5" goto :TVP
-if "%op%"=="6" goto :Cartoon
-if "%op%"=="7" goto :CustomTV
+if "%op%"=="1" goto :BEIN
+if "%op%"=="2" goto :Cartoon
+if "%op%"=="3" goto :ESPN
+if "%op%"=="4" goto :TVP
+if "%op%"=="5" goto :TNT
+if "%op%"=="6" goto :TYC
+if "%op%"=="7" goto :TYCPlay
 if "%op%"=="8" goto :Start
 if "%op%"=="" goto :Start
+
+:BEIN
+%FFPLAY% https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/playlist.m3u8 -flags low_delay
+goto :Start
 
 :ESPN
 %FFPLAY% https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:3 -flags low_delay
@@ -1848,6 +1853,7 @@ IF "%DECRYPTION_KEY%"=="" (
 ) ELSE (
     %FFPLAY% %URL% -cenc_decryption_key %DECRYPTION_KEY%
 )
+
 
 goto :Start
 
