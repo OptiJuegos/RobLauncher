@@ -1795,7 +1795,7 @@ echo *5.- TNT Sports
 echo *6.- TYC Sports
 echo *7.- TYC Sports Play 
 echo *8 - Personalizado
-echo *8 - Volver para Atras
+echo *9 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -1808,7 +1808,8 @@ if "%op%"=="4" goto :TVP
 if "%op%"=="5" goto :TNT
 if "%op%"=="6" goto :TYC
 if "%op%"=="7" goto :TYCPlay
-if "%op%"=="8" goto :Start
+if "%op%"=="8" goto :CustomTV
+if "%op%"=="9" goto :Start
 if "%op%"=="" goto :Start
 
 :BEIN
@@ -1820,7 +1821,7 @@ goto :Start
 goto :Start
 
 :TYC
-%FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3 -flags low_delay
+%FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:4 -flags low_delay
 goto :Start
 
 :TYCPlay
