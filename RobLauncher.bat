@@ -8,8 +8,8 @@ CD /D "%~dp0"
 :: Establecer las Variables de Entorno...
 set FFPLAY="%CD%\Assets\ffplay.exe"
 set WGET="%CD%\Assets\wget.exe"
-set LAUNCHER_TEXT=*RobLauncher V1.7 - Un launcher para OptiCraft y Demas Proyectos.*
-set LAUNCHER_VER=RobLauncher V1.7
+set LAUNCHER_TEXT=*RobLauncher V1.8 - Un launcher para OptiCraft y Demas Proyectos.*
+set LAUNCHER_VER=RobLauncher V1.8
 
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
@@ -742,7 +742,7 @@ if exist "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat" (
 cls
 
 :: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Cuphead LITE.7z" -o"%CD%\Downloaded\OptiCraft"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Cuphead LITE.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
@@ -1787,41 +1787,35 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1 - Bein Sports
-echo *2 - Cartoon Network
-echo *3.- ESPN Premium
-echo *4 - Television Publica
-echo *5.- TNT Sports
-echo *6.- TYC Sports
-echo *7.- TYC Sports Play 
-echo *8 - Personalizado
-echo *9 - Volver para Atras
+echo *1.- ESPN Premium
+echo *2.- TYC Sports
+echo *3.- TYC Sports Play 
+echo *4.- TNT Sports
+echo *5 - Television Publica
+echo *6 - Cartoon Network
+echo *7 - Personalizado
+echo *8 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
 
-if "%op%"=="1" goto :BEIN
-if "%op%"=="2" goto :Cartoon
-if "%op%"=="3" goto :ESPN
-if "%op%"=="4" goto :TVP
-if "%op%"=="5" goto :TNT
-if "%op%"=="6" goto :TYC
-if "%op%"=="7" goto :TYCPlay
-if "%op%"=="8" goto :CustomTV
-if "%op%"=="9" goto :Start
+if "%op%"=="1" goto :ESPN
+if "%op%"=="2" goto :TYC
+if "%op%"=="3" goto :TYCPlay
+if "%op%"=="4" goto :TNT
+if "%op%"=="5" goto :TVP
+if "%op%"=="6" goto :Cartoon
+if "%op%"=="7" goto :CustomTV
+if "%op%"=="8" goto :Start
 if "%op%"=="" goto :Start
-
-:BEIN
-%FFPLAY% https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/playlist.m3u8 -flags low_delay
-goto :Start
 
 :ESPN
 %FFPLAY% https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:3 -flags low_delay
 goto :Start
 
 :TYC
-%FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:4 -flags low_delay
+%FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3 -flags low_delay
 goto :Start
 
 :TYCPlay
@@ -1854,7 +1848,6 @@ IF "%DECRYPTION_KEY%"=="" (
 ) ELSE (
     %FFPLAY% %URL% -cenc_decryption_key %DECRYPTION_KEY%
 )
-
 
 goto :Start
 
