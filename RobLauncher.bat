@@ -95,6 +95,7 @@ echo.
 echo ======================================================================================
 echo -Si los proyectos no te descargan, es posible que el sitio que los tiene este caido
 echo -Si esto te sucede, porfavor intenta descargar los juegos mas tarde
+echo -Tambien, te recomiendo actualizar el launcher frecuentemente para evitar fallos
 echo ======================================================================================
 echo.
 
@@ -670,20 +671,20 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- Call of Duty 2 - (1.7 GB)
-echo *2.- Cuphead - (1.7 GB)
+echo *1.- Call of Duty 2 - (3.5 GB)
+echo *2 - Cuphead - (1.7 GB)
 echo *3.- Craftsman PC - (25 MB)
 echo *4.- Counter Strike 1.6 - (139 MB)
 echo *5.- Counter Strike Global Offensive - (1.1 GB)
 echo *6.- Geometry Dash - (172 MB)
 echo *7.- Gta IV Lite - (11.3 GB)
-echo *8.- Gta V Lite - (51.7 GB)
+echo *8.- Gta V Lite - (37.4 GB)
 echo *9.- Hello Neighbor - (1.8 GB)
 echo *10.- Hollow Knight - (936 MB)
 echo *11.- Left 4 Dead 2 - (1.8 GB)
 echo *12.- PES 6 - (1.1 GB)
-echo *13.- PES 13 - (4.1 GB)
-echo *14.- PES 17 - (4.1 GB)
+echo *13.- PES 13 - (3.8 GB)
+echo *14.- PES 17 - (4.0 GB)
 echo *15.- Plants VS Zombies - (19 MB)
 echo *16.- Poly Bridge 1 - (77 MB)
 echo *17.- Portal 1 Lite - (10 MB)
@@ -913,10 +914,10 @@ goto :Start
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat" (
+if exist "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\gd_data\GeometryDash.exe" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat"
+    start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\gd_data\GeometryDash.exe"
 	goto :Start
 ) else (
     echo Descargando el Software...
@@ -937,7 +938,7 @@ del "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\1-Geometry Dash.bat"
+start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\gd_data\GeometryDash.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
@@ -997,7 +998,7 @@ if exist "%CD%\Downloaded\Games\Grand Theft Auto V LITE\1-Grand Theft Auto V - N
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Grand Theft Auto V LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWDAX7CzKFlFh7A-2qWOlFAByg2Lt2fcR64EmX5qJPfQ8A?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Grand Theft Auto V LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
 cls
 
 :: Descomprimiendo el Software...
@@ -1654,121 +1655,6 @@ echo -Porfavor comprueba de tener tu Sistema Operativo
 echo -Con las ultimas actualizaciones y Parches de Seguridad.
 echo ========================================================
 echo.
-
-timeout 3 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:Updates
-:: Comprobando si el sistema es Windows 7
-ver | findstr /i "6\.1\."
-if %errorlevel%==0 (
-	goto :StartUpdateW7
-) else (
-	goto :NotWin7
-)
-
-:NotWin7
-cls
-echo.
-echo %LAUNCHER_TEXT%
-echo.
-echo =======================================
-echo -Tu sistema no esta corriendo Windows 7
-echo -No se instalara ninguna Actualizacion.
-echo =======================================
-timeout /t 3 /nobreak
-goto :Start
-
-:StartUpdateW7
-cls
-
-:: Cartel de comprobacion
-echo.
-echo ===============================================
-echo -Antes de realizar este paso
-echo -Es recomendable crear un punto de restauracion
-echo -Por si te ocurre algun error!
-echo ===============================================
-echo.
-pause
-
-:: Habilitando el servicio de windows update.
-reg add "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\wuauserv" /v "Start" /t REG_DWORD /d 00000003 /f
-
-:: Comprobando si el OS es 32 o 64 Bits 
-if "%PROCESSOR_ARCHITECTURE%"=="x86" goto 32Bits
-if "%PROCESSOR_ARCHITECTURE%"=="AMD64" goto 64Bits
-
-:32Bits
-:: Descargando update KB9766932 (Service Pack 1, NECESARIA PARA TODO)
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\UpdatesW7" https://archive.org/download/windows-7-service-pack-1-kb976932/windows6.1-KB976932-X86.exe
-
-:: Descargando update KB2670838 (Plataform Update, necesaria para correr multiples apps DX10 y obtener software Render)
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\UpdatesW7" https://download.microsoft.com/download/1/4/9/14936FE9-4D16-4019-A093-5E00182609EB/Windows6.1-KB2670838-x86.msu
-
-:: Descargando update KB3080149 (EventSetInformation ADVAPI32.dll, necesaria OptiCraft 1.20)
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\UpdatesW7" https://download.microsoft.com/download/C/8/0/C8036E07-4382-46BD-BFFB-46A6D397222A/Windows6.1-KB3080149-x86.msu
-
-:: Instalando update KB9766932
-"%CD%\Downloaded\UpdateW7\windows6.1-KB976932-X86.exe" /quiet /norestart
-
-:: Instalando update KB2670838
-"wusa.exe" "%CD%\Downloaded\UpdateW7\Windows6.1-KB2670838-x86.msu" /quiet /norestart
-
-:: Instalando update KB3080149
-"wusa.exe" "%CD%\Downloaded\UpdateW7\Windows6.1-KB3080149-x86.msu" /quiet /norestart
-goto :Finalizado
-
-:64Bits
-:: Descargando update KB9766932 (Service Pack 1, NECESARIA PARA TODO)
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\UpdatesW7" https://archive.org/download/windows-7-service-pack-1-kb976932/windows6.1-KB976932-X64.exe
-
-:: Descargando update KB2670838 (Plataform Update, necesaria para correr multiples apps DX10 y obtener software Render)
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\UpdatesW7" https://catalog.s.download.windowsupdate.com/msdownload/update/software/ftpk/2013/02/windows6.1-kb2670838-x64_9f667ff60e80b64cbed2774681302baeaf0fc6a6.msu
-
-:: Descargando update KB3080149 (EventSetInformation ADVAPI32.dll, necesaria OptiCraft 1.20)
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\UpdatesW7" https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/updt/2015/08/windows6.1-kb3080149-x64_f25965cefd63a0188b1b6f4aad476a6bd28b68ce.msu
-
-:: Instalando update KB9766932
-"%CD%\Downloaded\UpdateW7\windows6.1-KB976932-X64.exe" /quiet /norestart
-
-:: Instalando update KB2670838
-"wusa.exe" "%CD%\Downloaded\UpdateW7\Windows6.1-KB2670838-x64.msu" /quiet /norestart
-
-:: Instalando update KB3080149
-"wusa.exe" "%CD%\Downloaded\UpdateW7\Windows6.1-KB3080149-x64.msu" /quiet /norestart
-goto :Finalizado
-
-:Finalizado
-echo.
-echo ==============================================
-echo -Las actualizaciones se han Instalado.
-echo -Tu computadora se reiniciara en 15 Segundos.
-echo ==============================================
-echo.
-shutdown /r /t 0
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:Temp
-cls
-
-:: Borrando Archivos Temporales...
-Del /S /F /Q "%temp%"
-Del /S /F /Q "%SystemDrive%\Windows\Temp\*.*"
-Del /S /F /Q "%SystemDrive%\Windows\Prefetch\*.*"
-
-:: Avisar que se instalo el coso
-cls
-echo.
-echo %LAUNCHER_TEXT%
-echo.
-echo ========================================
-echo -Se han borrado los Archivos Temporales
-echo -Que se encontraban en Temp y Prefetch.
-echo ========================================
 
 timeout 3 /nobreak
 goto :Start
