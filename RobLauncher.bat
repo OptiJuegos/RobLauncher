@@ -1215,7 +1215,8 @@ cls
 if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
+	cd "%CD%\Downloaded\Games\Plants vs Zombies"
+    start "" "PlantsVsZombies.exe"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1237,7 +1238,8 @@ cls
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
+cd "%CD%\Downloaded\Games\Plants vs Zombies"
+start "" "%CD%\PlantsVsZombies.exe"
 
 :: Cerrar proceso
 exit
@@ -1765,23 +1767,23 @@ if "%op%"=="" goto :Start
 
 :ESPN
 %FFPLAY% https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:3 -flags low_delay
-goto :Start
+goto :StartChannels
 
 :TYC
 %FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3 -flags low_delay
-goto :Start
+goto :StartChannels
 
 :TYCPlay
 %FFPLAY% https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8 -flags low_delay
-goto :Start
+goto :StartChannels
 
 :TNT
 %FFPLAY% https://edge-live32-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -vst v:3 -flags low_delay
-goto :Start
+goto :StartChannels
 
 :Cartoon
 %FFPLAY% https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -vst v:3 -flags low_delay
-goto :Start
+goto :StartChannels
 
 :CustomTV
 cls
@@ -1851,31 +1853,31 @@ if "%op%"=="" goto :Start
 
 :SMB
 %FFPLAY% https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8
-goto :Start
+goto :StartMovies
 
 :ACAPULCO
 %FFPLAY% https://archive.org/download/elchavo_201709/El%20Chavo%20del%208%20-%20Vacaciones%20en%20Acapulco.mp4
-goto :Start
+goto :StartMovies
 
 :ACAPULCO
 %FFPLAY% https://d2nvs31859zcd8.cloudfront.net/98e7c04c7eea92019916_stardetonador_96420261846_1856009047/chunked/index-muted-2GIYT9DRH4.m3u8
-goto :Start
+goto :StartMovies
 
 :FNAF
 %FFPLAY% https://cache018.peliscdn.online/newhls/b5501eb755e47e473787373877bc3265/EP.0.2.v0.1708598921.720.m3u8
-goto :Start
+goto :StartMovies
 
 :WALLE
 %FFPLAY% https://cache018.peliscdn.online/newhls/1b0a006b686bb395565173659004bb9d/EP.0.1.v0.1708749457.1080.m3u8
-goto :Start
+goto :StartMovies
 
 :Oppenheimer
 %FFPLAY% https://cache017.peliscdn.online/newhls/4c8ab7b7ea8a06df1e7ddceaa7490d9d/EP.0.0.v1.1708613656.720.m3u8
-goto :Start
+goto :StartMovies
 
 :Mundial
 %FFPLAY% https://d2nvs31859zcd8.cloudfront.net/a36dd5d176ef62012c0c_stardetonador_97571900428_7474081598/chunked/highlight-2056245952.m3u8
-goto :Start
+goto :StartMovies
 
 :CustomMOVIE
 cls
@@ -1887,4 +1889,4 @@ set /p URL=URL del video:
 
 %FFPLAY% %URL%
 
-goto :Start
+goto :StartMovies
