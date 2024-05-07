@@ -16,7 +16,8 @@ set LAUNCHER_VER=RobLauncher V1.8 FIX
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
 
-:: Crear la carpeta "Downloaded", donde van a ir todas las cosas descargadas.	
+:: Crear la carpeta "Downloaded", donde van a ir todas las cosas descargadas.
+mkdir "Assets\extra" >nul 2>&1	
 mkdir "Downloaded" >nul 2>&1
 mkdir "Downloaded\Compressed" >nul 2>&1
 mkdir "Downloaded\Games" >nul 2>&1
@@ -761,7 +762,7 @@ cls
 if exist "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
+	start "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -782,7 +783,7 @@ del "Downloaded\Compressed\Cuphead LITE.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
+"%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
 
 :: Cerrar proceso
 exit
@@ -808,16 +809,16 @@ if exist "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe" (
 cls
 
 :: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Craftsman PC Port 1.9.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z"
+del "Downloaded\Compressed\Craftsman PC Port 1.9.7z"
 
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe"
+start "" "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe"
 
 :: Cerrar proceso
 exit
@@ -1119,7 +1120,7 @@ if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer
 )
 
 :: Descargando el Software...
-%WGET% --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/PES 6 Portable Y Optimizado.7z?download=true"
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/PES 6 Portable Y Optimizado.7z?download=true"
 
 :: Descomprimiendo el Software...
 "%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" -o"%CD%\Downloaded\Games"
