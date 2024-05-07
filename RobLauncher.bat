@@ -1,4 +1,6 @@
 @echo off
+setlocal enabledelayedexpansion
+
 ======================================================================================================================================================================================	
 
 CD /D "%~dp0"
@@ -6,16 +8,21 @@ CD /D "%~dp0"
 =========================================================================================================================================================
 
 :: Establecer las Variables de Entorno...
-set FFPLAY="%CD%\Assets\ffplay.exe"
-set WGET="%CD%\Assets\wget.exe"
-set LAUNCHER_TEXT=*RobLauncher V1.8 - Un launcher para OptiCraft y Demas Proyectos.*
-set LAUNCHER_VER=RobLauncher V1.8
+set FFPLAY="Assets\ffplay.exe"
+set WGET="Assets\wget.exe"
+set LAUNCHER_TEXT=*RobLauncher V1.8 FIX - Un launcher para OptiCraft y Demas Proyectos.*
+set LAUNCHER_VER=RobLauncher V1.8 FIX
 
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
 
 :: Crear la carpeta "Downloaded", donde van a ir todas las cosas descargadas.	
 mkdir "Downloaded"
+mkdir "Downloaded\Compressed"
+mkdir "Downloaded\Games"
+mkdir "Downloaded\OptiCraft"
+mkdir "Downloaded\OptiCraft\FAQ"
+mkdir "Downloaded\Utilities"
 
 :: Comprobar si existe el archivo Options.txt, si no ir a un mini tutorial para los TOPOS (chiste los quiero mucho)
 if exist "%CD%\Assets\extra\options.txt" (
@@ -187,14 +194,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.7.3.1 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EbBfZnzUT8NDkvU4PEQ8sLkBBVJY63qsN95a2QtR6miE3g?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.7.3.1 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.7.3.1 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -211,7 +218,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -223,14 +230,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.9.1.0 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EelOarM7FixMlYd4bk4ys9sBE9qPPZWL3LCTOAGOZ6yR7g?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.9.1.0 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.9.1.0 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -247,7 +254,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -259,14 +266,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.1
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EUibyg9ig3lNg9Cgh7s6JJQBFT_uvm6o6XbASSWARDI9vg?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.12.0 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -283,7 +290,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.1
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -295,14 +302,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.14.31 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ET6v9hflz6tJqaWSlAe-JUkBEfxByvVl_Cu9u8fAMw2JsA?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.14.31 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.14.31 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -319,7 +326,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -337,14 +344,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.17.30 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EV76CXR9Px1Bt43vqoSneB0BpivVLo06L6f4Vc9AaL5sXw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.17.30 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.17.30 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -361,7 +368,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -373,14 +380,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.18.31 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWIFeD7fVFNFkbrvCrS5MA0BXhlN24dAvEaiFwKNSe89VA?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.18.31 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.18.31 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -397,7 +404,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -409,7 +416,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
@@ -434,7 +441,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -446,15 +453,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.20.10 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EZDFCsnoNjpEoN44RThvEIYBP_NQVMS35TBPq4diBzmynw?download=1
-
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.20.10 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.20.10 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -471,7 +477,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 ========================================================================================================================================================
 
@@ -522,15 +528,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat" (
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Eb9CPCrBaFlEvqjeuqkW54wBcXbXO-Bt6Igyk8uNbTJpVA?download=1
-
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.5.2.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -543,11 +548,11 @@ del "Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat"
+"%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -559,15 +564,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat" (
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVu8C8G2gQBFjDtJ4rSpGnwBP6go4KtIDHzH8VjsuiAuHw?download=1
-
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.8.9.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -580,11 +584,11 @@ del "Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat"
+"%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -596,15 +600,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ESpZMLg3YC1DncbdUeNfXv0BxTdlQcO6OMYV47SRNu6fPQ?download=1
-
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.12.2.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -617,11 +620,11 @@ del "Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
+"%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -633,15 +636,14 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Ea6mincAo9ZNo2VaeEBHIQcB3OXyCyVAbLznBjRCXHXKaw?download=1
-
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z" https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.16.5.7z?download=true
 cls
 
 :: Descomprimiendo el Software...
@@ -654,11 +656,11 @@ del "Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat"
+"%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 ========================================================================================================================================================
 
@@ -678,7 +680,7 @@ echo *4.- Counter Strike 1.6 - (139 MB)
 echo *5.- Counter Strike Global Offensive - (1.1 GB)
 echo *6.- Geometry Dash - (172 MB)
 echo *7.- Gta IV Lite - (11.3 GB)
-echo *8.- Gta V Lite - (37.4 GB)
+echo *8.- Gta V Lite - (44.7 GB)
 echo *9.- Hello Neighbor - (1.8 GB)
 echo *10.- Hollow Knight - (936 MB)
 echo *11.- Left 4 Dead 2 - (1.8 GB)
@@ -687,8 +689,8 @@ echo *13.- PES 13 - (3.8 GB)
 echo *14.- PES 17 - (4.0 GB)
 echo *15.- Plants VS Zombies - (19 MB)
 echo *16.- Poly Bridge 1 - (77 MB)
-echo *17.- Portal 1 Lite - (10 MB)
-echo *18.- Project Zomboid Lite - (360 MB)
+echo *17.- Portal 1 Lite - (512 MB)
+echo *18.- Project Zomboid Lite - (315 MB)
 echo *19.- Silent Hill 2 - (780 MB)
 echo *20.- Sonic 1 PC - (33 MB)
 echo *21.- Super Mario 64 PC - (15 MB)
@@ -738,14 +740,14 @@ if exist "%CD%\Downloaded\Games\Call of Duty 2 Optimized\1-Call Of Duty 2 - Norm
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\Games\Call of Duty 2 Optimized\1-Call Of Duty 2 - Normal.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\COD2.7z" "https://web.archive.org/web/20240414024113/https://cdn-lfs-us-1.huggingface.co/repos/81/ce/81ceb132a26e063686304c05d6685c46f92a38e7d72e5f9d211c47cbdafd1a61/7ce02206b94d888a356f072f807aa8b1b375ef30e7e1231f7f18c4ac1a13933a?response-content-disposition=attachment%3B+filename%2A%3DUTF-8%27%27Call%2520of%2520Duty%25202%2520Optimized.7z%3B+filename%3D%22Call+of+Duty+2+Optimized.7z%22%3B&response-content-type=application%2Fx-7z-compressed&Expires=1713319201&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTcxMzMxOTIwMX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmh1Z2dpbmdmYWNlLmNvL3JlcG9zLzgxL2NlLzgxY2ViMTMyYTI2ZTA2MzY4NjMwNGMwNWQ2Njg1YzQ2ZjkyYTM4ZTdkNzJlNWY5ZDIxMWM0N2NiZGFmZDFhNjEvN2NlMDIyMDZiOTRkODg4YTM1NmYwNzJmODA3YWE4YjFiMzc1ZWYzMGU3ZTEyMzFmN2YxOGM0YWMxYTEzOTMzYT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSomcmVzcG9uc2UtY29udGVudC10eXBlPSoifV19&Signature=Wf5luS~5Datio56BTdVSwQsUQ~HI1zx8ueAKOJdersJQ0ock~KuAiBfuKd5f~fg2oU6qvYUhyoQVC4JkK5hcVuzHyss66-PgYvLSiMACe2yrBed~2RMLfJXu3Q3zm4n26iIdwupxagLxWb9zwzxr8iath4R3E-jfUE7tgM1vnpO5NoOf2u6dNGxQPT-jMZmVTtUnJVzEOeXN9gM7jaUnVT~pB3mQZ418qY85AOT4tU6YFWgWmSvtfIF4rIG5gyUnLgODlQFhXgnbfF~7NFsFi8QU~pX7Uk7VBn0I3UnDzuVzyJK8nhsqC~fQKXYQISCWBNLtTFdtHsmBKUpHAWiaAA__&Key-Pair-Id=KCD77M1F0VK2B"
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\COD2.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Call of Duty 2 Optimized.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -762,7 +764,7 @@ start "" "%CD%\Downloaded\Games\Call of Duty 2 Optimized\1-Call Of Duty 2 - Norm
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -774,14 +776,14 @@ if exist "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat" (
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Cuphead LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQCx2poRgApFlKgS0WeQXw4BYpellRizN6fTRn2plYoD8A?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Cuphead LITE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Cuphead LITE.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -798,7 +800,7 @@ start "" "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -806,18 +808,18 @@ goto :Start
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe" (
+if exist "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe"
-	goto :Start
+    start "" "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe"
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EWLINayBsM9Iv6JSqLrk29IB_1A8HXm3Dkn9DXRA5zCyZw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Craftsman PC Port 1.9.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -834,7 +836,7 @@ start "" "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.ex
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -846,14 +848,14 @@ if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EYd2l17iwvxKkjQzwcodQ7EBsTYQ7eNHq-gBZn3NYhVhAg?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Counter Strike 1.6 Opti-Client.7z?download=true"
 cls
 
 :: Descomprimiendo el Juego...
@@ -870,7 +872,7 @@ start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -882,14 +884,14 @@ if exist "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe" (
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Resurrection Strike V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQyCaTGMnMFPoVmzL9kK_BcB9YPdgW4LdMUsMq-EyWoSiw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Resurrection Strike V1.0.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Resurrection Strike V1.0.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -906,7 +908,7 @@ start "" "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -914,18 +916,18 @@ goto :Start
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\gd_data\GeometryDash.exe" (
+if exist "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado By OptiJuegos\gd_data\GeometryDash.exe" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\gd_data\GeometryDash.exe"
-	goto :Start
+    start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado By OptiJuegos\gd_data\GeometryDash.exe"
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EU_wwY5XlvRLkZnWJmMs8WIBR5h_TOeaPlzqCBLStU7IIg?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Geometry Dash 2.2 Optimizado By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -938,11 +940,11 @@ del "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado\gd_data\GeometryDash.exe"
+start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado By OptiJuegos\gd_data\GeometryDash.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -954,15 +956,14 @@ if exist "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV -
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV - NORMAL.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GTA 4 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EdP10Hk0kvBKvRJY5fHwqNwBhgPYl-CqGSrW1kj0qqQdFQ?download=1
-
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GTA 4 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/GTA 4 LITE By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -979,7 +980,7 @@ start "" "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV -
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -987,18 +988,18 @@ goto :Start
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Grand Theft Auto V LITE\1-Grand Theft Auto V - NORMAL.bat" (
+if exist "%CD%\Downloaded\Games\GTA V LITE V4\1-Grand Theft Auto V - NORMAL.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Grand Theft Auto V LITE\1-Grand Theft Auto V - NORMAL.bat"
-	goto :Start
+    start "" "%CD%\Downloaded\Games\GTA V LITE V4\1-Grand Theft Auto V - NORMAL.bat"
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Grand Theft Auto V LITE.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Grand Theft Auto V LITE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/GTA V LITE V4.zip?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1015,7 +1016,7 @@ start "" "%CD%\Downloaded\Games\Grand Theft Auto V LITE\1-Grand Theft Auto V - N
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1027,14 +1028,14 @@ if exist "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello 
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello Neighbor.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hello Neighbor Optimizado Y Portable V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ERFWd9GAa1BKokhCFOsd01ABWsoO5_r_jU43UWfzor1mfQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hello Neighbor Optimizado Y Portable V2.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Hello Neighbor Optimizado Y Portable V2.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1051,7 +1052,7 @@ start "" "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello 
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1063,14 +1064,14 @@ if exist "%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat" (
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hollow Knight Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EUQmeV1zm29ClXLC_g5gLlkBm__x_oCA8ric_YxFEu_MEg?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hollow Knight Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Hollow Knight Optimizado.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1087,7 +1088,7 @@ start "" "%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1099,14 +1100,14 @@ if exist "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EXU0YmAjlx1Cv5q1Z7bUy3ABm3zjiLsVTtEiGdjb8_c1LQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Left 4 Dead 2 LITE By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1123,7 +1124,7 @@ start "" "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1135,15 +1136,14 @@ if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
-cls
+%WGET% --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/PES 6 Portable Y Optimizado.7z?download=true"
 
 :: Descomprimiendo el Software...
 "%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" -o"%CD%\Downloaded\Games"
@@ -1159,7 +1159,7 @@ start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1171,14 +1171,14 @@ if exist "%CD%\Downloaded\Games\Pro Evolution Soccer 2013\Pro Evolution Soccer 1
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\Pro Evolution Soccer 2013\Pro Evolution Soccer 13.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Pro Evolution Soccer 2013.7z" "https://web.archive.org/web/20240413171315/https://cdn-lfs-us-1.huggingface.co/repos/81/ce/81ceb132a26e063686304c05d6685c46f92a38e7d72e5f9d211c47cbdafd1a61/7a304eb5a2a9199e2704b125c2dde2f3ae8daab7c79ab8f111775125e21c7bb1?response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27Pro%2520Evolution%2520Soccer%25202013.7z%3B+filename%3D%22Pro+Evolution+Soccer+2013.7z%22%3B&response-content-type=application%2Fx-7z-compressed&Expires=1713287595&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTcxMzI4NzU5NX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmh1Z2dpbmdmYWNlLmNvL3JlcG9zLzgxL2NlLzgxY2ViMTMyYTI2ZTA2MzY4NjMwNGMwNWQ2Njg1YzQ2ZjkyYTM4ZTdkNzJlNWY5ZDIxMWM0N2NiZGFmZDFhNjEvN2EzMDRlYjVhMmE5MTk5ZTI3MDRiMTI1YzJkZGUyZjNhZThkYWFiN2M3OWFiOGYxMTE3NzUxMjVlMjFjN2JiMT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSomcmVzcG9uc2UtY29udGVudC10eXBlPSoifV19&Signature=l1x5mW7CXylI3KRmFiljEIR7krkdhIdavnkeIwoFoQNEFOB5q-1n2opuKpqB~Cq4Z39ZCswq-qnQ3CuQqBENbLLbY9JWq0xE~c1QYPNZWZ0lHLZMYxD~F1TPQDfLJXddKYeboI2gYbtHHB2Tbqv3jbot8bHukhlVqcwS5ucJBs-NfmA1dE7DpyyKgbnPLQZ8a~JuHEIRwlKdHdL6zB9XK9Fv5u~OBdwE6AEim85taXqZwkBPImcqOVMMWmpVrGRGOXrkW2OkQfDvCTFFmeA1ilNBuxUq4MfxEm8Iv3DQD63h1NIOnSC7LnNoIZ7YfJ8tOX4LonmUC4vJFmcp6sbbqQ__&Key-Pair-Id=KCD77M1F0VK2B"
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Pro Evolution Soccer 2013.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Pro Evolution Soccer 2013.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1195,7 +1195,7 @@ start "" ""%CD%\Downloaded\Games\Pro Evolution Soccer 2013\Pro Evolution Soccer 
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1207,14 +1207,14 @@ if exist "%CD%\Downloaded\Games\Pro Evolution Soccer 2017 Optimized\pesdata\PES2
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\Pro Evolution Soccer 2017 Optimized\pesdata\PES2017.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Pro Evolution Soccer 2017 Optimized.7z" "https://web.archive.org/web/20240413172619/https://cdn-lfs-us-1.huggingface.co/repos/81/ce/81ceb132a26e063686304c05d6685c46f92a38e7d72e5f9d211c47cbdafd1a61/300652e274f6b0801d2e0afa83dc70f9bdcf1834247b924c80e4c95555156bfa?response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27Pro%2520Evolution%2520Soccer%25202017%2520Optimized.7z%3B+filename%3D%22Pro+Evolution+Soccer+2017+Optimized.7z%22%3B&response-content-type=application%2Fx-7z-compressed&Expires=1713288379&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTcxMzI4ODM3OX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmh1Z2dpbmdmYWNlLmNvL3JlcG9zLzgxL2NlLzgxY2ViMTMyYTI2ZTA2MzY4NjMwNGMwNWQ2Njg1YzQ2ZjkyYTM4ZTdkNzJlNWY5ZDIxMWM0N2NiZGFmZDFhNjEvMzAwNjUyZTI3NGY2YjA4MDFkMmUwYWZhODNkYzcwZjliZGNmMTgzNDI0N2I5MjRjODBlNGM5NTU1NTE1NmJmYT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSomcmVzcG9uc2UtY29udGVudC10eXBlPSoifV19&Signature=XE~mnx5bFDOZYisJicKs~fVVLckIZQRAP5IRD8elu19hcsC24LdP8PCmvjgtxC91UGO-d-Ym4APeNcOF5y8S9UCqlidjIEFfg4f9tVz~7wLEq-Pt37GBcl6T9wgNSQJxXXh79rH2j6OMU2yWXXGQK68I2uPm~RdTbvdmo5A75UwjAM2LK43cO0sJs-WFvKs6WG1zsZCc5wbu5c5YlZhkw94lGfx5E0ex4djYZ0gNhcK0HL206J1D2IgIxZN4DKM8ry~liW656GlGijewC6yec9l9qP66BLyHtcUjIZBV9T07KUOhhPyIfaZ6-w4Sbt1S0O77U7TMXy2wSbQk~N4hbQ__&Key-Pair-Id=KCD77M1F0VK2B"
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Pro Evolution Soccer 2017 Optimized.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Pro Evolution Soccer 2017 Optimized.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1231,7 +1231,7 @@ start "" "%CD%\Downloaded\Games\Pro Evolution Soccer 2017 Optimized\pesdata\PES2
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1242,15 +1242,15 @@ cls
 if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
-	goto :Start
+    start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe"
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Plants_vs_Zombies.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ERLh0ATa6hNBitFNvDn1jT4BjR6tdPIbv5tllmCKDEGsaw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Plants_vs_Zombies.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Plants vs Zombies.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1268,7 +1268,7 @@ start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1280,16 +1280,14 @@ if exist "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridg
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
-pause
-
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVMIndhnLv1FvYuMxXAXX4wBdAcQgnJxk1lxrPAB9CfXhA?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Poly Bridge v0.73b Optimizado.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1300,9 +1298,14 @@ timeout /t 1 /nobreak
 del "%CD%\Downloadeds\Compressed\Poly_Bridge_v0.73b_Optimizado.7z"
 cls
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe"
 
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1314,14 +1317,14 @@ if exist "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat" (
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EbALKai1TZZOsVLioKXDyTwBpDlEalRi2AmHoyUpV2NaQA?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Portal 1 LITE By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Juego...
@@ -1339,7 +1342,7 @@ start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1347,36 +1350,36 @@ goto :Start
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat" (
+if exist "%CD%\Downloaded\Games\OptiZomboid\1-OptiZomboid.bat" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat"
-	goto :Start
+	start "" "%CD%\Downloaded\Games\OptiZomboid\1-OptiZomboid.bat"
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid V2.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EdoZWBekbBxLg4cA87TmOMsB2H6Hj1l6D1-R2bClD0AqoQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiZomboid.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiZomboid V2.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiZomboid.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-del "%CD%\Downloaded\Compressed\OptiZomboid V2.7z"
+del "%CD%\Downloaded\Compressed\OptiZomboid.7z"
 cls
 
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\OptiZomboid V2\1-OptiZomboid.bat"
+start "" "%CD%\Downloaded\Games\OptiZomboid V4\1-OptiZomboid.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1388,14 +1391,14 @@ if exist "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat" (
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Silent Hill 2 Portable.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EVr1U07JDcVLi_7nzqiMSVoBwQm_UipBqqhBUKc2j16ncQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Silent Hill 2 Portable.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Silent Hill 2 Portable.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1412,7 +1415,7 @@ start "" "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 
 
@@ -1426,14 +1429,14 @@ if exist "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe" (
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Sonic 1.zip" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQXwXDpiaaxJhG6T61sspaYBM5hA_9bIq4PZiLlGgTdM5w?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Sonic 1.zip" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Sonic 1.zip?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1451,7 +1454,7 @@ start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1463,14 +1466,14 @@ if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Super_Mario_64.zip" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ETw3DmdOjXJNq7mJbasRI88BZ_-ptyWdR1XH92LKa6UrGQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Super_Mario_64.zip" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Super_Mario_64.zip?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1488,7 +1491,7 @@ start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1500,14 +1503,14 @@ if exist "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat" (
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\The Forest Lite V1.0.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfnqfgzGPalBm6vx2btYadUB2UZXy9RxcK36_c2faXNfrw?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\The Forest Lite V1.0.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/The Forest Lite V1.0.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1524,26 +1527,25 @@ start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :YoutubersLife
-pause
 
 ::Comprobando si el Software ya ha sido descargado
 if exist "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat" (
 	echo Ejecutando el Software...
 	echo.
     start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
 )
 
 :: Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Youtubers Life Optimizado.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EfJSjBmH3zRHpciahJUxdusB3FH3KAVQtZj9w1fdGvLIAQ?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Youtubers Life Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Youtubers Life Optimizado.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1560,26 +1562,7 @@ start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat"
 
 :: Ir al menu inicial cuando se cierre el proceso.
 timeout 1 /nobreak
-goto :Start
-
---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-:SoftDownloaded
-cls
-
-:: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
-echo.
-echo %LAUNCHER_TEXT%
-echo.
-echo =========================================================
-echo -El archivo se ha descargado y descomprimido correctamente.
-echo -Visita la carpeta especifica para encontrarlo.
-echo =========================================================
-echo.
-pause
-
-:: Ir al inicio
-goto :OptiGames
+exit
 
 ========================================================================================================================================================
 
@@ -1618,8 +1601,8 @@ goto :Start
 cls
 
 :: Descargando el Visual C++, Net Framework Y DirectX x86
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2005_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2008_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://web.archive.org/web/20240507020145/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2005_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://web.archive.org/web/20240507020255/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2008_x86.exe
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2010_x86.exe
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2012_x86.exe
 %WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2013_x86.exe
@@ -1657,7 +1640,7 @@ echo ========================================================
 echo.
 
 timeout 3 /nobreak
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1674,7 +1657,7 @@ del "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt
 start "" "notepad.exe" "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt"
 
 :: Codigo para ir al menu con las Opciones
-goto :Start
+exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1686,7 +1669,7 @@ if exist "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe" (
 	echo Ejecutando el Software...
 	echo.
 	start "" "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe"
-	goto :Start
+	exit
 ) else (
     echo Descargando el Software...
 	echo.
@@ -1704,8 +1687,14 @@ timeout /t 1 /nobreak
 del "Downloaded\Compressed\Driver_Booster.7z"
 cls
 
-:: Ir al game downloaded para Avisar
-goto :SoftDownloaded
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe"
+
+:: Ir al menu inicial cuando se cierre el proceso.
+timeout 1 /nobreak
+exit
 
 ========================================================================================================================================================
 
