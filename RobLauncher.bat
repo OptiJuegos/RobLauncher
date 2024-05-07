@@ -17,13 +17,14 @@ set LAUNCHER_VER=RobLauncher V1.8 FIX
 title %LAUNCHER_VER%
 
 :: Crear la carpeta "Downloaded", donde van a ir todas las cosas descargadas.	
-mkdir "Downloaded"
-mkdir "Downloaded\Compressed"
-mkdir "Downloaded\Games"
-mkdir "Downloaded\OptiCraft"
-mkdir "Downloaded\OptiCraft\FAQ"
-mkdir "Downloaded\Utilities"
+mkdir "Downloaded" >nul 2>&1
+mkdir "Downloaded\Compressed" >nul 2>&1
+mkdir "Downloaded\Games" >nul 2>&1
+mkdir "Downloaded\OptiCraft" >nul 2>&1
+mkdir "Downloaded\OptiCraft\FAQ" >nul 2>&1
+mkdir "Downloaded\Utilities" >nul 2>&1
 
+:Options
 :: Comprobar si existe el archivo Options.txt, si no ir a un mini tutorial para los TOPOS (chiste los quiero mucho)
 if exist "%CD%\Assets\extra\options.txt" (
     goto :Start
@@ -61,7 +62,8 @@ goto :Start
 :StartGames
 :StartUtilities
 :StartAbout
-
+:StartChannels
+:StartMovies
 cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
@@ -216,8 +218,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -252,8 +253,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -288,8 +288,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -324,8 +323,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.14.31 By OptiJuegos\OptiCraft.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -366,8 +364,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.17.30 By OptiJuegos\OptiCraft.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -402,8 +399,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.18.31 By OptiJuegos\OptiCraft.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -423,8 +419,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.19.52 By OptiJuegos.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/EQ-F0QrwMyVAmJAd31zR_FEBK7NBq-IwcSiA1LQwSBlxCw?download=1
-
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.19.52 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.19.52 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -439,8 +434,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.19.52 By OptiJuegos\OptiCraft.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -475,8 +469,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.20.10 By OptiJuegos\OptiCraft.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 ========================================================================================================================================================
@@ -527,7 +520,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat"
+	"%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -550,8 +543,7 @@ cls
 echo Ejecutando el Software...
 "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -563,7 +555,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat"
+	"%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -586,8 +578,7 @@ cls
 echo Ejecutando el Software...
 "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -599,7 +590,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
+	"%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -622,8 +613,7 @@ cls
 echo Ejecutando el Software...
 "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -635,7 +625,7 @@ cls
 if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat"
+	"%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -658,8 +648,7 @@ cls
 echo Ejecutando el Software...
 "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 ========================================================================================================================================================
@@ -701,7 +690,6 @@ echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p op=Opcion: 
-
 if "%op%"=="1" goto :COD2
 if "%op%"=="2" goto :CupheadLITE
 if "%op%"=="3" goto :Craftsman
@@ -726,9 +714,8 @@ if "%op%"=="21" goto :SM64
 if "%op%"=="22" goto :TheForest
 if "%op%"=="23" goto :YoutubersLife
 if "%op%"=="24" goto :StartGames
-if "%op%"=="" goto :Start
-
-goto :Start
+if "%op%"=="" goto :StartGames
+goto :StartGames
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -762,8 +749,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Call of Duty 2 Optimized\1-Call Of Duty 2 - Normal.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -798,8 +784,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -834,8 +819,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Craftsman MOD PC PORT By OptiJuegos\Craftsman.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -847,7 +831,7 @@ cls
 if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
+    "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -868,10 +852,9 @@ del "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
+"%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -906,8 +889,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -942,8 +924,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado By OptiJuegos\gd_data\GeometryDash.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -955,7 +936,7 @@ cls
 if exist "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV - NORMAL.bat" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV - NORMAL.bat"
+	"%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV - NORMAL.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -976,10 +957,9 @@ del "Downloaded\Compressed\GTA 4 LITE By OptiJuegos.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV - NORMAL.bat"
+"%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV - NORMAL.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -991,7 +971,7 @@ cls
 if exist "%CD%\Downloaded\Games\GTA V LITE V4\1-Grand Theft Auto V - NORMAL.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\GTA V LITE V4\1-Grand Theft Auto V - NORMAL.bat"
+    "%CD%\Downloaded\Games\GTA V LITE V4\1-Grand Theft Auto V - NORMAL.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1012,10 +992,9 @@ del "Downloaded\Compressed\Grand Theft Auto V LITE.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Grand Theft Auto V LITE\1-Grand Theft Auto V - NORMAL.bat"
+"%CD%\Downloaded\Games\Grand Theft Auto V LITE\1-Grand Theft Auto V - NORMAL.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1027,7 +1006,7 @@ cls
 if exist "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello Neighbor.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello Neighbor.bat"
+    "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello Neighbor.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1048,10 +1027,9 @@ del "Downloaded\Compressed\Hello Neighbor Optimizado Y Portable V2.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello Neighbor.bat"
+"%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello Neighbor.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1063,7 +1041,7 @@ cls
 if exist "%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat"
+    "%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1084,10 +1062,9 @@ del "Downloaded\Compressed\Hollow Knight Optimizado.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat"
+"%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1099,7 +1076,7 @@ cls
 if exist "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2.bat"
+    "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1120,10 +1097,9 @@ del "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2.bat"
+"%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1135,7 +1111,7 @@ cls
 if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
+    "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1155,10 +1131,9 @@ del "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
+"%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer 6.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1170,7 +1145,7 @@ cls
 if exist "%CD%\Downloaded\Games\Pro Evolution Soccer 2013\Pro Evolution Soccer 13.bat" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Pro Evolution Soccer 2013\Pro Evolution Soccer 13.bat"
+    "%CD%\Downloaded\Games\Pro Evolution Soccer 2013\Pro Evolution Soccer 13.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1191,10 +1166,9 @@ del "Downloaded\Compressed\Pro Evolution Soccer 2013.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" ""%CD%\Downloaded\Games\Pro Evolution Soccer 2013\Pro Evolution Soccer 13.bat"
+"%CD%\Downloaded\Games\Pro Evolution Soccer 2013\Pro Evolution Soccer 13.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1229,8 +1203,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Pro Evolution Soccer 2017 Optimized\pesdata\PES2017.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1242,7 +1215,7 @@ cls
 if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe"
+    start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
 	exit
 ) else (
     echo Descargando el Software...
@@ -1250,7 +1223,7 @@ if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Plants_vs_Zombies.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Plants vs Zombies.7z?download=true"
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Plants_vs_Zombies.7z" "https://web.archive.org/web/20240507002159/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Plants vs Zombies.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1264,10 +1237,9 @@ cls
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe"
+start "" "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" -changedir
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1303,8 +1275,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridge.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1313,10 +1284,10 @@ exit
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat" (
+if exist "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\portaldata\portal.exe" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
+	start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\portaldata\portal.exe"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1338,10 +1309,9 @@ cls
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\Portal 1.bat"
+start "" "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\portaldata\portal.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1353,7 +1323,7 @@ cls
 if exist "%CD%\Downloaded\Games\OptiZomboid\1-OptiZomboid.bat" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\Games\OptiZomboid\1-OptiZomboid.bat"
+	"%CD%\Downloaded\Games\OptiZomboid\1-OptiZomboid.bat"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1375,10 +1345,9 @@ cls
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\OptiZomboid V4\1-OptiZomboid.bat"
+"%CD%\Downloaded\Games\OptiZomboid V4\1-OptiZomboid.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1413,8 +1382,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 
@@ -1428,7 +1396,8 @@ cls
 if exist "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
+	cd "%CD%\Downloaded\Games\Sonic 1"
+	start "" "Sonic 1.exe"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1436,7 +1405,7 @@ if exist "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Sonic 1.zip" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Sonic 1.zip?download=true"
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Sonic 1.zip" "https://web.archive.org/web/20240507010058/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Sonic 1.zip?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1450,10 +1419,10 @@ cls
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe"
+cd "%CD%\Downloaded\Games\Sonic 1"
+start "" "Sonic 1.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1473,7 +1442,7 @@ if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Super_Mario_64.zip" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Super_Mario_64.zip?download=true"
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Super_Mario_64.zip" "https://web.archive.org/web/20240507010436/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Super_Mario_64.zip?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1489,8 +1458,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1499,10 +1467,10 @@ exit
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat" (
+if exist "%CD%\Downloaded\Games\The Forest Lite V1.0\gamedata\TheForest32.exe" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
+    start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\gamedata\TheForest32.exe"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1523,21 +1491,21 @@ del "Downloaded\Compressed\The Forest Lite V1.0.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\1-The Forest.bat"
+start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\gamedata\TheForest32.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 :YoutubersLife
+cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat" (
+if exist "%CD%\Downloaded\Games\Youtubers Life Optimizado\gamedata\YoutubersLife.exe" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat"
+    start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\gamedata\YoutubersLife.exe"
 	exit
 ) else (
     echo Descargando el Software...
@@ -1558,10 +1526,9 @@ del "Downloaded\Compressed\Youtubers Life Optimizado.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\1-Youtubers Life.bat"
+start "" "%CD%\Downloaded\Games\Youtubers Life Optimizado\gamedata\YoutubersLife.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 ========================================================================================================================================================
@@ -1590,7 +1557,7 @@ if "%op%"=="1" goto :Drivers
 if "%op%"=="2" goto :Temp
 if "%op%"=="3" goto :Runtimes
 if "%op%"=="4" goto :FAQ
-if "%op%"=="5" goto :Start
+if "%op%"=="5" goto :StartUtilities
 if "%op%"=="" goto :Start
 
 goto :Start
@@ -1651,7 +1618,7 @@ cls
 del "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt
 
 :: Descargando el bloc de notas con el FAQ
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\OptiCraft\FAQ\FAQ.txt" https://lozanoalberto228gmailcom-my.sharepoint.com/:t:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Eb3GT04Wp7tBkPjAXdxOYFkBgcrLRWLfbq7b6fKL1iUPKg?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\OptiCraft\FAQ\FAQ.txt" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/FAQ.txt?download=true"
 
 :: Iniciando el NOTEPAD
 start "" "notepad.exe" "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt"
@@ -1676,7 +1643,7 @@ if exist "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Driver_Booster.7z" https://lozanoalberto228gmailcom-my.sharepoint.com/:u:/g/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/ERLufby56YdClj7lkSQnqWoBaoicdH2pDDoYqqyEN9PP_g?download=1
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Driver_Booster.7z" "https://web.archive.org/web/20240319014108/https://lozanoalberto228gmailcom-my.sharepoint.com/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Documents/ProjectsOpti/DriverBooster.7z?ga=1"
 cls
 
 :: Descomprimiendo el Software...
@@ -1692,8 +1659,7 @@ cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe"
 
-:: Ir al menu inicial cuando se cierre el proceso.
-timeout 1 /nobreak
+:: Cerrar proceso
 exit
 
 ========================================================================================================================================================
@@ -1764,7 +1730,7 @@ if exist "%CD%\Assets\ffplay.exe" (
 
 :FFPLAY
 echo Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" "https://web.archive.org/web/20240507225542/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe"
 cls
 goto :TVLOL
 
@@ -1794,7 +1760,7 @@ if "%op%"=="3" goto :TYCPlay
 if "%op%"=="4" goto :TNT
 if "%op%"=="5" goto :Cartoon
 if "%op%"=="6" goto :CustomTV
-if "%op%"=="7" goto :Start
+if "%op%"=="7" goto :StartChannels
 if "%op%"=="" goto :Start
 
 :ESPN
@@ -1879,6 +1845,7 @@ if "%op%"=="4" goto :FNAF
 if "%op%"=="5" goto :WALLE
 if "%op%"=="6" goto :Oppenheimer
 if "%op%"=="7" goto :Mundial
+if "%op%"=="8" goto :StartMovies
 if "%op%"=="9" goto :CustomMOVIE
 if "%op%"=="" goto :Start
 
