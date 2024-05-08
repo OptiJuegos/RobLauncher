@@ -1516,6 +1516,62 @@ if "%op%"=="4" goto :FAQ
 if "%op%"=="5" goto :StartUtilities
 if "%op%"=="" goto :Start
 
+:Drivers
+cls
+
+::Comprobando si el software ya ha sido descargado
+if exist "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Driver_Booster.7z" "https://web.archive.org/web/20240319014108/https://lozanoalberto228gmailcom-my.sharepoint.com/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Documents/ProjectsOpti/DriverBooster.7z?ga=1"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Driver_Booster.7z" -o"%CD%\Downloaded\Utilities"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Driver_Booster.7z"
+cls
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe"
+
+:: Cerrar proceso
+exit
+
+
+:Temp
+cls
+
+:: Borrando Archivos Temporales...
+Del /S /F /Q "%temp%"
+Del /S /F /Q "%SystemDrive%\Windows\Temp\*.*"
+Del /S /F /Q "%SystemDrive%\Windows\Prefetch\*.*"
+
+:: Avisar que se instalo el coso
+cls
+echo.
+echo %LAUNCHER_TEXT%
+echo.
+echo ========================================
+echo -Se han borrado los Archivos Temporales
+echo -Que se encontraban en Temp y Prefetch.
+echo ========================================
+
+timeout 5 /nobreak
+goto :Utilities
+
 
 :Runtimes
 cls
@@ -1576,41 +1632,6 @@ del "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt
 start "" "notepad.exe" "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt"
 
 :: Codigo para ir al menu con las Opciones
-exit
-
-
-:Drivers
-cls
-
-::Comprobando si el software ya ha sido descargado
-if exist "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe" (
-	echo Ejecutando el Software...
-	echo.
-	start "" "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe"
-	exit
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Driver_Booster.7z" "https://web.archive.org/web/20240319014108/https://lozanoalberto228gmailcom-my.sharepoint.com/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Documents/ProjectsOpti/DriverBooster.7z?ga=1"
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Driver_Booster.7z" -o"%CD%\Downloaded\Utilities"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Driver_Booster.7z"
-cls
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe"
-
-:: Cerrar proceso
 exit
 
 
