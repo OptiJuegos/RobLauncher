@@ -697,6 +697,7 @@ goto :StartGames
 
 
 :COD2
+:COD2
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -730,6 +731,7 @@ start "" "%CD%\Downloaded\Games\Call of Duty 2 Optimized\1-Call Of Duty 2 - Norm
 exit
 
 
+:CupheadLITE
 :CupheadLITE
 cls
 
@@ -765,6 +767,7 @@ exit
 
 
 :Craftsman
+:Craftsman
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -779,7 +782,7 @@ if exist "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Craftsman_MOD_PC_PORT_By_OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Craftsman PC Port 1.9.7z?download=true"
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Craftsman PC Port 1.9.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Craftsman PC Port 1.9.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -798,6 +801,7 @@ start "" "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe"
 exit
 
 
+:CS16
 :CS16
 cls
 
@@ -833,6 +837,7 @@ exit
 
 
 :CSGO
+:CSGO
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -866,6 +871,7 @@ start "" "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe"
 exit
 
 
+:GeometryDash
 :GeometryDash
 cls
 
@@ -901,6 +907,7 @@ exit
 
 
 :GtaIV
+:GtaIV
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -934,6 +941,7 @@ echo Ejecutando el Software...
 exit
 
 
+:GTAV
 :GTAV
 cls
 
@@ -969,6 +977,7 @@ exit
 
 
 :HelloNeighbor
+:HelloNeighbor
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -1002,6 +1011,7 @@ echo Ejecutando el Software...
 exit
 
 
+:HollowKnight
 :HollowKnight
 cls
 
@@ -1037,6 +1047,7 @@ exit
 
 
 :L4D2
+:L4D2
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -1071,6 +1082,7 @@ exit
 
 
 :PES6
+:PES6
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -1103,6 +1115,7 @@ echo Ejecutando el Software...
 exit
 
 
+:PES13
 :PES13
 cls
 
@@ -1138,6 +1151,7 @@ exit
 
 
 :PES17
+:PES17
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -1171,6 +1185,7 @@ start "" "%CD%\Downloaded\Games\Pro Evolution Soccer 2017 Optimized\pesdata\PES2
 exit
 
 
+:PVZ
 :PVZ
 cls
 
@@ -1209,6 +1224,7 @@ exit
 
 
 :PolyBridge
+:PolyBridge
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -1243,6 +1259,7 @@ start "" "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridg
 exit
 
 
+:Portal
 :Portal
 cls
 
@@ -1279,6 +1296,7 @@ exit
 
 
 :ProjectZomboid
+:ProjectZomboid
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -1314,6 +1332,7 @@ exit
 
 
 :SH2
+:SH2
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -1347,8 +1366,7 @@ start "" "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat"
 exit
 
 
-
-
+:Sonic
 :Sonic
 cls
 
@@ -1387,6 +1405,7 @@ exit
 
 
 :SM64
+:SM64
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -1422,6 +1441,7 @@ exit
 
 
 :TheForest
+:TheForest
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -1455,6 +1475,7 @@ start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\gamedata\TheForest32.exe"
 exit
 
 
+:YoutubersLife
 :YoutubersLife
 cls
 
@@ -1516,6 +1537,8 @@ if "%op%"=="4" goto :FAQ
 if "%op%"=="5" goto :StartUtilities
 if "%op%"=="" goto :Start
 
+
+:Drivers
 :Drivers
 cls
 
@@ -1552,6 +1575,7 @@ exit
 
 
 :Temp
+:Temp
 cls
 
 :: Borrando Archivos Temporales...
@@ -1573,6 +1597,7 @@ timeout 5 /nobreak
 goto :Utilities
 
 
+:Runtimes
 :Runtimes
 cls
 
@@ -1618,6 +1643,7 @@ timeout 3 /nobreak
 exit
 
 
+:FAQ
 :FAQ
 cls
 
@@ -1739,21 +1765,26 @@ if "%op%"=="7" goto :StartChannels
 if "%op%"=="" goto :Start
 
 :ESPN
+:ESPN
 %FFPLAY% https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:3 -flags low_delay
 goto :StartChannels
 
+:TYC
 :TYC
 %FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3 -flags low_delay
 goto :StartChannels
 
 :TYCPlay
+:TYCPlay
 %FFPLAY% https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8 -flags low_delay
 goto :StartChannels
 
 :TNT
+:TNT
 %FFPLAY% https://edge-live32-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -vst v:3 -flags low_delay
 goto :StartChannels
 
+:Cartoon
 :Cartoon
 %FFPLAY% https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -vst v:3 -flags low_delay
 goto :StartChannels
@@ -1824,29 +1855,36 @@ if "%op%"=="8" goto :CustomMOVIE
 if "%op%"=="" goto :Start
 
 :SMB
+:SMB
 %FFPLAY% https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8
 goto :StartMovies
 
+:ACAPULCO
 :ACAPULCO
 %FFPLAY% "https://archive.org/download/elchavo_201709/El Chavo del 8 - Vacaciones en Acapulco.mp4"
 goto :StartMovies
 
 :FNAF
+:FNAF
 %FFPLAY% https://cache018.peliscdn.online/newhls/b5501eb755e47e473787373877bc3265/EP.0.2.v0.1708598921.720.m3u8
 goto :StartMovies
 
+:WALLE
 :WALLE
 %FFPLAY% https://cache018.peliscdn.online/newhls/1b0a006b686bb395565173659004bb9d/EP.0.1.v0.1708749457.1080.m3u8
 goto :StartMovies
 
 :Oppenheimer
+:Oppenheimer
 %FFPLAY% https://cache017.peliscdn.online/newhls/4c8ab7b7ea8a06df1e7ddceaa7490d9d/EP.0.0.v1.1708613656.720.m3u8
 goto :StartMovies
 
 :Mundial
+:Mundial
 %FFPLAY% https://d2nvs31859zcd8.cloudfront.net/a36dd5d176ef62012c0c_stardetonador_97571900428_7474081598/chunked/highlight-2056245952.m3u8
 goto :StartMovies
 
+:CustomMOVIE
 :CustomMOVIE
 cls
 
