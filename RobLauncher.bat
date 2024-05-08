@@ -1607,8 +1607,7 @@ cls
 echo %LAUNCHER_TEXT%
 echo.
 echo ========================================================
-echo -Se ha instalado Visual C++ 2005-2022!
-echo -
+echo -Se han instalado los Visual C++!
 echo -Si tuviste algun error en la instalacion
 echo -Porfavor comprueba de tener tu Sistema Operativo
 echo -Con las ultimas actualizaciones y Parches de Seguridad.
@@ -1718,6 +1717,13 @@ echo *4.- TNT Sports
 echo *5 - Cartoon Network
 echo *6 - Personalizado
 echo *7 - Volver para Atras
+echo.
+
+:: Advertencia IP
+echo =================================================================================
+echo -Es posible que las transmisiones no funcionen si te encuentras en otro pais
+echo -Que no sea argentina, esto sucede porque los creadores establecieron este limite
+echo =================================================================================
 echo.
 
 :: Codigo para ir al menu con las Opciones
