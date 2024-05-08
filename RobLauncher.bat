@@ -165,20 +165,18 @@ echo ===========================================================================
 echo.
 
 :: Codigo para ir al menu con las Opciones
-set /p op=Opcion: 
-
-if "%op%"=="" goto :OptiCraftBE
-if "%op%"=="1" goto :1.7.3.1
-if "%op%"=="2" goto :1.9.1.0
-if "%op%"=="3" goto :1.12.0
-if "%op%"=="4" goto :1.14.31
-if "%op%"=="5" goto :1.17.30
-if "%op%"=="6" goto :1.18.31
-if "%op%"=="7" goto :1.19.52
-if "%op%"=="8" goto :1.20.10
-if "%op%"=="9" goto :StartBE
-if "%op%"=="" goto :OptiCraftBE
-pause
+set /p opbe=Opcion: 
+if "%opbe%"=="" goto :OptiCraftBE
+if "%opbe%"=="1" goto :1.7.3.1
+if "%opbe%"=="2" goto :1.9.1.0
+if "%opbe%"=="3" goto :1.12.0
+if "%opbe%"=="4" goto :1.14.31
+if "%opbe%"=="5" goto :1.17.30
+if "%opbe%"=="6" goto :1.18.31
+if "%opbe%"=="7" goto :1.19.52
+if "%opbe%"=="8" goto :1.20.10
+if "%opbe%"=="9" goto :StartBE
+if "%opbe%"=="" goto :StartBE
 
 
 :1.7.3.1
@@ -484,16 +482,14 @@ echo ===========================================================================
 echo.
 
 :: Codigo para ir al menu con las Opciones
-set /p op=Opcion: 
-
-if "%op%"=="" goto :OptiCraftJE
-if "%op%"=="1" goto :1.5.2
-if "%op%"=="2" goto :1.8.9
-if "%op%"=="3" goto :1.12.2
-if "%op%"=="4" goto :1.16.5
-if "%op%"=="5" goto :StartJE
-if "%op%"=="" goto :OptiCraftJE
-goto :StartJE
+set /p opje=Opcion: 
+if "%opje%"=="" goto :OptiCraftJE
+if "%opje%"=="1" goto :1.5.2
+if "%opje%"=="2" goto :1.8.9
+if "%opje%"=="3" goto :1.12.2
+if "%opje%"=="4" goto :1.16.5
+if "%opje%"=="5" goto :StartJE
+if "%opje%"=="" goto :OptiCraftJE
 
 :1.5.2
 cls
@@ -667,33 +663,32 @@ echo *24.- Volver para atras.
 echo.
 
 :: Codigo para ir al menu con las Opciones
-set /p op=Opcion: 
-if "%op%"=="1" goto :COD2
-if "%op%"=="2" goto :CupheadLITE
-if "%op%"=="3" goto :Craftsman
-if "%op%"=="4" goto :CS16
-if "%op%"=="5" goto :CSGO
-if "%op%"=="6" goto :GeometryDash
-if "%op%"=="7" goto :GtaIV
-if "%op%"=="8" goto :GtaV
-if "%op%"=="9" goto :HelloNeighbor
-if "%op%"=="10" goto :HollowKnight
-if "%op%"=="11" goto :L4D2
-if "%op%"=="12" goto :PES6
-if "%op%"=="13" goto :PES13
-if "%op%"=="14" goto :PES17
-if "%op%"=="15" goto :PVZ
-if "%op%"=="16" goto :PolyBridge
-if "%op%"=="17" goto :Portal
-if "%op%"=="18" goto :ProjectZomboid
-if "%op%"=="19" goto :SH2
-if "%op%"=="20" goto :Sonic
-if "%op%"=="21" goto :SM64
-if "%op%"=="22" goto :TheForest
-if "%op%"=="23" goto :YoutubersLife
-if "%op%"=="24" goto :StartGames
-if "%op%"=="" goto :StartGames
-goto :StartGames
+set /p opgm=Opcion: 
+if "%opgm%"=="1" goto :COD2
+if "%opgm%"=="2" goto :CupheadLITE
+if "%opgm%"=="3" goto :Craftsman
+if "%opgm%"=="4" goto :CS16
+if "%opgm%"=="5" goto :CSGO
+if "%opgm%"=="6" goto :GeometryDash
+if "%opgm%"=="7" goto :GtaIV
+if "%opgm%"=="8" goto :GtaV
+if "%opgm%"=="9" goto :HelloNeighbor
+if "%opgm%"=="10" goto :HollowKnight
+if "%opgm%"=="11" goto :L4D2
+if "%opgm%"=="12" goto :PES6
+if "%opgm%"=="13" goto :PES13
+if "%opgm%"=="14" goto :PES17
+if "%opgm%"=="15" goto :PVZ
+if "%opgm%"=="16" goto :PolyBridge
+if "%opgm%"=="17" goto :Portal
+if "%opgm%"=="18" goto :ProjectZomboid
+if "%opgm%"=="19" goto :SH2
+if "%opgm%"=="20" goto :Sonic
+if "%opgm%"=="21" goto :SM64
+if "%opgm%"=="22" goto :TheForest
+if "%opgm%"=="23" goto :YoutubersLife
+if "%opgm%"=="24" goto :StartGames
+if "%opgm%"=="" goto :OptiGames
 
 
 :COD2
@@ -1527,15 +1522,15 @@ echo *5.- Volver para atras.
 echo.
 
 :: Codigo para ir al menu con las Opciones
-set /p op=Opcion: 
+set /p oput=Opcion: 
 
 if "%op%"=="" goto :Utilities
-if "%op%"=="1" goto :Drivers
-if "%op%"=="2" goto :Temp
-if "%op%"=="3" goto :Runtimes
-if "%op%"=="4" goto :FAQ
-if "%op%"=="5" goto :StartUtilities
-if "%op%"=="" goto :Start
+if "%oput%"=="1" goto :Drivers
+if "%oput%"=="2" goto :Temp
+if "%oput%"=="3" goto :Runtimes
+if "%oput%"=="4" goto :FAQ
+if "%oput%"=="5" goto :StartUtilities
+if "%oput%"=="" goto :Utilities
 
 
 :Drivers
@@ -1729,6 +1724,7 @@ cls
 goto :TVLOL
 
 :TVLOL
+cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
 echo.
@@ -1753,16 +1749,16 @@ echo ===========================================================================
 echo.
 
 :: Codigo para ir al menu con las Opciones
-set /p op=Opcion: 
+set /p optv=Opcion: 
 
-if "%op%"=="1" goto :ESPN
-if "%op%"=="2" goto :TYC
-if "%op%"=="3" goto :TYCPlay
-if "%op%"=="4" goto :TNT
-if "%op%"=="5" goto :Cartoon
-if "%op%"=="6" goto :CustomTV
-if "%op%"=="7" goto :StartChannels
-if "%op%"=="" goto :Start
+if "%optv%"=="1" goto :ESPN
+if "%optv%"=="2" goto :TYC
+if "%optv%"=="3" goto :TYCPlay
+if "%optv%"=="4" goto :TNT
+if "%optv%"=="5" goto :Cartoon
+if "%optv%"=="6" goto :CustomTV
+if "%optv%"=="7" goto :StartChannels
+if "%optv%"=="" goto :TVLOL
 
 :ESPN
 :ESPN
@@ -1824,6 +1820,7 @@ cls
 goto :MOVIELOL
 
 :MOVIELOL
+cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
 echo.
@@ -1842,17 +1839,17 @@ echo *8 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
-set /p op=Opcion: 
+set /p opmov=Opcion: 
 
-if "%op%"=="1" goto :SMB
-if "%op%"=="2" goto :ACAPULCO
-if "%op%"=="3" goto :FNAF
-if "%op%"=="4" goto :WALLE
-if "%op%"=="5" goto :Oppenheimer
-if "%op%"=="6" goto :Mundial
-if "%op%"=="7" goto :StartMovies
-if "%op%"=="8" goto :CustomMOVIE
-if "%op%"=="" goto :Start
+if "%opmov%"=="1" goto :SMB
+if "%opmov%"=="2" goto :ACAPULCO
+if "%opmov%"=="3" goto :FNAF
+if "%opmov%"=="4" goto :WALLE
+if "%opmov%"=="5" goto :Oppenheimer
+if "%opmov%"=="6" goto :Mundial
+if "%opmov%"=="7" goto :CustomMOVIE
+if "%opmov%"=="8" goto :StartMovies
+if "%opmov%"=="" goto :MOVIELOL
 
 :SMB
 :SMB
