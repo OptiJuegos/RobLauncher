@@ -159,7 +159,7 @@ echo.
 :Seguir
 echo ===============================================================================
 echo -Las versiones superiores a la 1.18.31 incluyen el motor grafico Render Dragon.
-echo -Este motor grafico requiere un dispositivo con DirectX 10 o Superior 
+echo -Este mismo requiere un dispositivo con un soporte a DirectX 10 o Superior 
 echo -Si el juego tiene problemas, porfavor actualiza tu Driver de Video.
 echo ===============================================================================
 echo.
@@ -1577,27 +1577,27 @@ goto :Utilities
 cls
 
 :: Descargando el Visual C++, Net Framework Y DirectX x86
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://web.archive.org/web/20240507020145/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2005_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://web.archive.org/web/20240507020255/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2008_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2010_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2012_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2013_x86.exe
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%CD%\Downloaded\Utilities\Runtimes" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2015_2017_2019_x86.exe
-cls
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020145/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2005_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020255/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2008_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020619/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2010_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020735/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2012_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020704/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2013_x86.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020710/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2015_2017_2019_x86.exe
+
 
 :: Instalando Visual C++ 2015-2017-2019-2022
 echo Instalando Visual C++ 2005
-"%CD%\Downloaded\Utilities\Runtimes\vcredist2005_x86.exe" /q
+"%TEMP%\vcredist2005_x86.exe" /q
 echo Instalando Visual C++ 2008
-"%CD%\DownloadedUtilities\Runtimes\vcredist2008_x86.exe" /q /norestart
+"%TEMP%\vcredist2008_x86.exe" /q /norestart
 echo Instalando Visual C++ 2010
-"%CD%\Downloaded\Utilities\Runtimes\vcredist2010_x86.exe" /install /passive
+"%TEMP%\vcredist2010_x86.exe" /install /passive
 echo Instalando Visual C++ 2012
-"%CD%\DownloadedUtilities\Runtimes\vcredist2012_x86.exe" /install /passive
+"%TEMP%\vcredist2012_x86.exe" /install /passive
 echo Instalando Visual C++ 2013
-"%CD%\Downloaded\Utilities\Runtimes\vcredist2013_x86.exe" /install /passive
+"%TEMP%\vcredist2013_x86.exe" /install /passive
 echo Instalando Visual C++ 2015
-"%CD%\Downloaded\Utilities\Runtimes\vcredist2015_2017_2019_x86.exe" /install /passive
+"%TEMP%\vcredist2015_2017_2019_x86.exe" /install /passive
 
 :: Borrando los archivos Comprimidos
 RD /S /Q "%CD%\Downloaded\Utilities\Runtimes"
@@ -1782,7 +1782,7 @@ if exist "%CD%\Assets\ffplay.exe" (
 
 :FFPLAYMOVIE
 echo Descargando el Software...
-%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe
+%WGET% -q --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://web.archive.org/web/20240507225542/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe
 cls
 goto :MOVIELOL
 
@@ -1808,13 +1808,13 @@ echo.
 set /p op=Opcion: 
 
 if "%op%"=="1" goto :SMB
-if "%op%"=="3" goto :ACAPULCO
-if "%op%"=="4" goto :FNAF
-if "%op%"=="5" goto :WALLE
-if "%op%"=="6" goto :Oppenheimer
-if "%op%"=="7" goto :Mundial
-if "%op%"=="8" goto :StartMovies
-if "%op%"=="9" goto :CustomMOVIE
+if "%op%"=="2" goto :ACAPULCO
+if "%op%"=="3" goto :FNAF
+if "%op%"=="4" goto :WALLE
+if "%op%"=="5" goto :Oppenheimer
+if "%op%"=="6" goto :Mundial
+if "%op%"=="7" goto :StartMovies
+if "%op%"=="8" goto :CustomMOVIE
 if "%op%"=="" goto :Start
 
 :SMB
@@ -1822,11 +1822,7 @@ if "%op%"=="" goto :Start
 goto :StartMovies
 
 :ACAPULCO
-%FFPLAY% https://archive.org/download/elchavo_201709/El%20Chavo%20del%208%20-%20Vacaciones%20en%20Acapulco.mp4
-goto :StartMovies
-
-:ACAPULCO
-%FFPLAY% https://d2nvs31859zcd8.cloudfront.net/98e7c04c7eea92019916_stardetonador_96420261846_1856009047/chunked/index-muted-2GIYT9DRH4.m3u8
+%FFPLAY% "https://archive.org/download/elchavo_201709/El Chavo del 8 - Vacaciones en Acapulco.mp4"
 goto :StartMovies
 
 :FNAF
