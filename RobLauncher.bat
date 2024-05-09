@@ -9,6 +9,7 @@ set WGET="Assets\wget.exe"
 set LAUNCHER_TEXT=*RobLauncher V1.8 FIX - Un launcher para OptiCraft y Demas Proyectos.*
 set LAUNCHER_VER=RobLauncher V1.8 FIX
 
+
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
 
@@ -49,7 +50,6 @@ type nul > "%CD%\Assets\extra\options.txt"
 
 :: Ir al inicio del launcher
 goto :Start
-
 
 :Start
 :StartBE
@@ -104,18 +104,18 @@ echo ===========================================================================
 echo.
 
 :: Codigo para ir al menu con las Opciones
-set /p op=Opcion: 
+set /p opst=Opcion: 
 
-if "%op%"=="" goto :Start
-if "%op%"=="1" goto :OptiCraftBE
-if "%op%"=="2" goto :OptiCraftJE
-if "%op%"=="3" goto :OptiGames
-if "%op%"=="4" goto :Utilities
-if "%op%"=="5" goto :AboutPage
-if "%op%"=="6" goto :Update
-if "%op%"=="7" goto :TV
-if "%op%"=="8" goto :MOVIE
-if "%op%"=="" goto :Start
+if "%opst%"=="" goto :Start
+if "%opst%"=="1" goto :OptiCraftBE
+if "%opst%"=="2" goto :OptiCraftJE
+if "%opst%"=="3" goto :OptiGames
+if "%opst%"=="4" goto :Utilities
+if "%opst%"=="5" goto :AboutPage
+if "%opst%"=="6" goto :Update
+if "%opst%"=="7" goto :TV
+if "%opst%"=="8" goto :MOVIE
+if "%opst%"=="" goto :Start
 
 
 :OptiCraftBE
@@ -166,7 +166,6 @@ echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p opbe=Opcion: 
-if "%opbe%"=="" goto :OptiCraftBE
 if "%opbe%"=="1" goto :1.7.3.1
 if "%opbe%"=="2" goto :1.9.1.0
 if "%opbe%"=="3" goto :1.12.0
@@ -176,7 +175,7 @@ if "%opbe%"=="6" goto :1.18.31
 if "%opbe%"=="7" goto :1.19.52
 if "%opbe%"=="8" goto :1.20.10
 if "%opbe%"=="9" goto :StartBE
-if "%opbe%"=="" goto :StartBE
+if "%opbe%"=="" goto :OptiCraftBE
 
 
 :1.7.3.1
@@ -251,10 +250,10 @@ exit
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe" (
+if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft-1.12.0.exe" (
 	echo Ejecutando el Software...
 	echo.
-	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
+	start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft-1.12.0.exe"
 	exit
 ) else (
     echo Descargando el Software...
@@ -275,7 +274,7 @@ del "Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z"
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft.exe"
+start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.12.0 By OptiJuegos\OptiCraft-1.12.0.exe"
 
 :: Cerrar proceso
 exit
@@ -1524,7 +1523,6 @@ echo.
 :: Codigo para ir al menu con las Opciones
 set /p oput=Opcion: 
 
-if "%op%"=="" goto :Utilities
 if "%oput%"=="1" goto :Drivers
 if "%oput%"=="2" goto :Temp
 if "%oput%"=="3" goto :Runtimes
