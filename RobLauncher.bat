@@ -1,14 +1,13 @@
 @echo off
 setlocal enabledelayedexpansion
-
-CD /D "%~dp0"
+setlocal enableextensions
+cd /d "%~dp0"
 
 :: Establecer las Variables de Entorno...
 set FFPLAY="Assets\ffplay.exe"
 set WGET="Assets\wget.exe"
 set LAUNCHER_TEXT=*RobLauncher V1.8 FIX - Un launcher para OptiCraft y Demas Proyectos.*
 set LAUNCHER_VER=RobLauncher V1.8 FIX
-
 
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
@@ -22,6 +21,8 @@ mkdir "Downloaded\OptiCraft" >nul 2>&1
 mkdir "Downloaded\OptiCraft\FAQ" >nul 2>&1
 mkdir "Downloaded\Utilities" >nul 2>&1
 
+
+:Options
 :Options
 :: Comprobar si existe el archivo Options.txt, si no ir a un mini tutorial para los TOPOS (chiste los quiero mucho)
 if exist "%CD%\Assets\extra\options.txt" (
@@ -31,6 +32,7 @@ if exist "%CD%\Assets\extra\options.txt" (
 )
 
 
+:Tutorial
 :Tutorial
 cls
 
@@ -85,7 +87,9 @@ goto :OldOSWarning
 goto :StartContinue
 )
 
+
 :: Advertencia Windows antiguos
+:OldOSWarning
 :OldOSWarning
 echo ======================================================================================
 echo -Tu Windows es bastante antiguo, lo que puede generar multiples fallas con el Launcher
@@ -93,9 +97,10 @@ echo -Te recomendamos que, si es posible, actualices a un Windows mas reciente.
 echo ======================================================================================
 echo.
 
-:StartContinue
 
 :: Advertencia Links
+:StartContinue
+:StartContinue
 echo ======================================================================================
 echo -Si los proyectos no te descargan, es posible que el sitio que los tiene este caido
 echo -Si esto te sucede, porfavor intenta descargar los juegos mas tarde
@@ -119,6 +124,7 @@ if "%opst%"=="" goto :Start
 
 
 :OptiCraftBE
+:OptiCraftBE
 cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
@@ -127,15 +133,16 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- OptiCraft Bedrock 1.7.3.1 (25 MB)
-echo *2.- OptiCraft Bedrock 1.9.1.0 (66 MB)
-echo *3.- OptiCraft Bedrock 1.12.0 (92 MB)
-echo *4.- OptiCraft Bedrock 1.14.31 (87 MB)
-echo *5.- OptiCraft Bedrock 1.17.30 (100 MB)
-echo *6.- OptiCraft Bedrock 1.18.31 (116 MB)
-echo *7.- OptiCraft Bedrock 1.19.52 (172 MB)
-echo *8.- OptiCraft Bedrock 1.20.10 (175 MB)
-echo *9.- Volver para atras.
+echo *1.- Consultas frecuentes de OptiCraft (32 KB)
+echo *2.- OptiCraft Bedrock 1.7.3.1 (25 MB)
+echo *3.- OptiCraft Bedrock 1.9.1.0 (66 MB)
+echo *4.- OptiCraft Bedrock 1.12.0 (92 MB)
+echo *5.- OptiCraft Bedrock 1.14.31 (87 MB)
+echo *6.- OptiCraft Bedrock 1.17.30 (100 MB)
+echo *7.- OptiCraft Bedrock 1.18.31 (116 MB)
+echo *8.- OptiCraft Bedrock 1.19.52 (172 MB)
+echo *9.- OptiCraft Bedrock 1.20.10 (175 MB)
+echo *10.- Volver para atras.
 echo.
 
 :: Comprobando si el sistema es Windows 7
@@ -146,7 +153,9 @@ goto :W7Warning
 goto :Seguir
 )
 
+
 :: Advertencia Windows 7
+:W7Warning
 :W7Warning
 echo ==============================================================================
 echo -OptiCraft Bedrock requiere ciertas actualizaciones y dependencias que Windows
@@ -155,7 +164,9 @@ echo -Porfavor ve al apartado de Utilidades y instala todas las cosas de ahi (C+
 echo ==============================================================================
 echo.
 
+
 :: Aviso Render dragon
+:Seguir
 :Seguir
 echo ===============================================================================
 echo -Las versiones superiores a la 1.18.31 incluyen el motor grafico Render Dragon.
@@ -166,18 +177,37 @@ echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p opbe=Opcion: 
-if "%opbe%"=="1" goto :1.7.3.1
-if "%opbe%"=="2" goto :1.9.1.0
-if "%opbe%"=="3" goto :1.12.0
-if "%opbe%"=="4" goto :1.14.31
-if "%opbe%"=="5" goto :1.17.30
-if "%opbe%"=="6" goto :1.18.31
-if "%opbe%"=="7" goto :1.19.52
-if "%opbe%"=="8" goto :1.20.10
-if "%opbe%"=="9" goto :StartBE
+if "%oput%"=="1" goto :FAQ
+if "%opbe%"=="2" goto :1.7.3.1
+if "%opbe%"=="3" goto :1.9.1.0
+if "%opbe%"=="4" goto :1.12.0
+if "%opbe%"=="5" goto :1.14.31
+if "%opbe%"=="6" goto :1.17.30
+if "%opbe%"=="7" goto :1.18.31
+if "%opbe%"=="8" goto :1.19.52
+if "%opbe%"=="9" goto :1.20.10
+if "%opbe%"=="10" goto :StartBE
 if "%opbe%"=="" goto :OptiCraftBE
 
 
+:FAQ
+:FAQ
+cls
+
+:: Borrando las preguntas frecuentes Anteriores
+del "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt"
+
+:: Descargando el bloc de notas con el FAQ
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\OptiCraft\FAQ\FAQ.txt" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/FAQ.txt?download=true"
+
+:: Iniciando el NOTEPAD
+notepad.exe "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt"
+
+:: Codigo para ir al menu con las Opciones
+exit
+
+
+:1.7.3.1
 :1.7.3.1
 cls
 
@@ -193,7 +223,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.7.3.1 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.7.3.1 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.7.3.1 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.7.3.1 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -213,6 +243,7 @@ exit
 
 
 :1.9.1.0
+:1.9.1.0
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -227,7 +258,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.9.1.0 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.9.1.0 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.9.1.0 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.9.1.0 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -247,6 +278,7 @@ exit
 
 
 :1.12.0
+:1.12.0
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -261,7 +293,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.1
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.12.0 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.12.0 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -281,6 +313,7 @@ exit
 
 
 :1.14.31
+:1.14.31
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -295,7 +328,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.14.31 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.14.31 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.14.31 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.14.31 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -314,11 +347,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.
 exit
 
 
-:1.16.12
-:: Al final no la añadi porque esta version usa OpenGL 4.1 y como todos tienen una Intel HD Graphics que no lo soporta no les va a abrir
-:: Asi que la descarto.
-
-
+:1.17.30
 :1.17.30
 cls
 
@@ -334,7 +363,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.17.30 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.17.30 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.17.30 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.17.30 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -354,6 +383,7 @@ exit
 
 
 :1.18.31
+:1.18.31
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -368,7 +398,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.18.31 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.18.31 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.18.31 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.18.31 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -388,6 +418,7 @@ exit
 
 
 :1.19.52
+:1.19.52
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -402,7 +433,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.19.52 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.19.52 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.19.52 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.19.52 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -422,6 +453,7 @@ exit
 
 
 :1.20.10
+:1.20.10
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -436,7 +468,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft 1.20.10 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.20.10 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.20.10 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.20.10 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -455,6 +487,7 @@ start "" "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.
 exit
 
 
+:OptiCraftJE
 :OptiCraftJE
 cls
 
@@ -490,6 +523,8 @@ if "%opje%"=="4" goto :1.16.5
 if "%opje%"=="5" goto :StartJE
 if "%opje%"=="" goto :OptiCraftJE
 
+
+:1.5.2
 :1.5.2
 cls
 
@@ -505,7 +540,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.5.2.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.5.2.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -525,6 +560,7 @@ exit
 
 
 :1.8.9
+:1.8.9
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -539,7 +575,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.8.9.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.8.9.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -559,6 +595,7 @@ exit
 
 
 :1.12.2
+:1.12.2
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -573,7 +610,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.12.2.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.12.2.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -593,6 +630,7 @@ exit
 
 
 :1.16.5
+:1.16.5
 cls
 
 ::Comprobando si el Software ya ha sido descargado
@@ -607,7 +645,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z" https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.16.5.7z?download=true
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z" https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.16.5.7z?download=true
 cls
 
 :: Descomprimiendo el Software...
@@ -626,6 +664,7 @@ echo Ejecutando el Software...
 exit
 
 
+:OptiGames
 :OptiGames
 cls
 
@@ -1132,8 +1171,6 @@ cls
 "%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Pro Evolution Soccer 2013.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
-:: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Pro Evolution Soccer 2013.7z"
 
 :: Ejecutando el Software...
 cls
@@ -1505,6 +1542,7 @@ exit
 
 
 :Utilities
+:Utilities
 cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
@@ -1515,18 +1553,17 @@ echo.
 :: Opciones para seleccionar
 echo *1.- Actualizar Drivers con Driver Booster.
 echo *2.- Borrar archivos Temporales
-echo *3.- Instalar dependencias para programas (Visual C++)
-echo *4.- Preguntas frecuentes de OptiCraft.
-echo *5.- Volver para atras.
+echo *3.- Instalar dependencias para programas (DirectX - Visual C++)
+echo *4.- Optimizar Windows
+echo *5.- Volver para atras. 
 echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p oput=Opcion: 
-
 if "%oput%"=="1" goto :Drivers
 if "%oput%"=="2" goto :Temp
 if "%oput%"=="3" goto :Runtimes
-if "%oput%"=="4" goto :FAQ
+if "%oput%"=="4" goto :OPC
 if "%oput%"=="5" goto :StartUtilities
 if "%oput%"=="" goto :Utilities
 
@@ -1547,7 +1584,7 @@ if exist "%CD%\Downloaded\Utilities\DriverBooster\DriverBoosterPortable.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\Compressed\Driver_Booster.7z" "https://web.archive.org/web/20240319014108/https://lozanoalberto228gmailcom-my.sharepoint.com/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Documents/ProjectsOpti/DriverBooster.7z?ga=1"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Driver_Booster.7z" "https://web.archive.org/web/20240319014108/https://lozanoalberto228gmailcom-my.sharepoint.com/personal/dea_lozanoalberto228gmailcom_onmicrosoft_com/Documents/ProjectsOpti/DriverBooster.7z?ga=1"
 cls
 
 :: Descomprimiendo el Software...
@@ -1572,9 +1609,9 @@ exit
 cls
 
 :: Borrando Archivos Temporales...
-Del /S /F /Q "%temp%"
-Del /S /F /Q "%SystemDrive%\Windows\Temp\*.*"
-Del /S /F /Q "%SystemDrive%\Windows\Prefetch\*.*"
+del /S /F /Q "%temp%\*.*"
+del /S /F /Q "%SystemDrive%\Windows\Temp\*.*"
+del /S /F /Q "%SystemDrive%\Windows\Prefetch\*.*"
 
 :: Avisar que se instalo el coso
 cls
@@ -1595,37 +1632,39 @@ goto :Utilities
 cls
 
 :: Descargando el Visual C++, Net Framework Y DirectX x86
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020145/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2005_x86.exe
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020255/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2008_x86.exe
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020619/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2010_x86.exe
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020735/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2012_x86.exe
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020704/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2013_x86.exe
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" https://web.archive.org/web/20240507020710/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2015_2017_2019_x86.exe
-
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240507020145/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2005_x86.exe"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240507020255/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2008_x86.exe"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240507020619/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2010_x86.exe"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240507020735/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2012_x86.exe"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240507020704/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2013_x86.exe"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240507020710/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2015_2017_2019_x86.exe"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240420232338/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/DirectX.exe?download=true"
 
 :: Instalando Visual C++ 2015-2017-2019-2022
-echo Instalando Visual C++ 2005
+echo Instalando Visual C++ 2005...
 "%TEMP%\vcredist2005_x86.exe" /q
-echo Instalando Visual C++ 2008
+echo Instalando Visual C++ 2008...
 "%TEMP%\vcredist2008_x86.exe" /q /norestart
-echo Instalando Visual C++ 2010
+echo Instalando Visual C++ 2010...
 "%TEMP%\vcredist2010_x86.exe" /install /passive
-echo Instalando Visual C++ 2012
+echo Instalando Visual C++ 2012...
 "%TEMP%\vcredist2012_x86.exe" /install /passive
-echo Instalando Visual C++ 2013
+echo Instalando Visual C++ 2013...
 "%TEMP%\vcredist2013_x86.exe" /install /passive
-echo Instalando Visual C++ 2015
+echo Instalando Visual C++ 2015...
 "%TEMP%\vcredist2015_2017_2019_x86.exe" /install /passive
+echo Instalando DirectX
+"%TEMP%\DirectX.exe" /install /passive
 
 :: Borrando los archivos Comprimidos
-RD /S /Q "%CD%\Downloaded\Utilities\Runtimes"
+rd /s /q "%TEMP%"
 
 :: Avisar que se instalo el coso
 cls
 echo %LAUNCHER_TEXT%
 echo.
 echo ========================================================
-echo -Se han instalado los Visual C++!
+echo -Se han instalado los Visual C++ y DirectX!
 echo -Si tuviste algun error en la instalacion
 echo -Porfavor comprueba de tener tu Sistema Operativo
 echo -Con las ultimas actualizaciones y Parches de Seguridad.
@@ -1636,23 +1675,127 @@ timeout 3 /nobreak
 exit
 
 
-:FAQ
-:FAQ
+:OPC
+:OPC
 cls
 
-:: Borrando las preguntas frecuentes Anteriores
-del "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt
+:: BatchGotAdmin
+REM  --> Check for permissions
+    IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
+>nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
+) ELSE (
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+)
 
-:: Descargando el bloc de notas con el FAQ
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3  -O "Downloaded\OptiCraft\FAQ\FAQ.txt" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/FAQ.txt?download=true"
+REM --> If error flag set, we do not have admin.
+if '%errorlevel%' NEQ '0' (
+    goto UACPrompt
+) else ( goto script )
 
-:: Iniciando el NOTEPAD
-start "" "notepad.exe" "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt"
 
-:: Codigo para ir al menu con las Opciones
+:UACPrompt
+:UACPrompt
+cls
+echo.
+echo ------------------------------------------------------
+echo                   Optimizador
+echo ------------------------------------------------------
+echo.
+echo El optimizador requiere privilegios de administrador
+echo Para funcionar correctamente. Se cerrara el Launcher
+echo.
+echo ------------------------------------------------------
+echo.
+pause
 exit
 
 
+:script
+:script
+
+:: Punto de restauracion
+"powershell.exe" -Command "Checkpoint-Computer -Description 'Restauracion Optimizador'"
+
+:: Optimizaciones bcdedit
+bcdedit /set useplatformtick yes >nul 2>&1
+bcdedit /set disabledynamictick yes >nul 2>&1
+
+:: Deshabilitando Telemetria
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v "AllowTelemetry" /t REG_DWORD /d 0 /f
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Office\Common\ClientTelemetry" /v "DisableTelemetry" /t REG_DWORD /d 1 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat" /v "AITEnable" /t REG_DWORD /d 0 /f
+
+:: Deshabilitando Servicios
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DiagTrack" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\diagnosticshub.standardcollector.service" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\diagsvc" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DPS" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FontCache" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FontCache3.0.0.0" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MapsBroker" /v "Start" /t REG_DWORD /d 3 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PcaSvc" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ShellHWDetection" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SgrmBroker" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ssh-agent" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WSearch" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdiServiceHost" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdiSystemHost" /v "Start" /t REG_DWORD /d 4 /f
+
+:: Optimizando CPU
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization" /v "MinVmVersionForCpuBasedMitigations" /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "FeatureSettings" /t REG_DWORD /d 1 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "FeatureSettingsOverride" /t REG_DWORD /d 3 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "FeatureSettingsOverrideMask" /t REG_DWORD /d 3 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power" /v "FeatureSettings" /t REG_DWORD /d 0 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions" /v "CpuPriorityClass" /t REG_DWORD /d 5 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MsMpEng.exe\PerfOptions" /v "CpuPriorityClass" /t REG_DWORD /d 1 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ShellExperienceHost.exe\PerfOptions" /v "CpuPriorityClass" /t REG_DWORD /d 5 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\smss.exe\PerfOptions" /v "CpuPriorityClass" /t REG_DWORD /d 5 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winlogon.exe\PerfOptions" /v "CpuPriorityClass" /t REG_DWORD /d 5 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe\PerfOptions" /v "CpuPriorityClass" /t REG_DWORD /d 5 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cmd.exe\PerfOptions" /v "CpuPriorityClass" /t REG_DWORD /d 5 /f
+
+:: Optimizando RAM
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v "AutoEndTasks" /t REG_SZ /d "1" /f
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v "HungAppTimeout" /t REG_SZ /d "100" /f
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v "MenuShowDelay" /t REG_SZ /d "0" /f
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v "WaitToKillAppTimeout" /t REG_SZ /d "300" /f
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v "LowLevelHooksTimeout" /t REG_SZ /d "1000" /f
+reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer" /v "AlwaysUnloadDll" /t REG_DWORD /d 1 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control" /v "SvcHostSplitThresholdInKB" /t REG_DWORD /d 1024000 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control" /v "WaitToKillServiceTimeout" /t REG_SZ /d "300" /
+reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager" /v "LargeSystemCache" /t REG_DWORD /d 1 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" /v "MaxCmds" /t REG_DWORD /d 100 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" /v "MaxThreads" /t REG_DWORD /d 100 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" /v "MaxCollectionCount" /t REG_DWORD /d 32 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /v "SystemResponsiveness" /t REG_DWORD /d 0 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /v "NetworkThrottlingIndex" /t REG_DWORD /d 4294967295 /f
+
+:: Optimizando Grafica
+reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "EnableTransparency" /t REG_DWORD /d 0 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Affinity" /t REG_DWORD /d 0 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Background Only" /t REG_SZ /d "False" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Clock Rate" /t REG_DWORD /d 10000 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "GPU Priority" /t REG_DWORD /d 8 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Priority" /t REG_DWORD /d 6 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Scheduling Category" /t REG_SZ /d "High" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "SFIO Priority" /t REG_SZ /d "High" /f
+
+cls
+echo --------------------------------------------------
+echo            Optimizacion completada!
+echo --------------------------------------------------
+echo.
+echo Tu sistema operativo fue optimizado correctamente!	  
+echo Porfavor reinicia tu pc para notar el cambio.
+echo.
+echo --------------------------------------------------
+timeout /t 3 /nobreak
+exit
+
+
+:AboutPage
 :AboutPage
 cls
 
@@ -1674,6 +1817,7 @@ pause
 goto :StartAbout
 
 
+:Update
 :Update
 cls
 
@@ -1706,6 +1850,7 @@ timeout /t 1 /nobreak
 
 
 :TV
+:TV
 cls
 
 :: Comprobando si esta FFPLAY
@@ -1715,12 +1860,16 @@ if exist "%CD%\Assets\ffplay.exe" (
     goto :FFPLAY
 )
 
+
+:FFPLAY
 :FFPLAY
 echo Descargando el Software...
 %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" "https://web.archive.org/web/20240507225542/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe"
 cls
 goto :TVLOL
 
+
+:TVLOL
 :TVLOL
 cls
 
@@ -1758,31 +1907,38 @@ if "%optv%"=="6" goto :CustomTV
 if "%optv%"=="7" goto :StartChannels
 if "%optv%"=="" goto :TVLOL
 
+
 :ESPN
 :ESPN
 %FFPLAY% https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:3 -flags low_delay
 goto :StartChannels
+
 
 :TYC
 :TYC
 %FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3 -flags low_delay
 goto :StartChannels
 
+
 :TYCPlay
 :TYCPlay
 %FFPLAY% https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8 -flags low_delay
 goto :StartChannels
+
 
 :TNT
 :TNT
 %FFPLAY% https://edge-live32-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -vst v:3 -flags low_delay
 goto :StartChannels
 
+
 :Cartoon
 :Cartoon
 %FFPLAY% https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -vst v:3 -flags low_delay
 goto :StartChannels
 
+
+:CustomTV
 :CustomTV
 cls
 
@@ -1802,6 +1958,7 @@ goto :Start
 
 
 :MOVIE
+:MOVIE
 cls
 
 :: Comprobando si esta FFPLAY
@@ -1811,12 +1968,16 @@ if exist "%CD%\Assets\ffplay.exe" (
     goto :FFPLAYMOVIE
 )
 
+
+:FFPLAYMOVIE
 :FFPLAYMOVIE
 echo Descargando el Software...
 %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://web.archive.org/web/20240507225542/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe
 cls
 goto :MOVIELOL
 
+
+:MOVIELOL
 :MOVIELOL
 cls
 
@@ -1849,35 +2010,42 @@ if "%opmov%"=="7" goto :CustomMOVIE
 if "%opmov%"=="8" goto :StartMovies
 if "%opmov%"=="" goto :MOVIELOL
 
+
 :SMB
 :SMB
 %FFPLAY% https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8
 goto :StartMovies
+
 
 :ACAPULCO
 :ACAPULCO
 %FFPLAY% "https://archive.org/download/elchavo_201709/El Chavo del 8 - Vacaciones en Acapulco.mp4"
 goto :StartMovies
 
+
 :FNAF
 :FNAF
 %FFPLAY% https://cache018.peliscdn.online/newhls/b5501eb755e47e473787373877bc3265/EP.0.2.v0.1708598921.720.m3u8
 goto :StartMovies
+
 
 :WALLE
 :WALLE
 %FFPLAY% https://cache018.peliscdn.online/newhls/1b0a006b686bb395565173659004bb9d/EP.0.1.v0.1708749457.1080.m3u8
 goto :StartMovies
 
+
 :Oppenheimer
 :Oppenheimer
 %FFPLAY% https://cache017.peliscdn.online/newhls/4c8ab7b7ea8a06df1e7ddceaa7490d9d/EP.0.0.v1.1708613656.720.m3u8
 goto :StartMovies
 
+
 :Mundial
 :Mundial
 %FFPLAY% https://d2nvs31859zcd8.cloudfront.net/a36dd5d176ef62012c0c_stardetonador_97571900428_7474081598/chunked/highlight-2056245952.m3u8
 goto :StartMovies
+
 
 :CustomMOVIE
 :CustomMOVIE
