@@ -101,11 +101,10 @@ echo.
 :: Advertencia Links
 :StartContinue
 :StartContinue
-echo ======================================================================================
-echo -Si los proyectos no te descargan, es posible que el sitio que los tiene este caido
-echo -Si esto te sucede, porfavor intenta descargar los juegos mas tarde
-echo -Tambien, te recomiendo actualizar el launcher frecuentemente para evitar fallos
-echo ======================================================================================
+echo ===========================================================================
+echo -Te recomiendo actualizar frecuentemente el programa para corregir errores.
+echo -Puedes hacerlo desde el apartado "Actualizar el Launcher"
+echo ===========================================================================
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -990,20 +989,20 @@ if exist "%CD%\Downloaded\Games\GTA V LITE V4\1-Grand Theft Auto V - NORMAL.bat"
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Grand Theft Auto V LITE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/GTA V LITE V4.zip?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GTA V LITE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/GTA V LITE V4.zip?download=true"
 cls
 
 :: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Grand Theft Auto V LITE.7z" -o"%CD%\Downloaded\Games"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\GTA V LITE.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Grand Theft Auto V LITE.7z"
+del "Downloaded\Compressed\GTA V LITE.7z"
 
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-"%CD%\Downloaded\Games\Grand Theft Auto V LITE\1-Grand Theft Auto V - NORMAL.bat"
+"%CD%\Downloaded\Games\GTA V LITE V4\1-Grand Theft Auto V - NORMAL.bat"
 
 :: Cerrar proceso
 exit
@@ -1942,16 +1941,16 @@ goto :StartChannels
 :CustomTV
 cls
 
-echo Establecer link personalizado
+echo Establecer video personalizado
 echo.
 
-set /p URL=URL del video: 
+set /p URL=Ruta o link del video: 
 set /p DECRYPTION_KEY=Clave de desencriptacion (dejar en blanco si no hay alguna):
 
 IF "%DECRYPTION_KEY%"=="" (
-    %FFPLAY% %URL%
+    %FFPLAY% "%URL%"
 ) ELSE (
-    %FFPLAY% %URL% -cenc_decryption_key %DECRYPTION_KEY%
+    %FFPLAY% "%URL%" -cenc_decryption_key %DECRYPTION_KEY%
 )
 
 goto :Start
@@ -2051,11 +2050,11 @@ goto :StartMovies
 :CustomMOVIE
 cls
 
-echo Establecer link personalizado
+echo Establecer video personalizado
 echo.
 
-set /p URL=URL del video:
+set /p URL=Ruta o link del video: 
 
-%FFPLAY% %URL%
+%FFPLAY% "%URL%"
 
 goto :StartMovies
