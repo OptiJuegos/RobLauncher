@@ -672,30 +672,29 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- 60! Seconds - (384 MB)		*25.- PES 17 - (684 MB)
-echo *2 - A Hat In Time - (1.7 GB)		*26.- Plants vs Zombies - (684 MB
-echo *3.- Assassin's Creed - (25 MB)         *27.- Poly Bridge - (684 MB)	
-echo *4.- Bad Piggies - (139 MB)             *28.- Portal - (684 MB)     
-echo *5.- Bully - (1.1 GB)                   *29.- Project Zomboid - (684 MB)     
-echo *6.- Call of Duty 2 - (172 MB)		*30.- Silent Hill 2 - (684 MB)
-echo *7.- Call Of Duty 4 - (11.3 GB)	        *31.- Sonic 1 - (684 MB)        
-echo *8.- Counter Strike 1.6 - (44.7 GB)     *32.- Super Mario 64 - (684 MB)  
-echo *9.- Counter Strike GO - (1.8 GB)       *33.- Tetris - (684 MB)
-echo *10.- Cuphead - (1.8 GB) 	        *34.- The Forest - (684 MB)
-echo *11.- Dark Souls - (936 MB)		*35.- Unturned
-echo *12.- Far Cry 1 - (1.8 GB)	        *36.- Youtubers Life
-echo *13.- Getting Over it - (1.1 GB)        *37.- Volver para atras.               
-echo *14.- Geometry Dash - (3.8 GB)                 
-echo *15.- GTA IV- (4.0 GB)                 
-echo *16.- GTA V - (19 MB)       
-echo *17.- Half Life - (77 MB)	
-echo *18.- Hello Neighbor - (512 MB)		
-echo *19.- Hollow Knight - (315 MB)       
-echo *20.- Left 4 Dead 2 - (780 MB)
-echo *21.- Limbo - (780 MB)			
-echo *22.- Outlast - (33 MB)		
-echo *23.- PES 6 - (15 MB)     
-echo *24.- PES 13 - (1.1 GB)          
+echo *1.- 60! Seconds - (384 MB)		*25.- PES 17 - (4.4 GB)
+echo *2 - A Hat In Time - (2.8 GB)		*26.- Plants vs Zombies - (19 MB)
+echo *3.- Assassin's Creed - (3.6 GB)        *27.- Poly Bridge - (70 MB)	
+echo *4.- Bad Piggies - (30 MB)              *28.- Portal - (521 MB)     
+echo *5.- Bully - (2.1 GB)                   *29.- Project Zomboid - (307 MB)     
+echo *6.- Call of Duty 2 - (3.5 GB)		*30.- Silent Hill 2 - (703 MB)
+echo *7.- Call Of Duty 4 - (2.8 GB)	        *31.- Sonic 1 - (32 MB)        
+echo *8.- Counter Strike 1.6 - (155 MB)      *32.- Super Mario 64 - (15 MB)  
+echo *9.- Counter Strike GO - (1.1 GB)       *33.- Tetris - (871 KB)
+echo *10.- Cuphead - (1.8 GB) 	        *34.- The Forest - (1.0 GB)
+echo *11.- Dark Souls - (3.5 GB)		*35.- Unturned - (20 MB)
+echo *12.- Far Cry 1 - (1.9 GB)	        *36.- Youtubers Life - (684 MB)
+echo *13.- Getting Over it - (481 MB)        *37.- Volver para atras.               
+echo *14.- Geometry Dash - (172 MB)                 
+echo *15.- GTA IV- (11.3 GB)                 
+echo *16.- GTA V - (44.4 GB)       
+echo *17.- Half Life - (142 MB)	
+echo *18.- Hello Neighbor - (1.5 GB)       
+echo *20.- Left 4 Dead 2 - (1.8 GB)
+echo *21.- Limbo - (74 MB)			
+echo *22.- Outlast - (2.3 GB)		
+echo *23.- PES 6 - (1.1 GB)     
+echo *24.- PES 13 - (3.8 GB)          
 echo.
 
 :: Codigo para ir al menu con las Opciones
