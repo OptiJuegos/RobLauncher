@@ -672,29 +672,30 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- 60! Seconds - (384 MB)		*25.- PES 17 - (4.4 GB)
-echo *2 - A Hat In Time - (2.8 GB)		*26.- Plants vs Zombies - (19 MB)
-echo *3.- Assassin's Creed - (3.6 GB)        *27.- Poly Bridge - (70 MB)	
-echo *4.- Bad Piggies - (30 MB)              *28.- Portal - (521 MB)     
-echo *5.- Bully - (2.1 GB)                   *29.- Project Zomboid - (307 MB)     
-echo *6.- Call of Duty 2 - (3.5 GB)		*30.- Silent Hill 2 - (703 MB)
-echo *7.- Call Of Duty 4 - (2.8 GB)	        *31.- Sonic 1 - (32 MB)        
-echo *8.- Counter Strike 1.6 - (155 MB)      *32.- Super Mario 64 - (15 MB)  
-echo *9.- Counter Strike GO - (1.1 GB)       *33.- Tetris - (871 KB)
-echo *10.- Cuphead - (1.8 GB) 	        *34.- The Forest - (1.0 GB)
-echo *11.- Dark Souls - (3.5 GB)		*35.- Unturned - (20 MB)
-echo *12.- Far Cry 1 - (1.9 GB)	        *36.- Youtubers Life - (684 MB)
-echo *13.- Getting Over it - (481 MB)        *37.- Volver para atras.               
-echo *14.- Geometry Dash - (172 MB)                 
-echo *15.- GTA IV- (11.3 GB)                 
-echo *16.- GTA V - (44.4 GB)       
-echo *17.- Half Life - (142 MB)	
-echo *18.- Hello Neighbor - (1.5 GB)       
-echo *20.- Left 4 Dead 2 - (1.8 GB)
-echo *21.- Limbo - (74 MB)			
-echo *22.- Outlast - (2.3 GB)		
-echo *23.- PES 6 - (1.1 GB)     
-echo *24.- PES 13 - (3.8 GB)          
+echo *1.- 60! Seconds - (384 MB)		*25.- PES 13 - (3.8 GB)
+echo *2 - A Hat In Time - (2.8 GB)		*26.- PES 17 - (4.0 GB)
+echo *3.- Assassin's Creed - (3.6 GB)        *27.- Plants vs Zombies - (25 MB)	
+echo *4.- Bad Piggies - (30 MB)              *28.- Poly Bridge - (70 MB)     
+echo *5.- Bully - (2.1 GB)                   *29.- Portal - (521 MB)     
+echo *6.- Call of Duty 2 - (3.5 GB)		*30.- Project Zomboid - (307 MB)
+echo *7.- Call Of Duty 4 - (2.8 GB)	        *31.- Silent Hill 2 - (703 MB)        
+echo *8.- Counter Strike 1.6 - (155 MB)      *32.- Sonic 1 - (32 MB)  
+echo *9.- Counter Strike GO - (1.1 GB)       *33.- Super Mario 64 - (15 MB)
+echo *10.- Craftsman PC - (25 MB)            *34.- Tetris - (871 KB)
+echo *11.- Cuphead - (1.8 GB) 	        *35.- The Forest - (1.0 GB)
+echo *12.- Dark Souls - (3.5 GB)		*36.- Unturned - (20 MB)
+echo *13.- Far Cry 1 - (1.9 GB)	        *37.- Youtubers Life - (684 MB)
+echo *14.- Getting Over it - (481 MB)        *38.- Volver para atras.                  
+echo *15.- Geometry Dash - (172 MB)                 
+echo *16.- GTA IV- (11.3 GB)                 
+echo *17.- GTA V - (44.4 GB)       
+echo *18.- Half Life - (142 MB)	
+echo *19.- Hello Neighbor - (1.5 GB)
+echo *20.- Hollow Knight - (936 MB)       
+echo *21.- Left 4 Dead 2 - (1.8 GB)
+echo *23.- Limbo - (74 MB)			
+echo *24.- Outlast - (2.3 GB)		
+echo *25.- PES 6 - (1.1 GB)          
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -708,34 +709,35 @@ if "%opgm%"=="6" goto :COD2
 if "%opgm%"=="7" goto :COD4
 if "%opgm%"=="8" goto :CS16
 if "%opgm%"=="9" goto :CSGO
-if "%opgm%"=="10" goto :CupheadLITE
-if "%opgm%"=="11" goto :DarkSouls
-if "%opgm%"=="12" goto :FarCry
-if "%opgm%"=="13" goto :GettingOver
-if "%opgm%"=="14" goto :GeometryDash
-if "%opgm%"=="15" goto :GtaIV
-if "%opgm%"=="16" goto :GTAV
-if "%opgm%"=="17" goto :HalfLife
-if "%opgm%"=="18" goto :HelloNeighbor
-if "%opgm%"=="19" goto :HollowKnight
-if "%opgm%"=="20" goto :L4D2
-if "%opgm%"=="21" goto :Limbo
-if "%opgm%"=="22" goto :Outlast
-if "%opgm%"=="23" goto :PES6
-if "%opgm%"=="24" goto :PES13
-if "%opgm%"=="25" goto :PES17
-if "%opgm%"=="26" goto :PVZ
-if "%opgm%"=="27" goto :PolyBridge
-if "%opgm%"=="28" goto :Portal
-if "%opgm%"=="29" goto :ProjectZomboid
-if "%opgm%"=="30" goto :SH2
-if "%opgm%"=="31" goto :Sonic
-if "%opgm%"=="32" goto :SM64
-if "%opgm%"=="33" goto :Tetris
-if "%opgm%"=="34" goto :TheForest
-if "%opgm%"=="35" goto :Unturned
-if "%opgm%"=="36" goto :YoutubersLife
-if "%opgm%"=="37" goto :StartGames
+if "%opgm%"=="10" goto :Craftsman
+if "%opgm%"=="11" goto :CupheadLITE
+if "%opgm%"=="12" goto :DarkSouls
+if "%opgm%"=="13" goto :FarCry
+if "%opgm%"=="14" goto :GettingOver
+if "%opgm%"=="15" goto :GeometryDash
+if "%opgm%"=="16" goto :GtaIV
+if "%opgm%"=="17" goto :GTAV
+if "%opgm%"=="18" goto :HalfLife
+if "%opgm%"=="19" goto :HelloNeighbor
+if "%opgm%"=="20" goto :HollowKnight
+if "%opgm%"=="21" goto :L4D2
+if "%opgm%"=="22" goto :Limbo
+if "%opgm%"=="23" goto :Outlast
+if "%opgm%"=="24" goto :PES6
+if "%opgm%"=="25" goto :PES13
+if "%opgm%"=="26" goto :PES17
+if "%opgm%"=="27" goto :PVZ
+if "%opgm%"=="28" goto :PolyBridge
+if "%opgm%"=="29" goto :Portal
+if "%opgm%"=="30" goto :ProjectZomboid
+if "%opgm%"=="31" goto :SH2
+if "%opgm%"=="32" goto :Sonic
+if "%opgm%"=="33" goto :SM64
+if "%opgm%"=="34" goto :Tetris
+if "%opgm%"=="35" goto :TheForest
+if "%opgm%"=="36" goto :Unturned
+if "%opgm%"=="37" goto :YoutubersLife
+if "%opgm%"=="38" goto :StartGames
 if "%opgm%"=="" goto :OptiGames
 
 
@@ -1086,6 +1088,41 @@ del "Downloaded\Compressed\Cuphead LITE.7z"
 cls
 echo Ejecutando el Software...
 "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
+
+:: Cerrar proceso
+exit
+
+
+:Craftsman
+:Craftsman
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Craftsman PC Port 1.9.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Craftsman PC Port 1.9.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Craftsman PC Port 1.9.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Craftsman PC Port 1.9.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe"
 
 :: Cerrar proceso
 exit
@@ -1877,7 +1914,7 @@ cls
 if exist "%CD%\Downloaded\Games\Tetris.exe" (
 	echo Ejecutando el Software...
 	echo.
-    start "" "%CD%\Downloaded\Games\Tetris.exee"
+    start "" "%CD%\Downloaded\Games\Tetris.exe"
 	exit
 ) else (
     echo Descargando el Software...
