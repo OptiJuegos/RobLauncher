@@ -6,8 +6,8 @@ cd /d "%~dp0"
 :: Establecer las Variables de Entorno...
 set FFPLAY="Assets\ffplay.exe"
 set WGET="Assets\wget.exe"
-set LAUNCHER_TEXT=*RobLauncher V1.8 FIX - Un launcher para OptiCraft y Demas Proyectos.*
-set LAUNCHER_VER=RobLauncher V1.8 FIX
+set LAUNCHER_TEXT=*RobLauncher V1.9 BETA - Un launcher para OptiCraft y Demas Proyectos.*
+set LAUNCHER_VER=RobLauncher V1.9 BETA
 
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
@@ -109,7 +109,6 @@ echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p opst=Opcion: 
-
 if "%opst%"=="" goto :Start
 if "%opst%"=="1" goto :OptiCraftBE
 if "%opst%"=="2" goto :OptiCraftJE
@@ -673,59 +672,250 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- Call of Duty 2 - (3.5 GB)
-echo *2 - Cuphead - (1.7 GB)
-echo *3.- Craftsman PC - (25 MB)
-echo *4.- Counter Strike 1.6 - (139 MB)
-echo *5.- Counter Strike Global Offensive - (1.1 GB)
-echo *6.- Geometry Dash - (172 MB)
-echo *7.- Gta IV Lite - (11.3 GB)
-echo *8.- Gta V Lite - (44.7 GB)
-echo *9.- Hello Neighbor - (1.8 GB)
-echo *10.- Hollow Knight - (936 MB)
-echo *11.- Left 4 Dead 2 - (1.8 GB)
-echo *12.- PES 6 - (1.1 GB)
-echo *13.- PES 13 - (3.8 GB)
-echo *14.- PES 17 - (4.0 GB)
-echo *15.- Plants VS Zombies - (19 MB)
-echo *16.- Poly Bridge 1 - (77 MB)
-echo *17.- Portal 1 Lite - (512 MB)
-echo *18.- Project Zomboid Lite - (315 MB)
-echo *19.- Silent Hill 2 - (780 MB)
-echo *20.- Sonic 1 PC - (33 MB)
-echo *21.- Super Mario 64 PC - (15 MB)
-echo *22.- The Forest Lite - (1.1 GB)
-echo *23.- Youtubers Life - (684 MB)
-echo *24.- Volver para atras.
+echo *1.- 60! Seconds - (384 MB)		*25.- PES 17 - (684 MB)
+echo *2 - A Hat In Time - (1.7 GB)		*26.- Plants vs Zombies - (684 MB
+echo *3.- Assassin's Creed - (25 MB)         *27.- Poly Bridge - (684 MB)	
+echo *4.- Bad Piggies - (139 MB)             *28.- Portal - (684 MB)     
+echo *5.- Bully - (1.1 GB)                   *29.- Project Zomboid - (684 MB)     
+echo *6.- Call of Duty 2 - (172 MB)		*30.- Silent Hill 2 - (684 MB)
+echo *7.- Call Of Duty 4 - (11.3 GB)	        *31.- Sonic 1 - (684 MB)        
+echo *8.- Counter Strike 1.6 - (44.7 GB)     *32.- Super Mario 64 - (684 MB)  
+echo *9.- Counter Strike GO - (1.8 GB)       *33.- Tetris - (684 MB)
+echo *10.- Cuphead - (1.8 GB) 	        *34.- The Forest - (684 MB)
+echo *11.- Dark Souls - (936 MB)		*35.- Unturned
+echo *12.- Far Cry 1 - (1.8 GB)	        *36.- Youtubers Life
+echo *13.- Getting Over it - (1.1 GB)        *37.- Volver para atras.               
+echo *14.- Geometry Dash - (3.8 GB)                 
+echo *15.- GTA IV- (4.0 GB)                 
+echo *16.- GTA V - (19 MB)       
+echo *17.- Half Life - (77 MB)	
+echo *18.- Hello Neighbor - (512 MB)		
+echo *19.- Hollow Knight - (315 MB)       
+echo *20.- Left 4 Dead 2 - (780 MB)
+echo *21.- Limbo - (780 MB)			
+echo *22.- Outlast - (33 MB)		
+echo *23.- PES 6 - (15 MB)     
+echo *24.- PES 13 - (1.1 GB)          
 echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p opgm=Opcion: 
-if "%opgm%"=="1" goto :COD2
-if "%opgm%"=="2" goto :CupheadLITE
-if "%opgm%"=="3" goto :Craftsman
-if "%opgm%"=="4" goto :CS16
-if "%opgm%"=="5" goto :CSGO
-if "%opgm%"=="6" goto :GeometryDash
-if "%opgm%"=="7" goto :GtaIV
-if "%opgm%"=="8" goto :GtaV
-if "%opgm%"=="9" goto :HelloNeighbor
-if "%opgm%"=="10" goto :HollowKnight
-if "%opgm%"=="11" goto :L4D2
-if "%opgm%"=="12" goto :PES6
-if "%opgm%"=="13" goto :PES13
-if "%opgm%"=="14" goto :PES17
-if "%opgm%"=="15" goto :PVZ
-if "%opgm%"=="16" goto :PolyBridge
-if "%opgm%"=="17" goto :Portal
-if "%opgm%"=="18" goto :ProjectZomboid
-if "%opgm%"=="19" goto :SH2
-if "%opgm%"=="20" goto :Sonic
-if "%opgm%"=="21" goto :SM64
-if "%opgm%"=="22" goto :TheForest
-if "%opgm%"=="23" goto :YoutubersLife
-if "%opgm%"=="24" goto :StartGames
+if "%opgm%"=="1" goto :60s
+if "%opgm%"=="2" goto :AHat
+if "%opgm%"=="3" goto :Assassin
+if "%opgm%"=="4" goto :BadPiggies
+if "%opgm%"=="5" goto :Bully
+if "%opgm%"=="6" goto :COD2
+if "%opgm%"=="7" goto :COD4
+if "%opgm%"=="8" goto :CS16
+if "%opgm%"=="9" goto :CSGO
+if "%opgm%"=="10" goto :CupheadLITE
+if "%opgm%"=="11" goto :DarkSouls
+if "%opgm%"=="12" goto :FarCry
+if "%opgm%"=="13" goto :GettingOver
+if "%opgm%"=="14" goto :GeometryDash
+if "%opgm%"=="15" goto :GtaIV
+if "%opgm%"=="16" goto :GTAV
+if "%opgm%"=="17" goto :HalfLife
+if "%opgm%"=="18" goto :HelloNeighbor
+if "%opgm%"=="19" goto :HollowKnight
+if "%opgm%"=="20" goto :L4D2
+if "%opgm%"=="21" goto :Limbo
+if "%opgm%"=="22" goto :Outlast
+if "%opgm%"=="23" goto :PES6
+if "%opgm%"=="24" goto :PES13
+if "%opgm%"=="25" goto :PES17
+if "%opgm%"=="26" goto :PVZ
+if "%opgm%"=="27" goto :PolyBridge
+if "%opgm%"=="28" goto :Portal
+if "%opgm%"=="29" goto :ProjectZomboid
+if "%opgm%"=="30" goto :SH2
+if "%opgm%"=="31" goto :Sonic
+if "%opgm%"=="32" goto :SM64
+if "%opgm%"=="33" goto :Tetris
+if "%opgm%"=="34" goto :TheForest
+if "%opgm%"=="35" goto :Unturned
+if "%opgm%"=="36" goto :YoutubersLife
+if "%opgm%"=="37" goto :StartGames
 if "%opgm%"=="" goto :OptiGames
+
+
+:60s
+:60s
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\60 Seconds! Optimized\60Seconds.exe" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Games\60 Seconds! Optimized\60Seconds.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\60s.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/60 Seconds Optimized.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\60s.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\60s.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\60 Seconds! Optimized\60Seconds.exe"
+
+:: Cerrar proceso
+exit
+
+
+:AHat
+:AHat
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\A Hat In Time\gamedata\Binaries\Win64\HatinTimeGame.exe" (
+	echo Ejecutando el Software...
+	echo.
+	cd "%CD%\Downloaded\Games\A Hat In Time\gamedata\Binaries\Win64"
+	start "" "HatinTimeGame.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\AHatInTime.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/A Hat in Time.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\AHatInTime.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\AHatInTime.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+cd "%CD%\Downloaded\Games\A Hat In Time\gamedata\Binaries\Win64"
+start "" "HatinTimeGame.exe"
+
+:: Cerrar proceso
+exit
+
+
+:Assassin
+:Assassin
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Assassins Creed 1 Optimized\gamedata\AssassinsCreed_Dx9.exe" (
+	echo Ejecutando el Software...
+	echo.
+	cd "%CD%\Downloaded\Games\Assassins Creed 1 Optimized\gamedata"
+	start "" "AssassinsCreed_Dx9.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Assassins.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/A Hat in Time.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Assassins.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Assassins.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+cd "%CD%\Downloaded\Assassins Creed 1 Optimized\gamedata"
+start "" "AssassinsCreed_Dx9.exe"
+
+:: Cerrar proceso
+exit
+
+:BadPiggies
+:BadPiggies
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Bad Piggies\BadPiggies.exe" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Games\Bad Piggies\BadPiggies.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\BadPiggies.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Bad_Piggies.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\BadPiggies.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\BadPiggies.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Bad Piggies\BadPiggies.exe"
+
+:: Cerrar proceso
+exit
+
+
+:Bully
+:Bully
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\OptiBully\bullydata\Bully.exe" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Games\OptiBully\bullydata\Bully.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiBully.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiBully.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\OptiBully.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\OptiBully.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\OptiBully\bullydata\Bully.exe"
+
+:: Cerrar proceso
+exit
 
 
 :COD2
@@ -763,15 +953,15 @@ start "" "%CD%\Downloaded\Games\Call of Duty 2 Optimized\1-Call Of Duty 2 - Norm
 exit
 
 
-:CupheadLITE
-:CupheadLITE
+:COD4
+:COD4
 cls
 
 ::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat" (
+if exist "%CD%\Downloaded\Games\Call of Duty 4 Modern Warfare Optimized\coddata\iw3sp.exe" (
 	echo Ejecutando el Software...
 	echo.
-	start "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
+	start "" "%CD%\Downloaded\Games\Call of Duty 4 Modern Warfare Optimized\coddata\iw3sp.exe"
 	exit
 ) else (
     echo Descargando el Software...
@@ -779,59 +969,23 @@ if exist "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Cuphead LITE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Cuphead LITE.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\COD4.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Call of Duty 4 Modern Warfare Optimized.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Cuphead LITE.7z" -o"%CD%\Downloaded\OptiCraft"
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\COD4.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
 
 :: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Cuphead LITE.7z"
+del "Downloaded\Compressed\COD2.7z"
 
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
-"%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
+start "" "%CD%\Downloaded\Games\Call of Duty 4 Modern Warfare Optimized\coddata\iw3sp.exe"
 
 :: Cerrar proceso
 exit
-
-
-:Craftsman
-:Craftsman
-cls
-
-::Comprobando si el Software ya ha sido descargado
-if exist "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe" (
-	echo Ejecutando el Software...
-	echo.
-    start "" "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe"
-	exit
-) else (
-    echo Descargando el Software...
-	echo.
-)
-
-:: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Craftsman PC Port 1.9.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Craftsman PC Port 1.9.7z?download=true"
-cls
-
-:: Descomprimiendo el Software...
-"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Craftsman PC Port 1.9.7z" -o"%CD%\Downloaded\Games"
-timeout /t 1 /nobreak
-
-:: Borrando los archivos Comprimidos
-del "Downloaded\Compressed\Craftsman PC Port 1.9.7z"
-
-:: Ejecutando el Software...
-cls
-echo Ejecutando el Software...
-start "" "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe"
-
-:: Cerrar proceso
-exit
-
 
 :CS16
 :CS16
@@ -898,6 +1052,146 @@ del "Downloaded\Compressed\Resurrection Strike V1.0.7z"
 cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe"
+
+:: Cerrar proceso
+exit
+
+
+:CupheadLITE
+:CupheadLITE
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat" (
+	echo Ejecutando el Software...
+	echo.
+	%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Cuphead LITE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Cuphead LITE.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Cuphead LITE.7z" -o"%CD%\Downloaded\OptiCraft"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Cuphead LITE.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+"%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat"
+
+:: Cerrar proceso
+exit
+
+
+:DarkSouls
+:DarkSouls
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Dark Souls 1 LITE\darkdata\DARKSOULS.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Dark Souls 1 LITE\darkdata\DARKSOULS.exe
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando las Partes del Software
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\DarkSouls.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Dark Souls 1 LITE.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\DarkSouls.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\DarkSouls.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" ""%CD%\Downloaded\Games\Dark Souls 1 LITE\darkdata\DARKSOULS.exe"
+
+:: Cerrar proceso
+exit
+
+
+:FarCry
+:FarCry
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Far Cry 1\gamedata\Bin32\FarCry.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Far Cry 1\gamedata\Bin32\FarCry.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando las Partes del Software
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\FarCry.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Far Cry 1.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\FarCry.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\GettingOverIt.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" ""%CD%\Downloaded\Games\Far Cry 1\gamedata\Bin32\FarCry.exe"
+
+:: Cerrar proceso
+exit
+
+
+:GettingOver
+:GettingOver
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Getting Over It\GettingOverIt.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Getting Over It\GettingOverIt.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando las Partes del Software
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GettingOverIt.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Getting Over It.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\GettingOverIt.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\GettingOverIt.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" ""%CD%\Downloaded\Games\Getting Over It\GettingOverIt.exe"
 
 :: Cerrar proceso
 exit
@@ -1008,6 +1302,42 @@ echo Ejecutando el Software...
 exit
 
 
+:HalfLife
+:HalfLife
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Half Life Xash3D\Half Life.exe" (
+	echo Ejecutando el Software...
+	echo.
+	cd "%CD%\Downloaded\Games\Half Life Xash3D"
+    start "" "Half Life.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Half Life.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Half Life Xash3D.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Half Life.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Half Life.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+"%CD%\Downloaded\Games\Half Life Xash3D\Half Life.exe"
+
+:: Cerrar proceso
+exit
+
+
 :HelloNeighbor
 :HelloNeighbor
 cls
@@ -1093,7 +1423,7 @@ if exist "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2
 	echo.
 )
 
-:: Descargando las Partes del Software
+:: Descargando el Software...
 %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Left 4 Dead 2 LITE By OptiJuegos.7z?download=true"
 cls
 
@@ -1108,6 +1438,76 @@ del "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z"
 cls
 echo Ejecutando el Software...
 "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2.bat"
+
+:: Cerrar proceso
+exit
+
+
+:Limbo
+:Limbo
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Limbo\limbo.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Limbo\limbo.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Limbo.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Limbo.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Limbo.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Limbo.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Limbo\limbo.exe"
+
+:: Cerrar proceso
+exit
+
+
+:Outlast
+:Outlast
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Outlast\OutlastLauncher.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Outlast\OutlastLauncher.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Outlast.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Outlast.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Outlast.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Outlast.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Outlast\OutlastLauncher.exe"
 
 :: Cerrar proceso
 exit
@@ -1130,6 +1530,7 @@ if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer
 
 :: Descargando el Software...
 %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/PES 6 Portable Y Optimizado.7z?download=true"
+cls
 
 :: Descomprimiendo el Software...
 "%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" -o"%CD%\Downloaded\Games"
@@ -1169,7 +1570,6 @@ cls
 :: Descomprimiendo el Software...
 "%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Pro Evolution Soccer 2013.7z" -o"%CD%\Downloaded\Games"
 timeout /t 1 /nobreak
-
 
 :: Ejecutando el Software...
 cls
@@ -1470,6 +1870,34 @@ start "" "%CD%\Downloaded\Games\SM64\SM64-60.exe"
 exit
 
 
+:Tetris
+:Tetris
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Tetris.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Tetris.exee"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Games\Tetris.exe" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Tetris_GameBoy.exe?download=true"
+cls
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Tetris.exe"
+
+:: Cerrar proceso
+exit
+
+
 :TheForest
 :TheForest
 cls
@@ -1500,6 +1928,41 @@ del "Downloaded\Compressed\The Forest Lite V1.0.7z"
 cls
 echo Ejecutando el Software...
 start "" "%CD%\Downloaded\Games\The Forest Lite V1.0\gamedata\TheForest32.exe"
+
+:: Cerrar proceso
+exit
+
+
+:Unturned
+:Unturned
+cls
+
+::Comprobando si el Software ya ha sido descargado
+if exist "%CD%\Downloaded\Games\Unturned 3.9.9.5\Unturned.exe" (
+	echo Ejecutando el Software...
+	echo.
+    start "" "%CD%\Downloaded\Games\Unturned 3.9.9.5\Unturned.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando el Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Unturned.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Unturned_3.9.9.5.7z?download=true"
+cls
+
+:: Descomprimiendo el Software...
+"%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Unturned.7z" -o"%CD%\Downloaded\Games"
+timeout /t 1 /nobreak
+
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Unturned.7z"
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Games\Unturned 3.9.9.5\Unturned.exe"
 
 :: Cerrar proceso
 exit
