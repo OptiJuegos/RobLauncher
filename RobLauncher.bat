@@ -2357,6 +2357,7 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FontCache3.0.0.0" 
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Ndu" /v "Start" /t REG_DWORD /d 2 /f >nul 2>&1
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PcaSvc" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ShellHWDetection" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SgrmAgent" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SgrmBroker" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ssh-agent" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
@@ -2512,62 +2513,146 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1.- ESPN Premium
-echo *2.- TYC Sports
-echo *3.- TYC Sports Play 
-echo *4.- TNT Sports
-echo *5 - Cartoon Network
-echo *6 - Personalizado
-echo *7 - Volver para Atras
+echo *1 - Bein Sports
+echo *2 - Cartoon Network
+echo *3.- ESPN 1
+echo *4.- ESPN 2
+echo *5.- ESPN 3
+echo *6.- ESPN 4
+echo *7.- ESPN Premium
+echo *8.- FOX Sports
+echo *9.- FOX Sports 2
+echo *10.- FOX Sports 3
+echo *11.- Nickelodeon
+echo *12.- TYC Sports
+echo *13.- TYC Sports Play 
+echo *14.- TNT Sports
+echo *15 - Personalizado
+echo *16 - Volver para Atras
 echo.
 
 :: Advertencia IP
-echo =================================================================================
-echo -Es posible que las transmisiones no funcionen si te encuentras en otro pais
-echo -Que no sea argentina, esto sucede porque los creadores establecieron este limite
-echo =================================================================================
+echo ====================================================================================
+echo -Los canales solo estan disponibles en Argentina, Uruguay y Paraguay.
+echo -Si no estas en ninguno de estos paises, no podras acceder a menos que uses una VPN.
+echo ====================================================================================
 echo.
 
 :: Codigo para ir al menu con las Opciones
 set /p optv=Opcion: 
-
-if "%optv%"=="1" goto :ESPN
-if "%optv%"=="2" goto :TYC
-if "%optv%"=="3" goto :TYCPlay
-if "%optv%"=="4" goto :TNT
-if "%optv%"=="5" goto :Cartoon
-if "%optv%"=="6" goto :CustomTV
-if "%optv%"=="7" goto :StartChannels
+if "%optv%"=="1" goto :Bein
+if "%optv%"=="2" goto :Cartoon
+if "%optv%"=="3" goto :ESPN
+if "%optv%"=="4" goto :ESPN2
+if "%optv%"=="5" goto :ESPN3
+if "%optv%"=="6" goto :ESPN4
+if "%optv%"=="7" goto :ESPNP
+if "%optv%"=="8" goto :FOXS1
+if "%optv%"=="9" goto :FOXS2
+if "%optv%"=="10" goto :FOXS3
+if "%optv%"=="11" goto :NICK
+if "%optv%"=="12" goto :TYC
+if "%optv%"=="13" goto :TYCPlay
+if "%optv%"=="14" goto :TNT
+if "%optv%"=="15" goto :CustomTV
+if "%optv%"=="16" goto :StartChannels
 if "%optv%"=="" goto :TVLOL
 
 
+:Bein
+:Bein
+cls
+%FFPLAY% https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/playlist.m3u8
+goto :StartChannels
+
+
+:Cartoon
+:Cartoon
+cls
+%FFPLAY% https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -vst v:3
+goto :StartChannels
+
+
 :ESPN
 :ESPN
-%FFPLAY% https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:3 -flags low_delay
+cls
+%FFPLAY% https://edge1-ccast-sl.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc/ESPN2HD.mpd -cenc_decryption_key cb89ee3961599e3e648a5aad60895f34 -vst v:3
+goto :StartChannels
+
+
+:ESPN2
+:ESPN2
+cls
+%FFPLAY% https://edge2-ccast-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd -cenc_decryption_key 0b40ae9f78a7bac3b57ecbf72d3c081e -vst v:3
+goto :StartChannels
+
+
+:ESPN3
+:ESPN3
+cls
+%FFPLAY% https://edge-mix04-coe.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc/ESPN3.mpd -cenc_decryption_key 1743cd03dfe3736b2c95da91a783af38 -vst v:3
+goto :StartChannels
+
+
+:ESPN4
+:ESPN4
+cls
+%FFPLAY% https://edge5-hr.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd -cenc_decryption_key fb85d059687ab0fc67805806204edbdf -vst v:3
+goto :StartChannels
+
+:ESPNP
+:ESPNP
+cls
+%FFPLAY% https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:3
+goto :StartChannels
+
+
+:FOXS1
+:FOXS1
+cls
+%FFPLAY% https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports/SA_Live_dash_enc/FoxSports.mpd -cenc_decryption_key aac61b730e2ac1df23f1e872e7541c1b -vst v:3
+goto :StartChannels
+
+
+:FOXS2
+:FOXS2
+cls
+%FFPLAY% https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports2HD/SA_Live_dash_enc/FoxSports2HD.mpd -cenc_decryption_key 5086d370e840010232cf4532b16e197f -vst v:3
+goto :StartChannels
+
+
+:FOXS3
+:FOXS3
+cls
+%FFPLAY% https://edge-mix02-cte.cvattv.com.ar/live/c3eds/FoxSports3HD/SA_Live_dash_enc/FoxSports3HD.mpd -cenc_decryption_key fa39e855543c5d70f30600d59e5e4c1b -vst v:3
+goto :StartChannels
+
+
+:NICK
+:NICK
+cls
+%FFPLAY% https://edge-mix03-mus.cvattv.com.ar/live/c3eds/Nickelodeon/SA_Live_dash_enc/Nickelodeon.mpd -cenc_decryption_key 38d6f650cbf9a38fd9f35c01f98e647a -vst v:3
 goto :StartChannels
 
 
 :TYC
 :TYC
-%FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3 -flags low_delay
+cls
+%FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3
 goto :StartChannels
 
 
 :TYCPlay
 :TYCPlay
+cls
 %FFPLAY% https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8 -flags low_delay
 goto :StartChannels
 
 
 :TNT
 :TNT
+cls
 %FFPLAY% https://edge-live32-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -vst v:3
-goto :StartChannels
-
-
-:Cartoon
-:Cartoon
-%FFPLAY% https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -vst v:3 -flags low_delay
 goto :StartChannels
 
 
@@ -2578,7 +2663,7 @@ cls
 echo Establecer video personalizado
 echo.
 
-set /p URL=Ruta o link del video: 
+set /p URL=Link del video: 
 set /p DECRYPTION_KEY=Clave de desencriptacion (dejar en blanco si no hay alguna):
 
 IF "%DECRYPTION_KEY%"=="" (
