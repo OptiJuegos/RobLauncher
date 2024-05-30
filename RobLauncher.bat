@@ -2562,97 +2562,97 @@ if "%optv%"=="" goto :TVLOL
 :Bein
 :Bein
 cls
-%FFPLAY% https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/playlist.m3u8
+%FFPLAY% -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/playlist.m3u8
 goto :StartChannels
 
 
 :Cartoon
 :Cartoon
 cls
-%FFPLAY% https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -vst v:3
+%FFPLAY% -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd
 goto :StartChannels
 
 
 :ESPN
 :ESPN
 cls
-%FFPLAY% https://edge1-ccast-sl.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc/ESPN2HD.mpd -cenc_decryption_key cb89ee3961599e3e648a5aad60895f34 -vst v:3
+%FFPLAY% -cenc_decryption_key cb89ee3961599e3e648a5aad60895f34 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge1-ccast-sl.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc/ESPN2HD.mpd 
 goto :StartChannels
 
 
 :ESPN2
 :ESPN2
 cls
-%FFPLAY% https://edge2-ccast-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd -cenc_decryption_key 0b40ae9f78a7bac3b57ecbf72d3c081e -vst v:3
+%FFPLAY% -cenc_decryption_key 0b40ae9f78a7bac3b57ecbf72d3c081e -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge2-ccast-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd 
 goto :StartChannels
 
 
 :ESPN3
 :ESPN3
 cls
-%FFPLAY% https://edge-mix04-coe.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc/ESPN3.mpd -cenc_decryption_key 1743cd03dfe3736b2c95da91a783af38 -vst v:3
+%FFPLAY% -cenc_decryption_key 1743cd03dfe3736b2c95da91a783af38 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix04-coe.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc/ESPN3.mpd
 goto :StartChannels
 
 
 :ESPN4
 :ESPN4
 cls
-%FFPLAY% https://edge5-hr.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd -cenc_decryption_key fb85d059687ab0fc67805806204edbdf -vst v:3
+%FFPLAY% -cenc_decryption_key fb85d059687ab0fc67805806204edbdf -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge5-hr.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd
 goto :StartChannels
 
 :ESPNP
 :ESPNP
 cls
-%FFPLAY% https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -vst v:3
+%FFPLAY% -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd 
 goto :StartChannels
 
 
 :FOXS1
 :FOXS1
 cls
-%FFPLAY% https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports/SA_Live_dash_enc/FoxSports.mpd -cenc_decryption_key aac61b730e2ac1df23f1e872e7541c1b -vst v:3
+%FFPLAY% -cenc_decryption_key aac61b730e2ac1df23f1e872e7541c1b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports/SA_Live_dash_enc/FoxSports.mpd 
 goto :StartChannels
 
 
 :FOXS2
 :FOXS2
 cls
-%FFPLAY% https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports2HD/SA_Live_dash_enc/FoxSports2HD.mpd -cenc_decryption_key 5086d370e840010232cf4532b16e197f -vst v:3
+%FFPLAY% -cenc_decryption_key 5086d370e840010232cf4532b16e197f -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports2HD/SA_Live_dash_enc/FoxSports2HD.mpd
 goto :StartChannels
 
 
 :FOXS3
 :FOXS3
 cls
-%FFPLAY% https://edge-mix02-cte.cvattv.com.ar/live/c3eds/FoxSports3HD/SA_Live_dash_enc/FoxSports3HD.mpd -cenc_decryption_key fa39e855543c5d70f30600d59e5e4c1b -vst v:3
+%FFPLAY% -cenc_decryption_key fa39e855543c5d70f30600d59e5e4c1b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix02-cte.cvattv.com.ar/live/c3eds/FoxSports3HD/SA_Live_dash_enc/FoxSports3HD.mpd
 goto :StartChannels
 
 
 :NICK
 :NICK
 cls
-%FFPLAY% https://edge-mix03-mus.cvattv.com.ar/live/c3eds/Nickelodeon/SA_Live_dash_enc/Nickelodeon.mpd -cenc_decryption_key 38d6f650cbf9a38fd9f35c01f98e647a -vst v:3
+%FFPLAY% -cenc_decryption_key 38d6f650cbf9a38fd9f35c01f98e647a -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix03-mus.cvattv.com.ar/live/c3eds/Nickelodeon/SA_Live_dash_enc/Nickelodeon.mpd
 goto :StartChannels
 
 
 :TYC
 :TYC
 cls
-%FFPLAY% https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -vst v:3
+%FFPLAY% -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd
 goto :StartChannels
 
 
 :TYCPlay
 :TYCPlay
 cls
-%FFPLAY% https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8 -flags low_delay
+%FFPLAY% -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8
 goto :StartChannels
 
 
 :TNT
 :TNT
 cls
-%FFPLAY% https://edge-live32-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -vst v:3
+%FFPLAY% -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live32-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd
 goto :StartChannels
 
 
