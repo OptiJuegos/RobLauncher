@@ -2051,12 +2051,14 @@ echo.
 
 :: Opciones para seleccionar
 echo *1.- Activar Windows
-echo *2.- Actualizar Drivers con Driver Booster.
-echo *3.- Borrar archivos Temporales
-echo *4.- Instalar dependencias para programas (DirectX - Visual C++)
-echo *5.- Optimizar Internet
-echo *6.- Optimizar Sistema
-echo *7.- Volver para atras.
+echo *2.- Actualizar Drivers
+echo *3.- Borrar Archivos Temporales
+echo *4.- Deshabilitar Windows Defender
+echo *5.- Instalar Dependencias (Visual C++ - DirectX)
+echo *6.- Optimizar Internet
+echo *7.- Optimizar Sistema
+echo *8.- Psiphon VPN
+echo *9.- Volver para atras.
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -2064,10 +2066,12 @@ set /p oput=Opcion:
 if "%oput%"=="1" goto :AWindows
 if "%oput%"=="2" goto :Drivers
 if "%oput%"=="3" goto :Temp
-if "%oput%"=="4" goto :Runtimes
-if "%oput%"=="5" goto :Internet
-if "%oput%"=="6" goto :OPC
-if "%oput%"=="7" goto :StartUtilities
+if "%oput%"=="4" goto :DefenderDisable
+if "%oput%"=="5" goto :Runtimes
+if "%oput%"=="6" goto :Internet
+if "%oput%"=="7" goto :OPC
+if "%oput%"=="8" goto :VPNCrota
+if "%oput%"=="9" goto :StartUtilities
 if "%oput%"=="" goto :Utilities
 
 
@@ -2161,6 +2165,120 @@ timeout 5 /nobreak
 goto :Utilities
 
 
+:DefenderDisable
+:DefenderDisable
+cls
+
+:: BatchGotAdmin
+REM  --> Check for permissions
+    IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
+>nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
+) ELSE (
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+)
+
+REM --> If error flag set, we do not have admin.
+if '%errorlevel%' NEQ '0' (
+    goto UACPromptD
+) else ( goto scriptD )
+
+
+:UACPromptD
+:UACPromptD
+cls
+echo.
+echo ------------------------------------------------------
+echo               Deshabilitar Defender
+echo ------------------------------------------------------
+echo.
+echo Este apartado requiere privilegios de administrador
+echo Para funcionar correctamente. Se cerrara el Launcher
+echo.
+echo ------------------------------------------------------
+echo.
+pause
+exit
+
+
+:ScriptD
+:ScriptD
+cls
+
+:: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
+echo.
+echo %LAUNCHER_TEXT%
+echo.
+
+:: Opciones para seleccionar
+echo *1.- Deshabilitar Defender
+echo *2.- Habilitar Defender
+echo *3.- Volver para atras.
+echo.
+
+:: Codigo para ir al menu con las Opciones
+set /p oput=Opcion: 
+if "%oput%"=="1" goto :DF
+if "%oput%"=="2" goto :DE
+if "%oput%"=="3" goto :Utilities
+if "%oput%"=="" goto :Utilities
+
+
+:DF
+:DF
+cls
+echo.
+echo --------------------------------------------------
+echo        Deshabilitando Windows Defender
+echo --------------------------------------------------
+echo.
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisSvc" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Sense" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableAntiSpyware" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableRoutinelyTakingAction" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "ServiceKeepAlive" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableBehaviorMonitoring" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableIOAVProtection" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableOnAccessProtection" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableRealtimeMonitoring" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Reporting" /v "DisableEnhancedNotifications" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications" /v "DisableNotifications" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotification" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotificationOnLockScreen" /t REG_DWORD /d 1 /f
+timeout /t 3 /nobreak
+goto :StartUtilities
+
+
+:DE
+:DE
+cls
+echo.
+echo --------------------------------------------------
+echo            Habilitando Windows Defender.
+echo --------------------------------------------------
+echo.
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend" /v "Start" /t REG_DWORD /d 2 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService" /v "Start" /t REG_DWORD /d 2 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisSvc" /v "Start" /t REG_DWORD /d 2 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Sense" /v "Start" /t REG_DWORD /d 2 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc" /v "Start" /t REG_DWORD /d 2 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableAntiSpyware" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableRoutinelyTakingAction" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "ServiceKeepAlive" /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableBehaviorMonitoring" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableIOAVProtection" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableOnAccessProtection" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableRealtimeMonitoring" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Reporting" /v "DisableEnhancedNotifications" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications" /v "DisableNotifications" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotification" /t REG_DWORD /d 0 /f >nul 2>&1
+reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotificationOnLockScreen" /t REG_DWORD /d 0 /f
+timeout /t 3 /nobreak
+goto StartUtilities
+
+
 :Runtimes
 :Runtimes
 cls
@@ -2207,6 +2325,7 @@ echo.
 
 timeout 3 /nobreak
 exit
+
 
 :Internet
 :Internet
@@ -2289,6 +2408,7 @@ echo.
 echo --------------------------------------------------
 pause
 exit
+
 
 :OPC
 :OPC
@@ -2429,6 +2549,33 @@ pause
 exit
 
 
+:VPNCrota
+cls
+
+::Comprobando si el software ya ha sido descargado
+if exist "%CD%\Downloaded\Utilities\psiphon3-legacy.exe" (
+	echo Ejecutando el Software...
+	echo.
+	start "" "%CD%\Downloaded\Utilities\psiphon3-legacy.exe"
+	exit
+) else (
+    echo Descargando el Software...
+	echo.
+)
+
+:: Descargando Software...
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Utilities\psiphon3-legacy.exe" "https://web.archive.org/web/20200720005015/https://psiphon.s3.amazonaws.com/legacy/psiphon3-legacy.exe"
+cls
+
+:: Ejecutando el Software...
+cls
+echo Ejecutando el Software...
+start "" "%CD%\Downloaded\Utilities\psiphon3-legacy.exe"
+
+:: Cerrar proceso
+exit
+
+
 :AboutPage
 :AboutPage
 cls
@@ -2515,6 +2662,7 @@ echo.
 :: Opciones para seleccionar
 echo *1 - Bein Sports
 echo *2 - Cartoon Network
+echo *2 - Disney Channel
 echo *3.- ESPN 1
 echo *4.- ESPN 2
 echo *5.- ESPN 3
@@ -2542,6 +2690,7 @@ echo.
 set /p optv=Opcion: 
 if "%optv%"=="1" goto :Bein
 if "%optv%"=="2" goto :Cartoon
+if "%optv%"=="2" goto :DISNEYC
 if "%optv%"=="3" goto :ESPN
 if "%optv%"=="4" goto :ESPN2
 if "%optv%"=="5" goto :ESPN3
@@ -2562,97 +2711,118 @@ if "%optv%"=="" goto :TVLOL
 :Bein
 :Bein
 cls
-%FFPLAY% -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/playlist.m3u8
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/playlist.m3u8
 goto :StartChannels
 
 
 :Cartoon
 :Cartoon
 cls
-%FFPLAY% -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd
+%FFPLAY% -hide_banner -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd
+goto :StartChannels
+
+
+:DISNEYC
+:DISNEYC
+cls
+%FFPLAY% -hide_banner -cenc_decryption_key 0df77ede9bc744376836d21afa137dda -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix03-mus.cvattv.com.ar/live/c3eds/DisneyChannelHD/SA_Live_dash_enc/DisneyChannelHD.mpd
+goto :StartChannels
+
+
+:Estrellas
+:Estrellas
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://linear-553.frequency.stream/dist/vix/553/hls/master/playlist.m3u8
 goto :StartChannels
 
 
 :ESPN
 :ESPN
 cls
-%FFPLAY% -cenc_decryption_key cb89ee3961599e3e648a5aad60895f34 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge1-ccast-sl.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc/ESPN2HD.mpd 
+%FFPLAY% -hide_banner -cenc_decryption_key cb89ee3961599e3e648a5aad60895f34 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge1-ccast-sl.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc/ESPN2HD.mpd 
 goto :StartChannels
 
 
 :ESPN2
 :ESPN2
 cls
-%FFPLAY% -cenc_decryption_key 0b40ae9f78a7bac3b57ecbf72d3c081e -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge2-ccast-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd 
+%FFPLAY% -hide_banner -cenc_decryption_key 0b40ae9f78a7bac3b57ecbf72d3c081e -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge2-ccast-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd 
 goto :StartChannels
 
 
 :ESPN3
 :ESPN3
 cls
-%FFPLAY% -cenc_decryption_key 1743cd03dfe3736b2c95da91a783af38 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix04-coe.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc/ESPN3.mpd
+%FFPLAY% -hide_banner -cenc_decryption_key 1743cd03dfe3736b2c95da91a783af38 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix04-coe.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc/ESPN3.mpd
 goto :StartChannels
 
 
 :ESPN4
 :ESPN4
 cls
-%FFPLAY% -cenc_decryption_key fb85d059687ab0fc67805806204edbdf -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge5-hr.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd
+%FFPLAY% -hide_banner -cenc_decryption_key fb85d059687ab0fc67805806204edbdf -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge5-hr.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc/ESPNHD.mpd
 goto :StartChannels
 
 :ESPNP
 :ESPNP
 cls
-%FFPLAY% -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd 
+%FFPLAY% -hide_banner -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd 
 goto :StartChannels
 
 
 :FOXS1
 :FOXS1
 cls
-%FFPLAY% -cenc_decryption_key aac61b730e2ac1df23f1e872e7541c1b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports/SA_Live_dash_enc/FoxSports.mpd 
+%FFPLAY% -hide_banner -cenc_decryption_key aac61b730e2ac1df23f1e872e7541c1b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports/SA_Live_dash_enc/FoxSports.mpd 
 goto :StartChannels
 
 
 :FOXS2
 :FOXS2
 cls
-%FFPLAY% -cenc_decryption_key 5086d370e840010232cf4532b16e197f -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports2HD/SA_Live_dash_enc/FoxSports2HD.mpd
+%FFPLAY% -hide_banner -cenc_decryption_key 5086d370e840010232cf4532b16e197f -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports2HD/SA_Live_dash_enc/FoxSports2HD.mpd
 goto :StartChannels
 
 
 :FOXS3
 :FOXS3
 cls
-%FFPLAY% -cenc_decryption_key fa39e855543c5d70f30600d59e5e4c1b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix02-cte.cvattv.com.ar/live/c3eds/FoxSports3HD/SA_Live_dash_enc/FoxSports3HD.mpd
+%FFPLAY% -hide_banner -cenc_decryption_key fa39e855543c5d70f30600d59e5e4c1b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix02-cte.cvattv.com.ar/live/c3eds/FoxSports3HD/SA_Live_dash_enc/FoxSports3HD.mpd
 goto :StartChannels
 
 
 :NICK
 :NICK
 cls
-%FFPLAY% -cenc_decryption_key 38d6f650cbf9a38fd9f35c01f98e647a -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix03-mus.cvattv.com.ar/live/c3eds/Nickelodeon/SA_Live_dash_enc/Nickelodeon.mpd
+%FFPLAY% -hide_banner -cenc_decryption_key 38d6f650cbf9a38fd9f35c01f98e647a -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix03-mus.cvattv.com.ar/live/c3eds/Nickelodeon/SA_Live_dash_enc/Nickelodeon.mpd
+goto :StartChannels
+
+
+:TELEFE
+:TELEFE
+cls
+%FFPLAY% -hide_banner -cenc_decryption_key c69f3afde2085dcaaaddbf55246a0323 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix03-mus.cvattv.com.ar/live/c6eds/TelefeHD/SA_Live_dash_enc/TelefeHD.mpd
 goto :StartChannels
 
 
 :TYC
 :TYC
 cls
-%FFPLAY% -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd
+%FFPLAY% -hide_banner -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd
 goto :StartChannels
 
 
 :TYCPlay
 :TYCPlay
 cls
-%FFPLAY% -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8
 goto :StartChannels
 
 
 :TNT
 :TNT
 cls
-%FFPLAY% -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live32-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd
+%FFPLAY% -hide_banner -cenc_decryption_key ea46e4e9f1132e8dd71fb77f7d55058a -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live32-sl.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd
 goto :StartChannels
 
 
@@ -2664,12 +2834,12 @@ echo Establecer video personalizado
 echo.
 
 set /p URL=Link del video: 
-set /p DECRYPTION_KEY=Clave de desencriptacion (dejar en blanco si no hay alguna):
+set /p DECRYPTION_KEY=Decryption Key (dejar en blanco si no hay alguna): 
 
 IF "%DECRYPTION_KEY%"=="" (
     %FFPLAY% "%URL%"
 ) ELSE (
-    %FFPLAY% "%URL%" -cenc_decryption_key %DECRYPTION_KEY%
+    %FFPLAY% "%URL%" -cenc_decryption_key %DECRYPTION_KEY% -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast
 )
 
 goto :Start
@@ -2731,37 +2901,37 @@ if "%opmov%"=="" goto :MOVIELOL
 
 :SMB
 :SMB
-%FFPLAY% https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8
 goto :StartMovies
 
 
 :ACAPULCO
 :ACAPULCO
-%FFPLAY% "https://archive.org/download/elchavo_201709/El Chavo del 8 - Vacaciones en Acapulco.mp4"
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast "https://archive.org/download/elchavo_201709/El Chavo del 8 - Vacaciones en Acapulco.mp4"
 goto :StartMovies
 
 
 :FNAF
 :FNAF
-%FFPLAY% https://cache018.peliscdn.online/newhls/b5501eb755e47e473787373877bc3265/EP.0.2.v0.1708598921.720.m3u8
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://cache018.peliscdn.online/newhls/b5501eb755e47e473787373877bc3265/EP.0.2.v0.1708598921.720.m3u8
 goto :StartMovies
 
 
 :WALLE
 :WALLE
-%FFPLAY% https://cache018.peliscdn.online/newhls/1b0a006b686bb395565173659004bb9d/EP.0.1.v0.1708749457.1080.m3u8
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://cache018.peliscdn.online/newhls/1b0a006b686bb395565173659004bb9d/EP.0.1.v0.1708749457.1080.m3u8
 goto :StartMovies
 
 
 :Oppenheimer
 :Oppenheimer
-%FFPLAY% https://cache017.peliscdn.online/newhls/4c8ab7b7ea8a06df1e7ddceaa7490d9d/EP.0.0.v1.1708613656.720.m3u8
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://cache017.peliscdn.online/newhls/4c8ab7b7ea8a06df1e7ddceaa7490d9d/EP.0.0.v1.1708613656.720.m3u8
 goto :StartMovies
 
 
 :Mundial
 :Mundial
-%FFPLAY% https://d2nvs31859zcd8.cloudfront.net/a36dd5d176ef62012c0c_stardetonador_97571900428_7474081598/chunked/highlight-2056245952.m3u8
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://d2nvs31859zcd8.cloudfront.net/a36dd5d176ef62012c0c_stardetonador_97571900428_7474081598/chunked/highlight-2056245952.m3u8
 goto :StartMovies
 
 
@@ -2774,6 +2944,6 @@ echo.
 
 set /p URL=Ruta o link del video: 
 
-%FFPLAY% "%URL%"
+%FFPLAY% "%URL%" -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast
 
 goto :StartMovies
