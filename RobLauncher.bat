@@ -2691,15 +2691,15 @@ echo.
 set /p optv=Opcion: 
 if "%optv%"=="1" goto :Bein
 if "%optv%"=="2" goto :Cartoon
-if "%optv%"=="2" goto :DISNEYC
-if "%optv%"=="3" goto :ESPN
-if "%optv%"=="4" goto :ESPN2
-if "%optv%"=="5" goto :ESPN3
-if "%optv%"=="6" goto :ESPN4
-if "%optv%"=="7" goto :ESPNP
-if "%optv%"=="8" goto :FOXS1
-if "%optv%"=="9" goto :FOXS2
-if "%optv%"=="10" goto :FOXS3
+if "%optv%"=="3" goto :DISNEYC
+if "%optv%"=="4" goto :ESPN
+if "%optv%"=="5" goto :ESPN2
+if "%optv%"=="6" goto :ESPN3
+if "%optv%"=="7" goto :ESPN4
+if "%optv%"=="8" goto :ESPNP
+if "%optv%"=="9" goto :FOXS1
+if "%optv%"=="10" goto :FOXS2
+if "%optv%"=="11" goto :FOXS3
 if "%optv%"=="12" goto :Estrellas
 if "%optv%"=="13" goto :NICK
 if "%optv%"=="14" goto :TYC
@@ -2761,7 +2761,7 @@ goto :StartChannels
 :ESPNP
 :ESPNP
 cls
-%FFPLAY% -hide_banner -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A/Fox_Sports_Premiun_HD.mpd 
+%FFPLAY% -hide_banner -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A_wl/Fox_Sports_Premiun_HD.mpd 
 goto :StartChannels
 
 
