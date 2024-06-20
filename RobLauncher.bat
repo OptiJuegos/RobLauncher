@@ -2662,21 +2662,22 @@ echo.
 :: Opciones para seleccionar
 echo *1 - Bein Sports
 echo *2 - Cartoon Network
-echo *2 - Disney Channel
-echo *3.- ESPN 1
-echo *4.- ESPN 2
-echo *5.- ESPN 3
-echo *6.- ESPN 4
-echo *7.- ESPN Premium
-echo *8.- FOX Sports
-echo *9.- FOX Sports 2
-echo *10.- FOX Sports 3
-echo *11.- Nickelodeon
-echo *12.- TYC Sports
-echo *13.- TYC Sports Play 
-echo *14.- TNT Sports
-echo *15 - Personalizado
-echo *16 - Volver para Atras
+echo *3 - Disney Channel
+echo *4.- ESPN 1
+echo *5.- ESPN 2
+echo *6.- ESPN 3
+echo *7.- ESPN 4
+echo *8.- ESPN Premium
+echo *9.- FOX Sports
+echo *10.- FOX Sports 2
+echo *11.- FOX Sports 3
+echo *12 - Las Estrellas
+echo *13.- Nickelodeon
+echo *14.- TYC Sports
+echo *15.- TYC Sports Play 
+echo *16.- TNT Sports
+echo *17 - Personalizado
+echo *18 - Volver para Atras
 echo.
 
 :: Advertencia IP
@@ -2699,12 +2700,13 @@ if "%optv%"=="7" goto :ESPNP
 if "%optv%"=="8" goto :FOXS1
 if "%optv%"=="9" goto :FOXS2
 if "%optv%"=="10" goto :FOXS3
-if "%optv%"=="11" goto :NICK
-if "%optv%"=="12" goto :TYC
-if "%optv%"=="13" goto :TYCPlay
-if "%optv%"=="14" goto :TNT
-if "%optv%"=="15" goto :CustomTV
-if "%optv%"=="16" goto :StartChannels
+if "%optv%"=="12" goto :Estrellas
+if "%optv%"=="13" goto :NICK
+if "%optv%"=="14" goto :TYC
+if "%optv%"=="15" goto :TYCPlay
+if "%optv%"=="16" goto :TNT
+if "%optv%"=="17" goto :CustomTV
+if "%optv%"=="18" goto :StartChannels
 if "%optv%"=="" goto :TVLOL
 
 
@@ -2729,17 +2731,10 @@ cls
 goto :StartChannels
 
 
-:Estrellas
-:Estrellas
-cls
-%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://linear-553.frequency.stream/dist/vix/553/hls/master/playlist.m3u8
-goto :StartChannels
-
-
 :ESPN
 :ESPN
 cls
-%FFPLAY% -hide_banner -cenc_decryption_key cb89ee3961599e3e648a5aad60895f34 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge1-ccast-sl.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc/ESPN2HD.mpd 
+%FFPLAY% -hide_banner -cenc_decryption_key cb89ee3961599e3e648a5aad60895f34 -probesize 32 -analyzeduration 0 -window_title "Reproductor" -fflags nobuffer -flags +low_delay -sn -ac 2 -vst v:3 -fast https://edge1-ccast-sl.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc/ESPN2HD.mpd 
 goto :StartChannels
 
 
@@ -2795,6 +2790,13 @@ goto :StartChannels
 :NICK
 cls
 %FFPLAY% -hide_banner -cenc_decryption_key 38d6f650cbf9a38fd9f35c01f98e647a -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix03-mus.cvattv.com.ar/live/c3eds/Nickelodeon/SA_Live_dash_enc/Nickelodeon.mpd
+goto :StartChannels
+
+
+:Estrellas
+:Estrellas
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://linear-553.frequency.stream/dist/vix/553/hls/master/playlist.m3u8
 goto :StartChannels
 
 
