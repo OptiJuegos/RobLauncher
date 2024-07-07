@@ -2660,7 +2660,7 @@ echo %LAUNCHER_TEXT%
 echo.
 
 :: Opciones para seleccionar
-echo *1 - Bein Sports
+echo *1 - Bein Sports 
 echo *2 - Cartoon Network
 echo *3 - Disney Channel
 echo *4.- ESPN 1
@@ -2673,11 +2673,12 @@ echo *10.- FOX Sports 2
 echo *11.- FOX Sports 3
 echo *12 - Las Estrellas
 echo *13.- Nickelodeon
-echo *14.- TYC Sports
-echo *15.- TYC Sports Play 
-echo *16.- TNT Sports
-echo *17 - Personalizado
-echo *18 - Volver para Atras
+echo *14.- Telefe
+echo *15.- TUDN
+echo *16.- TYC Sports
+echo *17.- TNT Sports
+echo *18 - Personalizado
+echo *19 - Volver para Atras
 echo.
 
 :: Advertencia IP
@@ -2702,11 +2703,12 @@ if "%optv%"=="10" goto :FOXS2
 if "%optv%"=="11" goto :FOXS3
 if "%optv%"=="12" goto :Estrellas
 if "%optv%"=="13" goto :NICK
-if "%optv%"=="14" goto :TYC
-if "%optv%"=="15" goto :TYCPlay
-if "%optv%"=="16" goto :TNT
-if "%optv%"=="17" goto :CustomTV
-if "%optv%"=="18" goto :StartChannels
+if "%optv%"=="14" goto :TELEFE
+if "%optv%"=="15" goto :TUDN
+if "%optv%"=="16" goto :TYC
+if "%optv%"=="17" goto :TNT
+if "%optv%"=="18" goto :CustomTV
+if "%optv%"=="19" goto :StartChannels
 if "%optv%"=="" goto :TVLOL
 
 
@@ -2807,17 +2809,24 @@ cls
 goto :StartChannels
 
 
+:TUDN
+:TUDN
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://fonz01.dlive.click/Pk5ElCxxJRc482maI9QH5Q/1720345571/323830303a3831303a3438663a3732613a396361313a313031333a633236663a37356532/ff558/playlist.m3u8?b=1
+goto :StartChannels
+
+
 :TYC
 :TYC
 cls
-%FFPLAY% -hide_banner -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live32-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_2A/TyCSport.mpd
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://d3055hobuue3je.cloudfront.net/out/v1/188a8f3baf914a35868453bd5d0b0fd2/index_4.m3u8
 goto :StartChannels
 
 
 :TYCPlay
 :TYCPlay
 cls
-%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8
 goto :StartChannels
 
 
