@@ -77,7 +77,7 @@ echo *4.- Utilidades
 echo *5.- Sobre el Launcher
 echo *6.- Actualizar el Launcher
 echo *7.- Canales Television
-echo *8.- Peliculas
+echo *8.- Peliculas y Series
 echo.
 
 :: Comprobando si el sistema es Windows XP
@@ -831,7 +831,7 @@ if exist "%CD%\Downloaded\Games\Assassins Creed 1 Optimized\gamedata\AssassinsCr
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Assassins.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/A Hat in Time.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Assassins.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Assassins Creed 1 Optimized.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -2819,7 +2819,7 @@ goto :StartChannels
 :TYC
 :TYC
 cls
-%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://d3055hobuue3je.cloudfront.net/out/v1/188a8f3baf914a35868453bd5d0b0fd2/index_4.m3u8
+%FFPLAY% -hide_banner -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix04-coe.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc/TyCSport.mpd
 goto :StartChannels
 
 
@@ -2889,11 +2889,12 @@ echo.
 echo *1.- Super Mario Bros: La Pelicula
 echo *2.- El Chavo: Vacaciones en Acapulco
 echo *3 - Five nights at Freddy: La Pelicula
-echo *4 - Wall-E
-echo *5 - Oppenheimer
-echo *6 - Argentina VS Francia Qatar 2022 (cualquiera)
-echo *7 - Personalizado
-echo *8 - Volver para Atras
+echo *4 - Los Simpsons (en vivo)
+echo *5 - Wall-E
+echo *6 - Oppenheimer
+echo *7 - Argentina VS Francia Qatar 2022 (cualquiera)
+echo *8 - Personalizado
+echo *9 - Volver para Atras
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -2902,11 +2903,12 @@ set /p opmov=Opcion:
 if "%opmov%"=="1" goto :SMB
 if "%opmov%"=="2" goto :ACAPULCO
 if "%opmov%"=="3" goto :FNAF
-if "%opmov%"=="4" goto :WALLE
-if "%opmov%"=="5" goto :Oppenheimer
-if "%opmov%"=="6" goto :Mundial
-if "%opmov%"=="7" goto :CustomMOVIE
-if "%opmov%"=="8" goto :StartMovies
+if "%opmov%"=="4" goto :SIMP
+if "%opmov%"=="5" goto :WALLE
+if "%opmov%"=="6" goto :Oppenheimer
+if "%opmov%"=="7" goto :Mundial
+if "%opmov%"=="8" goto :CustomMOVIE
+if "%opmov%"=="9" goto :StartMovies
 if "%opmov%"=="" goto :MOVIELOL
 
 
@@ -2925,6 +2927,12 @@ goto :StartMovies
 :FNAF
 :FNAF
 %FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://cache018.peliscdn.online/newhls/b5501eb755e47e473787373877bc3265/EP.0.2.v0.1708598921.720.m3u8
+goto :StartMovies
+
+
+:SIMP
+:SIMP
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://ythls.armelin.one/channel/UCnwtyUi2VFqwH9uv2Wk0hew.m3u8
 goto :StartMovies
 
 
