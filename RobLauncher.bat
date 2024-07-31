@@ -2097,6 +2097,10 @@ if exist "%CD%\Downloaded\Utilities\Activar.cmd" (
 "%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Activar.7z" -o"%CD%\Downloaded\Utilities"
 timeout /t 1 /nobreak
 
+:: Borrando los archivos Comprimidos
+del "Downloaded\Compressed\Activar.7z"
+cls
+
 :: Ejecutando el Software...
 cls
 echo Ejecutando el Software...
@@ -2104,7 +2108,6 @@ echo Ejecutando el Software...
 
 :: Cerrar proceso
 exit
-
 
 :Drivers
 :Drivers
@@ -2485,7 +2488,11 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WerSvc" /v "Start"
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WSearch" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdiServiceHost" /v "Start" /t REG_DWORD /d 4 /f >nul 2>&1
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdiSystemHost" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GpuEnergyDrv" /v "Start" /t REG_DWORD /d 4 /f
 echo === Servicios en Manual ====
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MapsBroker" /v "Start" /t REG_DWORD /d 3 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dmwappushservice" /v "Start" /t REG_DWORD /d 3 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\defragsvc" /v "Start" /t REG_DWORD /d 3 /f
 echo.
 
 echo === Optimizando CPU ===
@@ -2674,11 +2681,10 @@ echo *11.- FOX Sports 3
 echo *12 - Las Estrellas
 echo *13.- Nickelodeon
 echo *14.- Telefe
-echo *15.- TUDN
-echo *16.- TYC Sports
-echo *17.- TNT Sports
-echo *18 - Personalizado
-echo *19 - Volver para Atras
+echo *15.- TYC Sports
+echo *16.- TNT Sports
+echo *17 - Personalizado
+echo *18 - Volver para Atras
 echo.
 
 :: Advertencia IP
@@ -2704,11 +2710,10 @@ if "%optv%"=="11" goto :FOXS3
 if "%optv%"=="12" goto :Estrellas
 if "%optv%"=="13" goto :NICK
 if "%optv%"=="14" goto :TELEFE
-if "%optv%"=="15" goto :TUDN
-if "%optv%"=="16" goto :TYC
-if "%optv%"=="17" goto :TNT
-if "%optv%"=="18" goto :CustomTV
-if "%optv%"=="19" goto :StartChannels
+if "%optv%"=="15" goto :TYC
+if "%optv%"=="16" goto :TNT
+if "%optv%"=="17" goto :CustomTV
+if "%optv%"=="18" goto :StartChannels
 if "%optv%"=="" goto :TVLOL
 
 
@@ -2718,13 +2723,11 @@ cls
 %FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/playlist.m3u8
 goto :StartChannels
 
-
 :Cartoon
 :Cartoon
 cls
 %FFPLAY% -hide_banner -cenc_decryption_key 8abb2ee9150d8b2af8ebec0de0f833c8 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live13-sl.cvattv.com.ar/live/c3eds/CartoonNetwork/SA_Live_dash_enc/CartoonNetwork.mpd
 goto :StartChannels
-
 
 :DISNEYC
 :DISNEYC
@@ -2732,13 +2735,11 @@ cls
 %FFPLAY% -hide_banner -cenc_decryption_key 0df77ede9bc744376836d21afa137dda -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix03-mus.cvattv.com.ar/live/c3eds/DisneyChannelHD/SA_Live_dash_enc/DisneyChannelHD.mpd
 goto :StartChannels
 
-
 :ESPN
 :ESPN
 cls
 %FFPLAY% -hide_banner -cenc_decryption_key cb89ee3961599e3e648a5aad60895f34 -probesize 32 -analyzeduration 0 -window_title "Reproductor" -fflags nobuffer -flags +low_delay -sn -ac 2 -vst v:3 -fast https://edge1-ccast-sl.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc/ESPN2HD.mpd 
 goto :StartChannels
-
 
 :ESPN2
 :ESPN2
@@ -2746,13 +2747,11 @@ cls
 %FFPLAY% -hide_banner -cenc_decryption_key 0b40ae9f78a7bac3b57ecbf72d3c081e -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge2-ccast-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd 
 goto :StartChannels
 
-
 :ESPN3
 :ESPN3
 cls
 %FFPLAY% -hide_banner -cenc_decryption_key 1743cd03dfe3736b2c95da91a783af38 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix04-coe.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc/ESPN3.mpd
 goto :StartChannels
-
 
 :ESPN4
 :ESPN4
@@ -2766,13 +2765,11 @@ cls
 %FFPLAY% -hide_banner -cenc_decryption_key 4186a7c2a15f590a9399886feaec4257 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live11-sl.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_2A_wl/Fox_Sports_Premiun_HD.mpd 
 goto :StartChannels
 
-
 :FOXS1
 :FOXS1
 cls
 %FFPLAY% -hide_banner -cenc_decryption_key aac61b730e2ac1df23f1e872e7541c1b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports/SA_Live_dash_enc/FoxSports.mpd 
 goto :StartChannels
-
 
 :FOXS2
 :FOXS2
@@ -2780,13 +2777,11 @@ cls
 %FFPLAY% -hide_banner -cenc_decryption_key 5086d370e840010232cf4532b16e197f -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge6-hr.cvattv.com.ar/live/c3eds/FoxSports2HD/SA_Live_dash_enc/FoxSports2HD.mpd
 goto :StartChannels
 
-
 :FOXS3
 :FOXS3
 cls
 %FFPLAY% -hide_banner -cenc_decryption_key fa39e855543c5d70f30600d59e5e4c1b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix02-cte.cvattv.com.ar/live/c3eds/FoxSports3HD/SA_Live_dash_enc/FoxSports3HD.mpd
 goto :StartChannels
-
 
 :NICK
 :NICK
@@ -2794,13 +2789,11 @@ cls
 %FFPLAY% -hide_banner -cenc_decryption_key 38d6f650cbf9a38fd9f35c01f98e647a -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix03-mus.cvattv.com.ar/live/c3eds/Nickelodeon/SA_Live_dash_enc/Nickelodeon.mpd
 goto :StartChannels
 
-
 :Estrellas
 :Estrellas
 cls
-%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://linear-553.frequency.stream/dist/vix/553/hls/master/playlist.m3u8
+%FFPLAY% -hide_banner -cenc_decryption_key 917309c98f072b0bd484dd6560c6d166 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-live01-mun.cvattv.com.ar/live/c6eds/Canal_de_las_estrellas/SA_Live_dash_enc/Canal_de_las_estrellas.mpd
 goto :StartChannels
-
 
 :TELEFE
 :TELEFE
@@ -2808,27 +2801,17 @@ cls
 %FFPLAY% -hide_banner -cenc_decryption_key c69f3afde2085dcaaaddbf55246a0323 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix03-mus.cvattv.com.ar/live/c6eds/TelefeHD/SA_Live_dash_enc/TelefeHD.mpd
 goto :StartChannels
 
-
-:TUDN
-:TUDN
-cls
-%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://fonz01.dlive.click/Pk5ElCxxJRc482maI9QH5Q/1720345571/323830303a3831303a3438663a3732613a396361313a313031333a633236663a37356532/ff558/playlist.m3u8?b=1
-goto :StartChannels
-
-
 :TYC
 :TYC
 cls
 %FFPLAY% -hide_banner -cenc_decryption_key cc23ea1fb32629f9e1f48c8deeae3e5b -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://edge-mix04-coe.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc/TyCSport.mpd
 goto :StartChannels
 
-
 :TYCPlay
 :TYCPlay
 cls
 %FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://d320m3arb2wo8b.cloudfront.net/out/v1/34e0da501a8c4489b713809eb08a9bf3/index_13.m3u8
 goto :StartChannels
-
 
 :TNT
 :TNT
@@ -2848,7 +2831,7 @@ set /p URL=Link del video:
 set /p DECRYPTION_KEY=Decryption Key (dejar en blanco si no hay alguna): 
 
 IF "%DECRYPTION_KEY%"=="" (
-    %FFPLAY% "%URL%"
+    %FFPLAY% "%URL%" -s 1280:720 -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast
 ) ELSE (
     %FFPLAY% "%URL%" -cenc_decryption_key %DECRYPTION_KEY% -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast
 )
@@ -2889,7 +2872,7 @@ echo.
 echo *1.- Super Mario Bros: La Pelicula
 echo *2.- El Chavo: Vacaciones en Acapulco
 echo *3 - Five nights at Freddy: La Pelicula
-echo *4 - Los Simpsons (en vivo)
+echo *4 - Los Simpsons
 echo *5 - Wall-E
 echo *6 - Oppenheimer
 echo *7 - Argentina VS Francia Qatar 2022 (cualquiera)
@@ -2917,36 +2900,31 @@ if "%opmov%"=="" goto :MOVIELOL
 %FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://cache008.peliscdn.online/newhls/b9f3f5e072aa9be99699e94bdf0924d6/EP.0.1.v2.1708682322.m3u8
 goto :StartMovies
 
-
 :ACAPULCO
 :ACAPULCO
 %FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast "https://archive.org/download/elchavo_201709/El Chavo del 8 - Vacaciones en Acapulco.mp4"
 goto :StartMovies
-
 
 :FNAF
 :FNAF
 %FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://cache018.peliscdn.online/newhls/b5501eb755e47e473787373877bc3265/EP.0.2.v0.1708598921.720.m3u8
 goto :StartMovies
 
-
 :SIMP
 :SIMP
-%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -vst v:3 -fast https://ythls.armelin.one/channel/UCnwtyUi2VFqwH9uv2Wk0hew.m3u8
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://player.odycdn.com/v6/streams/56f1ddf1bde570b00a424ff53f619334d7dc5f39/e11315.mp4?download=true
 goto :StartMovies
-
 
 :WALLE
 :WALLE
 %FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://cache018.peliscdn.online/newhls/1b0a006b686bb395565173659004bb9d/EP.0.1.v0.1708749457.1080.m3u8
 goto :StartMovies
 
-
 :Oppenheimer
 :Oppenheimer
 %FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://cache017.peliscdn.online/newhls/4c8ab7b7ea8a06df1e7ddceaa7490d9d/EP.0.0.v1.1708613656.720.m3u8
 goto :StartMovies
-
 
 :Mundial
 :Mundial
