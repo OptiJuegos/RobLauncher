@@ -694,9 +694,9 @@ echo *18.- Half Life - (142 MB)
 echo *19.- Hello Neighbor - (1.5 GB)
 echo *20.- Hollow Knight - (936 MB)       
 echo *21.- Left 4 Dead 2 - (1.8 GB)
-echo *23.- Limbo - (74 MB)			
-echo *24.- Outlast - (2.3 GB)		
-echo *25.- PES 6 - (1.1 GB)          
+echo *22.- Limbo - (74 MB)			
+echo *23.- Outlast - (2.3 GB)		
+echo *24.- PES 6 - (1.1 GB)          
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -2054,6 +2054,7 @@ echo *1.- Activar Windows
 echo *2.- Actualizar Drivers
 echo *3.- Borrar Archivos Temporales
 echo *4.- Deshabilitar Windows Defender
+echo *5.- Grabar Transmisiones FFmpeg
 echo *5.- Instalar Dependencias (Visual C++ - DirectX)
 echo *6.- Optimizar Internet
 echo *7.- Optimizar Sistema
