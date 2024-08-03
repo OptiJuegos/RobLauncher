@@ -7,6 +7,7 @@ cd /d "%~dp0"
 :: Establecer las Variables de Entorno...
 set FFMPEG="Assets\ffmpeg.exe"
 set FFPLAY="Assets\ffplay.exe"
+set FFPLAYNOGUI="Assets\ffplaynogui.exe"
 set WGET="Assets\wget.exe"
 set YTDLP="Assets\yt-dlp.exe"
 set LAUNCHER_TEXT=*RobLauncher V1.9 - Un launcher para OptiCraft y Demas Proyectos.*
@@ -66,6 +67,7 @@ goto :Start
 :StartAbout
 :StartChannels
 :StartMovies
+:StartRadio
 cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
@@ -82,6 +84,7 @@ echo *5.- Sobre el Launcher
 echo *6.- Actualizar el Launcher
 echo *7.- Canales Television
 echo *8.- Peliculas y Series
+echo *9.- Radios Argentinas
 echo.
 
 :: Comprobando si el sistema es Windows XP
@@ -123,6 +126,7 @@ if "%opst%"=="5" goto :AboutPage
 if "%opst%"=="6" goto :Update
 if "%opst%"=="7" goto :TV
 if "%opst%"=="8" goto :MOVIE
+if "%opst%"=="9" goto :Radio
 if "%opst%"=="" goto :Start
 
 
@@ -2335,7 +2339,7 @@ cls
 if exist "%CD%\Assets\ffmpeg.exe" (
 	cls
 ) else (
-    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Assets\ffmpeg.exe" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/ffmpeg.exe?download=true"
+    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Assets\ffmpeg.exe" "https://web.archive.org/web/20240803004520/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/ffmpeg.exe?download=true"
 	cls
 )
 
@@ -3012,3 +3016,85 @@ set /p URL=Ruta o link del video:
 %FFPLAY% "%URL%" -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast
 
 goto :StartMovies
+
+:Radio
+:Radio
+cls
+
+:: Comprobando si esta ffplay
+if exist "%CD%\Assets\ffplay.exe" (
+	cls
+) else (
+    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://web.archive.org/web/20240507225542/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe
+	cls
+)
+
+:: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
+echo.
+echo %LAUNCHER_TEXT%
+echo.
+
+:: Opciones para seleccionar
+echo *1.- Aspen FM 102.3
+echo *2.- Radio Disney FM 94.3
+echo *3 - La Red FM 98.3
+echo *4 - Rock And Pop FM 95.9
+echo *5 - Urbana Play FM 104.3
+echo *6 - Radio Rivadavia AM 630
+echo *7 - Radio Con Vos FM 89.9
+echo *8 - Volver para Atras
+echo.
+
+:: Codigo para ir al menu con las Opciones
+set /p opra=Opcion: 
+
+if "%opra%"=="1" goto :ASPEN
+if "%opra%"=="2" goto :DISNEYRA
+if "%opra%"=="3" goto :LARED
+if "%opra%"=="4" goto :ROCKPOP
+if "%opra%"=="5" goto :URBANA
+if "%opra%"=="6" goto :RIVADAVIA
+if "%opra%"=="7" goto :ConVos
+if "%opra%"=="8" goto :StartRadio
+if "%opra%"=="" goto :Radio
+
+:ASPEN
+:ASPEN
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://24283.live.streamtheworld.com/ASPENAAC.aac
+goto :StartRadio
+
+:DISNEYRA
+:DISNEYRA
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://26563.live.streamtheworld.com/DISNEY_ARG_BA_ADP/HLS/playlist.m3u8
+goto :StartRadio
+
+:LARED
+:LARED
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast http://stream.lt8.com.ar:8080/laredrosario.mp3
+goto :StartRadio
+
+:ROCKPOP
+:ROCKPOP
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://playerservices.streamtheworld.com/api/livestream-redirect/ROCKANDPOPAAC_SC
+goto :StartRadio
+
+:URBANA
+:URBANA
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://g2.vxral-slo.transport.edge-access.net/nx-beta/nx.hor.livetx.01/60083afdba6eb40016c35954_240p/index.m3u8
+goto :StartRadio
+
+:RIVADAVIA
+:RIVADAVIA
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIAAAC_SC
+goto :StartRadio
+
+:ConVos
+cls
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://server1.stweb.tv/rcvos/live/playlist.m3u8
+goto :StartRadio
