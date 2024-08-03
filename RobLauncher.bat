@@ -10,8 +10,8 @@ set FFPLAY="Assets\ffplay.exe"
 set FFPLAYNOGUI="Assets\ffplaynogui.exe"
 set WGET="Assets\wget.exe"
 set YTDLP="Assets\yt-dlp.exe"
-set LAUNCHER_TEXT=*RobLauncher V1.9 - Un launcher para OptiCraft y Demas Proyectos.*
-set LAUNCHER_VER=RobLauncher V1.9
+set LAUNCHER_TEXT=*RobLauncher V1.91 - Un launcher para OptiCraft y Demas Proyectos.*
+set LAUNCHER_VER=RobLauncher V1.91
 
 :: Establecer el Titulo del launcher
 title %LAUNCHER_VER%
