@@ -2789,7 +2789,7 @@ if "%optv%"=="15" goto :TYC
 if "%optv%"=="16" goto :TNT
 if "%optv%"=="17" goto :CustomTV
 if "%optv%"=="18" goto :StartChannels
-if "%optv%"=="" goto :TVLOL
+if "%optv%"=="" goto :TV
 
 
 :Bein
@@ -2955,7 +2955,7 @@ if "%opmov%"=="6" goto :Oppenheimer
 if "%opmov%"=="7" goto :Mundial
 if "%opmov%"=="8" goto :CustomMOVIE
 if "%opmov%"=="9" goto :StartMovies
-if "%opmov%"=="" goto :MOVIELOL
+if "%opmov%"=="" goto :MOVIE
 
 
 :SMB
