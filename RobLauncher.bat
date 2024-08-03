@@ -5,8 +5,10 @@ chcp 65001 > nul
 cd /d "%~dp0"
 
 :: Establecer las Variables de Entorno...
+set FFMPEG="Assets\ffmpeg.exe"
 set FFPLAY="Assets\ffplay.exe"
 set WGET="Assets\wget.exe"
+set YTDLP="Assets\yt-dlp.exe"
 set LAUNCHER_TEXT=*RobLauncher V1.9 - Un launcher para OptiCraft y Demas Proyectos.*
 set LAUNCHER_VER=RobLauncher V1.9
 
@@ -20,6 +22,8 @@ mkdir "Downloaded\Compressed" >nul 2>&1
 mkdir "Downloaded\Games" >nul 2>&1
 mkdir "Downloaded\OptiCraft" >nul 2>&1
 mkdir "Downloaded\OptiCraft\FAQ" >nul 2>&1
+mkdir "Downloaded\Recordings" >nul 2>&1
+mkdir "Downloaded\Recordings\Youtube" >nul 2>&1
 mkdir "Downloaded\Utilities" >nul 2>&1
 
 
@@ -2053,13 +2057,14 @@ echo.
 echo *1.- Activar Windows
 echo *2.- Actualizar Drivers
 echo *3.- Borrar Archivos Temporales
-echo *4.- Deshabilitar Windows Defender
-echo *5.- Grabar Transmisiones FFmpeg
-echo *5.- Instalar Dependencias (Visual C++ - DirectX)
-echo *6.- Optimizar Internet
-echo *7.- Optimizar Sistema
-echo *8.- Psiphon VPN
-echo *9.- Volver para atras.
+echo *4.- Descargar Videos de YouTube
+echo *5.- Deshabilitar Windows Defender
+echo *6.- Grabar Transmisiones o Directos
+echo *7.- Instalar Dependencias (Visual C++ - DirectX)
+echo *8.- Optimizar Internet
+echo *9.- Optimizar Sistema
+echo *10.- Psiphon VPN
+echo *11.- Volver para atras.
 echo.
 
 :: Codigo para ir al menu con las Opciones
@@ -2067,12 +2072,14 @@ set /p oput=Opcion:
 if "%oput%"=="1" goto :AWindows
 if "%oput%"=="2" goto :Drivers
 if "%oput%"=="3" goto :Temp
-if "%oput%"=="4" goto :DefenderDisable
-if "%oput%"=="5" goto :Runtimes
-if "%oput%"=="6" goto :Internet
-if "%oput%"=="7" goto :OPC
-if "%oput%"=="8" goto :VPNCrota
-if "%oput%"=="9" goto :StartUtilities
+if "%oput%"=="4" goto :VidYT
+if "%oput%"=="5" goto :DefenderDisable
+if "%oput%"=="6" goto :FFRecording
+if "%oput%"=="7" goto :Runtimes
+if "%oput%"=="8" goto :Internet
+if "%oput%"=="9" goto :OPC
+if "%oput%"=="10" goto :VPNCrota
+if "%oput%"=="11" goto :StartUtilities
 if "%oput%"=="" goto :Utilities
 
 
@@ -2167,6 +2174,43 @@ echo ========================================
 
 timeout 5 /nobreak
 goto :Utilities
+
+
+:VidYT
+:VidYT
+cls
+
+:: Comprobando si esta YTDLP
+if exist "%CD%\Assets\yt-dlp.exe" (
+	cls
+) else (
+    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\yt-dlp.exe" "https://web.archive.org/web/20240802051734/https://github.com/yt-dlp/yt-dlp/releases/download/2024.08.01/yt-dlp_x86.exe"
+	cls
+)
+
+:: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
+echo.
+echo %LAUNCHER_TEXT%
+echo.
+
+echo =======================================
+echo -Los videos se encuentran en la carpeta
+echo -Downloaded, Recordings, Youtube
+echo =======================================
+echo.
+
+:: Hacer que el usuario establezca el link del video
+set /p LINK=-Link del video en YouTube: 
+
+:: Hacer que el usuario nombre el video
+set /p NAME=-Nombre del Video: 
+echo.
+
+:: Descargar el video usando YT-DPL 
+%YTDLP% %LINK% -o "Downloaded\Recordings\Youtube\%NAME%"
+
+:: Volver para atras
+goto :StartUtilities
 
 
 :DefenderDisable
@@ -2282,6 +2326,47 @@ reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\Pu
 timeout /t 3 /nobreak
 goto StartUtilities
 
+
+:FFRecording
+:FFRecording
+cls
+
+:: Comprobando si esta FFMPEG
+if exist "%CD%\Assets\ffmpeg.exe" (
+	cls
+) else (
+    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Assets\ffmpeg.exe" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/ffmpeg.exe?download=true"
+	cls
+)
+
+:: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
+echo.
+echo %LAUNCHER_TEXT%
+echo.
+
+echo =======================================
+echo -Los videos se encuentran en la carpeta
+echo -Downloaded, Recordings
+echo =======================================
+echo.
+
+:: Establecer URL del .M3U8 o .MPD
+set /p URLR=-Enlace del .MPD o .M3U8: 
+
+:: Clave de desencriptacion para los MPD
+set /p DECRYPTION_KEYR=Decryption Key (dejar en blanco si no hay alguna): 
+echo.
+
+:: Codigo para descargar la transmisiones
+IF "%DECRYPTION_KEYR%"=="" (
+    %FFMPEG% -i "%URLR%" -c copy "Downloaded\Recordings\Recording.mp4"
+	timeout 3 /nobreak
+) ELSE (
+    %FFMPEG% -i "%URLR%" -cenc_decryption_key %DECRYPTION_KEYR% -c copy "Downloaded\Recordings\Recording.mp4"
+	timeout 3 /nobreak
+)
+
+goto :StartMovies
 
 :Runtimes
 :Runtimes
@@ -2642,25 +2727,14 @@ timeout /t 1 /nobreak
 :TV
 cls
 
-:: Comprobando si esta FFPLAY
+:: Comprobando si esta ffplay
 if exist "%CD%\Assets\ffplay.exe" (
-	goto :TVLOL
+	cls
 ) else (
-    goto :FFPLAY
+    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://web.archive.org/web/20240507225542/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe
+	cls
 )
 
-
-:FFPLAY
-:FFPLAY
-echo Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" "https://web.archive.org/web/20240507225542/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe"
-cls
-goto :TVLOL
-
-
-:TVLOL
-:TVLOL
-cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
 echo.
@@ -2844,25 +2918,13 @@ goto :Start
 :MOVIE
 cls
 
-:: Comprobando si esta FFPLAY
+:: Comprobando si esta ffplay
 if exist "%CD%\Assets\ffplay.exe" (
-	goto :MOVIELOL
+	cls
 ) else (
-    goto :FFPLAYMOVIE
+    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://web.archive.org/web/20240507225542/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe
+	cls
 )
-
-
-:FFPLAYMOVIE
-:FFPLAYMOVIE
-echo Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "%CD%\Assets\ffplay.exe" https://web.archive.org/web/20240507225542/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/Assets/ffplay.exe
-cls
-goto :MOVIELOL
-
-
-:MOVIELOL
-:MOVIELOL
-cls
 
 :: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
 echo.
@@ -2936,6 +2998,11 @@ goto :StartMovies
 :CustomMOVIE
 :CustomMOVIE
 cls
+
+:: Nefasta decoracion del Launcher porque me crashean los textos ascii anda a saber porq
+echo.
+echo %LAUNCHER_TEXT%
+echo.
 
 echo Establecer video personalizado
 echo.
