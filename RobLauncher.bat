@@ -2061,7 +2061,7 @@ echo.
 echo *1.- Activar Windows
 echo *2.- Actualizar Drivers
 echo *3.- Borrar Archivos Temporales
-echo *4.- Descargar Videos de YouTube
+echo *4.- Descargar Videos de Sitios Web
 echo *5.- Deshabilitar Windows Defender
 echo *6.- Grabar Transmisiones o Directos
 echo *7.- Instalar Dependencias (Visual C++ - DirectX)
@@ -2184,7 +2184,7 @@ goto :Utilities
 :VidYT
 cls
 
-:: Comprobando si esta YTDLP
+:: Comprobando si esta YT-DLP
 if exist "%CD%\Assets\yt-dlp.exe" (
 	cls
 ) else (
@@ -2197,21 +2197,25 @@ echo.
 echo %LAUNCHER_TEXT%
 echo.
 
-echo =======================================
+echo ========================================
 echo -Los videos se encuentran en la carpeta
-echo -Downloaded, Recordings, Youtube
+echo -RobLauncher, Downloaded, Recordings
 echo =======================================
 echo.
 
 :: Hacer que el usuario establezca el link del video
-set /p LINK=-Link del video en YouTube: 
-
-:: Hacer que el usuario nombre el video
-set /p NAME=-Nombre del Video: 
+echo *Link del video: 
+set /p LINK=
 echo.
 
-:: Descargar el video usando YT-DPL 
-%YTDLP% %LINK% -o "Downloaded\Recordings\Youtube\%NAME%"
+:: Hacer que el usuario nombre el video
+echo *Nombre del Video: 
+set /p NAMEL=
+echo.
+
+:: Descargar el video usando YT-DlP
+cls
+%YTDLP% %LINK% -o "Downloaded\Recordings\%NAMEL%"
 
 :: Volver para atras
 goto :StartUtilities
@@ -2339,7 +2343,7 @@ cls
 if exist "%CD%\Assets\ffmpeg.exe" (
 	cls
 ) else (
-    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Assets\ffmpeg.exe" "https://web.archive.org/web/20240803004520/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/ffmpeg.exe?download=true"
+    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Assets\ffmpeg.exe" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/ffmpeg.exe?download=true"
 	cls
 )
 
@@ -2350,23 +2354,31 @@ echo.
 
 echo =======================================
 echo -Los videos se encuentran en la carpeta
-echo -Downloaded, Recordings
+echo -RobLauncher, Downloaded, Recordings
 echo =======================================
 echo.
 
 :: Establecer URL del .M3U8 o .MPD
-set /p URLR=-Enlace del .MPD o .M3U8: 
-
-:: Clave de desencriptacion para los MPD
-set /p DECRYPTION_KEYR=Decryption Key (dejar en blanco si no hay alguna): 
+echo *Enlace del archivo de transmision (.MPD - .M3U8):
+set /p URLR=
 echo.
 
+:: Hacer que el usuario nombre el video
+echo *Nombre de la Grabacion: 
+set /p NAME=
+echo.
+
+:: Clave de desencriptacion para los MPD
+echo *Decryption Key (dejar en blanco si no hay alguna): 
+set /p DECRYPTION_KEYR=
+
 :: Codigo para descargar la transmisiones
+cls
 IF "%DECRYPTION_KEYR%"=="" (
-    %FFMPEG% -i "%URLR%" -c copy "Downloaded\Recordings\Recording.mp4"
+    %FFMPEG% -i "%URLR%" -loglevel error -hide_banner -c copy "Downloaded\Recordings\Recording.mp4"
 	timeout 3 /nobreak
 ) ELSE (
-    %FFMPEG% -i "%URLR%" -cenc_decryption_key %DECRYPTION_KEYR% -c copy "Downloaded\Recordings\Recording.mp4"
+    %FFMPEG% -i "%URLR%" -cenc_decryption_key %DECRYPTION_KEYR% -loglevel error -hide_banner -c copy "Downloaded\Recordings\%NAME%.mp4"
 	timeout 3 /nobreak
 )
 
@@ -2980,7 +2992,7 @@ goto :StartMovies
 :SIMP
 :SIMP
 cls
-%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://player.odycdn.com/v6/streams/56f1ddf1bde570b00a424ff53f619334d7dc5f39/e11315.mp4?download=true
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://lozanogamer-simpfull.hf.space/stream.m3u8
 goto :StartMovies
 
 :WALLE
@@ -2996,6 +3008,18 @@ goto :StartMovies
 :Mundial
 :Mundial
 %FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://d2nvs31859zcd8.cloudfront.net/a36dd5d176ef62012c0c_stardetonador_97571900428_7474081598/chunked/highlight-2056245952.m3u8
+goto :StartMovies
+
+:RatMovie
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://web.archive.org/web/20240808044026/https://huggingface.co/spaces/OptiJuegos/d/resolve/main/rat.m3u8?download=true
+goto :StartMovies
+
+:Toy1
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://web.archive.org/web/20240808195254/https://huggingface.co/spaces/OptiJuegos/e/resolve/main/toy1.m3u8?download=true
+goto :StartMovies
+
+:ArgNew
+%FFPLAY% -hide_banner -window_title "Reproductor" -fflags nobuffer -flags low_delay -sn -ac 2 -fast https://web.archive.org/web/20240808200804/https://huggingface.co/spaces/OptiJuegos/f/resolve/main/argnew.m3u8?download=true
 goto :StartMovies
 
 
