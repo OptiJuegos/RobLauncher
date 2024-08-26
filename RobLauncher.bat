@@ -205,7 +205,7 @@ cls
 del "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt"
 
 :: Descargando el bloc de notas con el FAQ
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\OptiCraft\FAQ\FAQ.txt" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/FAQ.txt?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\OptiCraft\FAQ\FAQ.txt" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/FAQ.txt?download=true"
 
 :: Iniciando el NOTEPAD
 notepad.exe "%CD%\Downloaded\OptiCraft\FAQ\FAQ.txt"
@@ -230,7 +230,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.7.3.1 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.7.3.1 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.7.3.1 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.7.3.1 By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft 1.7.3.1 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -265,7 +265,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.9.1.0 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.9.1.0 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.9.1.0 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.9.1.0 By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft 1.9.1.0 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -300,7 +300,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.12.0 By OptiJuegos\OptiCraft 1.1
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.12.0 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.12.0 By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft 1.12.0 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -335,7 +335,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.14.31 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.14.31 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.14.31 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.14.31 By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft 1.14.31 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -370,7 +370,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.17.30 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.17.30 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.17.30 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.17.30 By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft 1.17.30 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -405,7 +405,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.18.31 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.18.31 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.18.31 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.18.31 By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft 1.18.31 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -440,7 +440,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.19.52 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.19.52 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.19.52 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.19.52 By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft 1.19.52 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -475,7 +475,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft 1.20.10 By OptiJuegos\OptiCraft 1.
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.20.10 By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft 1.20.10 By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft 1.20.10 By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft 1.20.10 By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -547,7 +547,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.5.2\1-OptiCraft.bat" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.5.2.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.5.2.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft JAVA 1.5.2.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -582,7 +582,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.8.9\1-OptiCraft.bat" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.8.9.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.8.9.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft JAVA 1.8.9.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -617,7 +617,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.12.2 FORGE\1-Minecraft.bat"
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.12.2.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.12.2 FORGE.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft JAVA 1.12.2.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -652,7 +652,7 @@ if exist "%CD%\Downloaded\OptiCraft\OptiCraft JAVA 1.16.5\1-Minecraft Sodium.bat
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z" https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiCraft JAVA 1.16.5.7z?download=true
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiCraft JAVA 1.16.5.7z" https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiCraft JAVA 1.16.5.7z?download=true
 cls
 
 :: Descomprimiendo el Software...
@@ -766,7 +766,7 @@ if exist "%CD%\Downloaded\Games\60 Seconds! Optimized\60Seconds.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\60s.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/60 Seconds Optimized.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\60s.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/60 Seconds Optimized.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -802,7 +802,7 @@ if exist "%CD%\Downloaded\Games\A Hat In Time\gamedata\Binaries\Win64\HatinTimeG
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\AHatInTime.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/A Hat in Time.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\AHatInTime.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/A Hat in Time.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -839,7 +839,7 @@ if exist "%CD%\Downloaded\Games\Assassins Creed 1 Optimized\gamedata\AssassinsCr
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Assassins.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Assassins Creed 1 Optimized.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Assassins.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Assassins Creed 1 Optimized.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -874,7 +874,7 @@ if exist "%CD%\Downloaded\Games\Bad Piggies\BadPiggies.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\BadPiggies.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Bad_Piggies.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\BadPiggies.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Bad_Piggies.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -909,7 +909,7 @@ if exist "%CD%\Downloaded\Games\OptiBully\bullydata\Bully.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiBully.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiBully.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiBully.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiBully.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -944,7 +944,7 @@ if exist "%CD%\Downloaded\Games\Call of Duty 2 Optimized\1-Call Of Duty 2 - Norm
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\COD2.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Call of Duty 2 Optimized.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\COD2.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Call of Duty 2 Optimized.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -979,7 +979,7 @@ if exist "%CD%\Downloaded\Games\Call of Duty 4 Modern Warfare Optimized\coddata\
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\COD4.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Call of Duty 4 Modern Warfare Optimized.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\COD4.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Call of Duty 4 Modern Warfare Optimized.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1013,7 +1013,7 @@ if exist "%CD%\Downloaded\Games\Counter Strike 1.6 OptiClient\Counter-Strike 1.6
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Counter Strike 1.6 Opti-Client.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Counter Strike 1.6 Opti-Client.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Counter Strike 1.6 Opti-Client.7z?download=true"
 cls
 
 :: Descomprimiendo el Juego...
@@ -1048,7 +1048,7 @@ if exist "%CD%\Downloaded\Games\Resurrection Strike V1.0\csgo.exe" (
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Resurrection Strike V1.0.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Resurrection Strike V1.0.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Resurrection Strike V1.0.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Resurrection Strike V1.0.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1083,7 +1083,7 @@ if exist "%CD%\Downloaded\Games\Cuphead LITE\1-Cuphead.bat" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Cuphead LITE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Cuphead LITE.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Cuphead LITE.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Cuphead LITE.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1118,7 +1118,7 @@ if exist "%CD%\Downloaded\Games\Craftsman PC Port 1.9\Craftsman.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Craftsman PC Port 1.9.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Craftsman PC Port 1.9.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Craftsman PC Port 1.9.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Craftsman PC Port 1.9.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1153,7 +1153,7 @@ if exist "%CD%\Downloaded\Games\Dark Souls 1 LITE\darkdata\DARKSOULS.exe" (
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\DarkSouls.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Dark Souls 1 LITE.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\DarkSouls.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Dark Souls 1 LITE.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1188,7 +1188,7 @@ if exist "%CD%\Downloaded\Games\Far Cry 1\gamedata\Bin32\FarCry.exe" (
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\FarCry.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Far Cry 1.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\FarCry.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Far Cry 1.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1223,7 +1223,7 @@ if exist "%CD%\Downloaded\Games\Getting Over It\GettingOverIt.exe" (
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GettingOverIt.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Getting Over It.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GettingOverIt.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Getting Over It.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1258,7 +1258,7 @@ if exist "%CD%\Downloaded\Games\Geometry Dash 2.2 Optimizado By OptiJuegos\gd_da
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Geometry Dash 2.2 Optimizado By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Geometry Dash 2.204 Optimizado By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Geometry Dash 2.2 Optimizado By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1293,7 +1293,7 @@ if exist "%CD%\Downloaded\Games\GTA 4 LITE By OptiJuegos\1-Grand Theft Auto IV -
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GTA 4 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/GTA 4 LITE By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GTA 4 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/GTA 4 LITE By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1328,7 +1328,7 @@ if exist "%CD%\Downloaded\Games\GTA V LITE V4\1-Grand Theft Auto V - NORMAL.bat"
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GTA V LITE.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/GTA V LITE V4.zip?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\GTA V LITE.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/GTA V LITE V4.zip?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1364,7 +1364,7 @@ if exist "%CD%\Downloaded\Games\Half Life Xash3D\Half Life.exe" (
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Half Life.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Half Life Xash3D.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Half Life.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Half Life Xash3D.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1399,7 +1399,7 @@ if exist "%CD%\Downloaded\Games\Hello Neighbor Optimizado Y Portable V2\1-Hello 
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hello Neighbor Optimizado Y Portable V2.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Hello Neighbor Optimizado Y Portable V2.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hello Neighbor Optimizado Y Portable V2.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Hello Neighbor Optimizado Y Portable V2.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1434,7 +1434,7 @@ if exist "%CD%\Downloaded\Games\Hollow Knight Optimizado\Hollow Knight.bat" (
 )
 
 :: Descargando el Software
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hollow Knight Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Hollow Knight Optimizado.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Hollow Knight Optimizado.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Hollow Knight Optimizado.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1469,7 +1469,7 @@ if exist "%CD%\Downloaded\Games\Left 4 Dead 2 LITE By OptiJuegos\1-Left 4 Dead 2
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Left 4 Dead 2 LITE By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Left 4 Dead 2 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Left 4 Dead 2 LITE By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1504,7 +1504,7 @@ if exist "%CD%\Downloaded\Games\Limbo\limbo.exe" (
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Limbo.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Limbo.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Limbo.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Limbo.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1539,7 +1539,7 @@ if exist "%CD%\Downloaded\Games\Outlast\OutlastLauncher.exe" (
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Outlast.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Outlast.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Outlast.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Outlast.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1574,7 +1574,7 @@ if exist "%CD%\Downloaded\Games\PES 6 Portable Y Optimizado\Pro Evolution Soccer
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/PES 6 Portable Y Optimizado.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\PES 6 Portable Y Optimizado.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/PES 6 Portable Y Optimizado.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1609,7 +1609,7 @@ if exist "%CD%\Downloaded\Games\Pro Evolution Soccer 2013\Pro Evolution Soccer 1
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Pro Evolution Soccer 2013.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Pro Evolution Soccer 2013.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Pro Evolution Soccer 2013.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Pro Evolution Soccer 2013.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1641,7 +1641,7 @@ if exist "%CD%\Downloaded\Games\Pro Evolution Soccer 2017 Optimized\pesdata\PES2
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Pro Evolution Soccer 2017 Optimized.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Pro Evolution Soccer 2017 Optimized.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Pro Evolution Soccer 2017 Optimized.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Pro Evolution Soccer 2017 Optimized.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1677,7 +1677,7 @@ if exist "%CD%\Downloaded\Games\Plants vs Zombies\PlantsVsZombies.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Plants_vs_Zombies.7z" "https://web.archive.org/web/20240507002159/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Plants vs Zombies.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Plants_vs_Zombies.7z" "https://web.archive.org/web/20240507002159/https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Plants vs Zombies.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1714,7 +1714,7 @@ if exist "%CD%\Downloaded\Games\Poly Bridge v0.73b Optimizado\polydata\polybridg
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Poly Bridge v0.73b Optimizado.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Poly_Bridge_v0.73b_Optimizado.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Poly Bridge v0.73b Optimizado.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1750,7 +1750,7 @@ if exist "%CD%\Downloaded\Games\Portal 1 LITE By OptiJuegos\portaldata\portal.ex
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Portal 1 LITE By OptiJuegos.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Portal 1 LITE By OptiJuegos.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Portal 1 LITE By OptiJuegos.7z?download=true"
 cls
 
 :: Descomprimiendo el Juego...
@@ -1786,7 +1786,7 @@ if exist "%CD%\Downloaded\Games\OptiZomboid\1-OptiZomboid.bat" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/OptiZomboid.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\OptiZomboid.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/OptiZomboid.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1822,7 +1822,7 @@ if exist "%CD%\Downloaded\Games\Silent Hill 2\Silent Hill 2.bat" (
 )
 
 :: Descargando las Partes del Software
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Silent Hill 2 Portable.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Silent Hill 2 Portable.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Silent Hill 2 Portable.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Silent Hill 2 Portable.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1858,7 +1858,7 @@ if exist "%CD%\Downloaded\Games\Sonic 1\Sonic 1.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Sonic 1.zip" "https://web.archive.org/web/20240507010058/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Sonic 1.zip?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Sonic 1.zip" "https://web.archive.org/web/20240507010058/https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Sonic 1.zip?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1895,7 +1895,7 @@ if exist "%CD%\Downloaded\Games\SM64\SM64-60.exe" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Super_Mario_64.zip" "https://web.archive.org/web/20240507010436/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Super_Mario_64.zip?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Super_Mario_64.zip" "https://web.archive.org/web/20240507010436/https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Super_Mario_64.zip?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1931,7 +1931,7 @@ if exist "%CD%\Downloaded\Games\Tetris.exe" (
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Games\Tetris.exe" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Tetris_GameBoy.exe?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Games\Tetris.exe" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Tetris_GameBoy.exe?download=true"
 cls
 
 :: Ejecutando el Software...
@@ -1959,7 +1959,7 @@ if exist "%CD%\Downloaded\Games\The Forest Lite V1.0\gamedata\TheForest32.exe" (
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\The Forest Lite V1.0.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/The Forest Lite V1.0.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\The Forest Lite V1.0.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/The Forest Lite V1.0.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -1994,7 +1994,7 @@ if exist "%CD%\Downloaded\Games\Unturned 3.9.9.5\Unturned.exe" (
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Unturned.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Unturned_3.9.9.5.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Unturned.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Unturned_3.9.9.5.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -2029,7 +2029,7 @@ if exist "%CD%\Downloaded\Games\Youtubers Life Optimizado\gamedata\YoutubersLife
 )
 
 :: Descargando el Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Youtubers Life Optimizado.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Youtubers Life Optimizado.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Youtubers Life Optimizado.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Youtubers Life Optimizado.7z?download=true"
 cls
 
 :: Descomprimiendo el Software...
@@ -2103,7 +2103,7 @@ if exist "%CD%\Downloaded\Utilities\Activar.cmd" (
 )
 
 :: Descargando Software...
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Activar.7z" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/Activar.7z?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Downloaded\Compressed\Activar.7z" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/Activar.7z?download=true"
 
 :: Descomprimiendo el Software...
 "%CD%\Assets\7z.exe" -bsp1 x "%CD%\Downloaded\Compressed\Activar.7z" -o"%CD%\Downloaded\Utilities"
@@ -2343,7 +2343,7 @@ cls
 if exist "%CD%\Assets\ffmpeg.exe" (
 	cls
 ) else (
-    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Assets\ffmpeg.exe" "https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/ffmpeg.exe?download=true"
+    %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -O "Assets\ffmpeg.exe" "https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/ffmpeg.exe?download=true"
 	cls
 )
 
@@ -2395,7 +2395,7 @@ cls
 %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240507020735/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2012_x86.exe"
 %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240507020704/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2013_x86.exe"
 %WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240507020710/https://raw.githubusercontent.com/OptiJuegos/RobLauncher/main/visual/vcredist2015_2017_2019_x86.exe"
-%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240420232338/https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/DirectX.exe?download=true"
+%WGET% -q --no-check-certificate --show-progress --connect-timeout=15 --tries=3 -P "%TEMP%" "https://web.archive.org/web/20240420232338/https://huggingface.co/spaces/OptiJuegos/lozanogamers/resolve/main/DirectX.exe?download=true"
 
 :: Instalando Visual C++ 2015-2017-2019-2022
 echo Instalando Visual C++ 2005...
